@@ -3,14 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CriarCandidatoComponent } from './componentes/candidatos/criar-candidato/criar-candidato.component';
+import { FormsModule } from '@angular/forms';
+import { ListarCandidatoComponent } from './componentes/candidatos/listar-candidato/listar-candidato.component';
+import { CandidatoComponent } from './componentes/candidatos/candidato/candidato.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExcluirCandidatoComponent } from './componentes/candidatos/excluir-candidato/excluir-candidato.component';
+import { EditarCandidatoComponent } from './componentes/candidatos/editar-candidato/editar-candidato.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CriarCandidatoComponent,
+    ListarCandidatoComponent,
+    CandidatoComponent,
+    ExcluirCandidatoComponent,
+    EditarCandidatoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

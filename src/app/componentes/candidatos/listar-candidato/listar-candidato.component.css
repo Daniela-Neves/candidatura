@@ -1,0 +1,55 @@
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+  width: auto;
+  height: auto;
+  background-color: black;
+  margin: auto;
+  border-radius: 15px;
+  border:2px solid rgb(225, 225, 3);
+}
+
+
+
+.d-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fundo1 {
+  width: 100%;
+  height: 1300px;
+  background: rgba(46,46,56,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.sem-candidatos {
+  text-align: center;
+  padding: 2rem 0 5rem;
+  color: yellow;
+  font-size: 50px;
+}
+
+.botao {
+  margin: auto;
+  margin-top: 20px;
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: black;
+  color: yellow;
+  border:2px solid rgb(225, 225, 3);
+}
+
+.botao:hover{
+  background-color: yellow;
+  color: black;
+}

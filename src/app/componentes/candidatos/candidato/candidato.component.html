@@ -1,0 +1,18 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div class="candidato ff-roboto-mono">
+  <div class="user-icon">
+    <i class="fas icone-colorido fa-user fa-2xl"></i>
+  </div>
+  <div class="container"><p class="dado"><b>{{ candidato.nome }}</b></p></div>
+  <div class="container"><p class="dado"><b>{{ candidato.sobrenome }}</b></p></div>
+  <div class="container"><p class="dado"><b>{{ candidato.email}}</b></p></div>
+  <div class="acoes">
+      <button class="botao-editar" routerLink="/candidatos/editarCandidato/{{candidato.id}}">
+          <img src="../../../../assets/images/icone-editar.png" alt="Ícone de editar">
+      </button>
+      <button class="botao-excluir" routerLink="/candidatos/excluirCandidato/{{candidato.id}}">
+          <img src="../../../../assets/images/icone-excluir.png" alt="Ícone de excluir">
+      </button>
+  </div>
+</div>

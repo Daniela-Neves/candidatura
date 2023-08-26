@@ -1,0 +1,19 @@
+<div class="fundo1">
+  <section class="container">
+    <header class="header d-flex">
+      <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px; text-align: center;" class="ff-inter">Mural de Candidatos</h2>
+      <div class="mural" *ngIf="listaCandidatos.length > 0, else semCandidatos">
+        <div *ngFor="let candidato of listaCandidatos">
+          <app-candidato [candidato]="candidato"></app-candidato>
+        </div>
+      </div>
+        <button routerLink="/criarCandidato" class="botao">Cadastrar Candidato</button>
+
+    </header>
+  </section>
+  <ng-template #semCandidatos>
+    <div class="ff-inter sem-pensamentos">
+</div>
+  </ng-template>
+
+</div>

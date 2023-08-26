@@ -1,0 +1,77 @@
+.acoes {
+  display: flex;
+  justify-content: flex-end
+}
+
+.botao-excluir {
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 60px;
+  color: yellow;
+  background-color: yellow;
+  border-radius: 10px;
+}
+
+.botao-editar {
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 60px;
+  background-color: yellow;
+  border-radius: 10px;
+}
+
+.candidato {
+  background-color: #303030;
+  margin: 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+
+  border:2px solid rgb(225, 225, 3);
+}
+
+.candidato .nome {
+  margin: 1rem auto;
+  word-wrap: break-word;
+}
+
+.candidato .sobrenome {
+  word-wrap: break-word;
+}
+.user-icon {
+  width: 100px; /* Tamanho do ícone circular */
+  height: 100px; /* Tamanho do ícone circular */
+  background-color: #007bff; /* Cor de fundo do ícone circular */
+  border-radius: 50%; /* Formato circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px; /* Tamanho do ícone dentro do círculo */
+  color: white; /* Cor do ícone dentro do círculo */
+  margin: auto; /* Espaçamento entre o ícone e o conteúdo */
+  background-color: black;
+}
+
+.container{
+  background-color: rgb(0, 0, 0);
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.icone-colorido {
+  color: yellow;
+  font-size: 40px;
+}
+
+.dado{
+  font-size: 15px;
+  color: yellow;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+

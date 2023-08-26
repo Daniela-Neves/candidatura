@@ -1,0 +1,51 @@
+<section class="container criar-candidatos ff-inter">
+
+  <div class="fundo1">
+    <div>
+      <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt="">
+    </div>
+    <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div>
+
+    <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
+    <form>
+      <input
+        type="textarea"
+        class="input"
+        id="email"
+        name="email"
+        placeholder="Email"
+        [(ngModel)]="candidato.email">
+
+        <input
+          type="text"
+          class="input"
+          id="nome"
+          name="nome"
+          placeholder="Nome"
+          [(ngModel)]="candidato.nome">
+
+        <input
+          type="text"
+          class="input"
+          id="sobrenome"
+          name="sobrenome"
+          placeholder="Sobrenome"
+          [(ngModel)]="candidato.sobrenome">
+
+        <input
+          type="text"
+          class="input"
+          id="senha"
+          name="senha"
+          placeholder="Senha"
+          [(ngModel)]="candidato.senha">
+
+        <div class="acoes">
+          <button (click)="criarCandidato()" class="botao">Cadastrar</button>
+          <button (click)="cancelar()" class="botao">Cancelar</button>
+        </div>
+      </form>
+  </div>
+</section>
+
+

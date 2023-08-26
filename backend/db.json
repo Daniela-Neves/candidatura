@@ -1,0 +1,50 @@
+{
+  "candidatos": [
+    {
+      "id": 2,
+      "nome": "Gabriel",
+      "sobrenome": "Morais",
+      "email": "gabrielc_morais@hotmail.com"
+    },
+    {
+      "id": 4,
+      "nome": "Daniel",
+      "sobrenome": "Morais",
+      "email": "gabrielc_morais@hotmail.com"
+    },
+    {
+      "email": "rafael_morais@hotmail.com",
+      "nome": "Rafael",
+      "sobrenome": "Souza",
+      "id": 6
+    },
+    {
+      "email": "Daniela",
+      "nome": "Dani",
+      "sobrenome": "Souza",
+      "senha": "4567",
+      "id": 7
+    },
+    {
+      "email": "dani@gmail.com",
+      "nome": "Dani",
+      "sobrenome": "Neves",
+      "senha": "345",
+      "id": 8
+    },
+    {
+      "email": "dani@gmail.com",
+      "nome": "Dani",
+      "sobrenome": "Neves",
+      "senha": "432",
+      "id": 9
+    },
+    {
+      "email": "",
+      "nome": "",
+      "sobrenome": "",
+      "senha": "",
+      "id": 11
+    }
+  ]
+}
