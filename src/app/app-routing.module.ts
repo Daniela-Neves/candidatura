@@ -4,12 +4,18 @@ import { CriarCandidatoComponent } from './componentes/candidatos/criar-candidat
 import { ListarCandidatoComponent } from './componentes/candidatos/listar-candidato/listar-candidato.component';
 import { ExcluirCandidatoComponent } from './componentes/candidatos/excluir-candidato/excluir-candidato.component';
 import { EditarCandidatoComponent } from './componentes/candidatos/editar-candidato/editar-candidato.component';
-
+import { LoginComponent } from './componentes/login/login.component';
+import { PerfisComponent } from './componentes/perfis/perfis.component';
+import { LoginEmpresaComponent } from './componentes/empresas/login-empresa/login-empresa.component';
 const routes: Routes = [
   {
     path:'',
-    component: ListarCandidatoComponent,
-    pathMatch: 'full'
+    component: PerfisComponent
+    //component: ListarCandidatoComponent,
+  },
+  {
+    path: 'perfis',
+    component: PerfisComponent
   },
   {
     path:'criarCandidato',
@@ -26,6 +32,18 @@ const routes: Routes = [
   {
     path: 'candidatos/editarCandidato/:id',
     component: EditarCandidatoComponent
+  },
+  {
+    path: 'candidato',
+    component: LoginComponent
+  },
+  {
+    path: 'criarEmpresa',
+    component:CriarCandidatoComponent
+  },
+  {
+    path: 'loginEmpresa',
+    component:LoginEmpresaComponent
   }
 ];
 
