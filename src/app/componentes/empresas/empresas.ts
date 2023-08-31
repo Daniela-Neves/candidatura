@@ -4,6 +4,7 @@ export interface Empresas{
   razaoSocial:string
   endereco:string
   numero:string
+  email:string
   senha:string
   confirmacaoSenha:string
 }

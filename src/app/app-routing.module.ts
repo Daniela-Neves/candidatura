@@ -4,11 +4,12 @@ import {CriarCandidatoComponent} from './componentes/candidatos/criar-candidato/
 import {ListarCandidatoComponent} from './componentes/candidatos/listar-candidato/listar-candidato.component';
 import {ExcluirCandidatoComponent} from './componentes/candidatos/excluir-candidato/excluir-candidato.component';
 import {EditarCandidatoComponent} from './componentes/candidatos/editar-candidato/editar-candidato.component';
-import {LoginComponent} from './componentes/login/login.component';
+import {LoginComponent} from './componentes/candidatos/login/login.component';
 import {PerfisComponent} from './componentes/perfis/perfis.component';
 import {LoginEmpresaComponent} from './componentes/empresas/login-empresa/login-empresa.component';
 import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
 import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
+import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
 
 const routes: Routes = [
     {
@@ -42,7 +43,7 @@ const routes: Routes = [
     }, 
     {
         path: 'criarEmpresa',
-        component: CriarCandidatoComponent
+        component: CriarEmpresaComponent
     }, 
     {
         path: 'loginEmpresa',

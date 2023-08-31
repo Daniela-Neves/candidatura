@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EmpresasService {
 
-  private readonly API = 'http://localhost:3000/candidatos'
+  private readonly API = 'http://localhost:3000/empresas'
 
   constructor(private http: HttpClient) { }
 
@@ -16,8 +16,8 @@ export class EmpresasService {
     return this.http.get<Empresas[]>(this.API)
   }
 
-  criar(candidato: Empresas):Observable<Empresas>{
-    return this.http.post<Empresas>(this.API, candidato)
+  criar(empresa: Empresas):Observable<Empresas>{
+    return this.http.post<Empresas>(this.API, empresa)
   }
 
   excluir(id:number):Observable<Empresas>{
@@ -30,8 +30,8 @@ export class EmpresasService {
     return this.http.get<Empresas>(url)
   }
 
-  editar(candidato: Empresas): Observable<Empresas>{
-    const url = `${this.API}/${candidato.id}`
-    return this.http.put<Empresas>(url, candidato)
+  editar(empresa: Empresas): Observable<Empresas>{
+    const url = `${this.API}/${empresa.id}`
+    return this.http.put<Empresas>(url, empresa)
   }
 }
