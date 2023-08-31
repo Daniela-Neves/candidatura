@@ -14,6 +14,8 @@ import { PerfisComponent } from './componentes/perfis/perfis.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { LoginEmpresaComponent } from './componentes/empresas/login-empresa/login-empresa.component';
 import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
+import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
+import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/cria
     PerfisComponent,
     LoginComponent,
     LoginEmpresaComponent,
-    CriarEmpresaComponent
+    CriarEmpresaComponent,
+    PaginaInicialEmpresaComponent,
+    CadastrarOportunidadeComponent
   ],
   imports: [
     BrowserModule,
