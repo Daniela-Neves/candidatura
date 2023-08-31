@@ -10,6 +10,12 @@ import { CandidatoComponent } from './componentes/candidatos/candidato/candidato
 import { HttpClientModule } from '@angular/common/http';
 import { ExcluirCandidatoComponent } from './componentes/candidatos/excluir-candidato/excluir-candidato.component';
 import { EditarCandidatoComponent } from './componentes/candidatos/editar-candidato/editar-candidato.component';
+import { PerfisComponent } from './componentes/perfis/perfis.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { LoginEmpresaComponent } from './componentes/empresas/login-empresa/login-empresa.component';
+import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
+import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
+import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { EditarCandidatoComponent } from './componentes/candidatos/editar-candid
     ListarCandidatoComponent,
     CandidatoComponent,
     ExcluirCandidatoComponent,
-    EditarCandidatoComponent
+    EditarCandidatoComponent,
+    PerfisComponent,
+    LoginComponent,
+    LoginEmpresaComponent,
+    CriarEmpresaComponent,
+    PaginaInicialEmpresaComponent,
+    CadastrarOportunidadeComponent
   ],
   imports: [
     BrowserModule,
