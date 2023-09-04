@@ -16,6 +16,7 @@ const routes: Routes = [
     {
         path: '',
         component: PerfisComponent
+        //component: ExcluirCandidatoComponent
         // component: ListarCandidatoComponent,
     },
     {

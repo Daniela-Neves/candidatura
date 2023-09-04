@@ -16,6 +16,12 @@
   overflow: hidden;
 }
 
+.fundo1 h1{
+  color: rgb(128, 128, 128);
+  margin-bottom: 35px;
+  font-weight: bolder;
+}
+
 .botao {
   margin: 5px;
   margin-top: 20px;
@@ -35,6 +41,7 @@
 .criar-candidatos {
   padding: 2rem 0;
   text-align: center;
+  height: 100%;
 }
 
 .recrutamentos{
@@ -59,7 +66,7 @@
 .criar-candidatos form {
   background: rgba(46,46,56,1);
 
-  width: 600px;
+  width: 70%;
 
   margin: auto;
   margin-top: 50px;
@@ -70,7 +77,7 @@
   flex-direction: column;
 
   padding: 2rem;
-
+  align-items: center;
 }
 
 .criar-candidatos form label {
@@ -82,14 +89,12 @@
 .criar-candidatos form .input {
   border: none;
   height: 40px;
-  width: 491px;
+  width: 70%;
   padding: 1rem 2rem;
   border-radius: 20px;
   margin: 0.5rem 0 2rem;
   background: rgb(205, 205, 205);
   font-size: 18px;
-
-
 
 }
 
@@ -108,4 +113,24 @@
   padding: 1rem 2rem;
   border-radius: 20px;
   margin: 0.5rem 0 2rem;
+}
+
+
+@media (max-width: 480px) {
+  /*
+  Teste para ver se a media pega
+  .fundo1 {
+    background-color: red;
+  }
+  */
+  .acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+
+
 }
