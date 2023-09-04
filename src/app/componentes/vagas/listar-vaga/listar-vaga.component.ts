@@ -20,9 +20,13 @@ export class ListarVagaComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')
-    this.service.buscarPorId(parseInt(id!)).subscribe((vagas) => {
-      this.vagas = vagas
+    // const id = this.route.snapshot.paramMap.get('id')
+    // this.service.buscarPorId(parseInt(id!)).subscribe((vagas) => {
+    //   this.vagas = vagas
+    // })
+
+    this.service.listar().subscribe((listaVagas) => {
+      this.listaVagas = listaVagas
     })
   }
 
@@ -33,7 +37,7 @@ export class ListarVagaComponent implements OnInit{
   }
 
   cancelar(){
-    this.router.navigate(['/listarVagas'])
+    this.router.navigate(['/paginaInicialEmpresa'])
   }
 
   vagas:Vagas={

@@ -46,5 +46,43 @@
       "senha": "",
       "id": 11
     }
+  ],
+  "vagas": [
+    {
+      "id": 0,
+      "nome": "Dev",
+      "tipoContratacao": "CLT",
+      "dataPublicacao": "21/12/1997",
+      "cidade": "Nhandeara",
+      "estado": "SP",
+      "remuneracao": "1200",
+      "sobreAVaga": "Desenvolver",
+      "responsabilidades": "Desenvolver",
+      "qualificacoes": "Contar até 3"
+    },
+    {
+      "nome": "",
+      "tipoContratacao": "",
+      "dataPublicacao": "",
+      "cidade": "",
+      "estado": "",
+      "remuneracao": "",
+      "sobreAVaga": "",
+      "responsabilidades": "",
+      "qualificacoes": "",
+      "id": 1
+    },
+    {
+      "nome": "Gerente",
+      "tipoContratacao": "",
+      "dataPublicacao": "",
+      "cidade": "",
+      "estado": "",
+      "remuneracao": "1400",
+      "sobreAVaga": "",
+      "responsabilidades": "",
+      "qualificacoes": "",
+      "id": 2
+    }
   ]
 }

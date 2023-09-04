@@ -62,3 +62,23 @@ body {
 .cadastro-button:hover {
     background-color: #333333;
 }
+
+.cancelar-button {
+  background-color: #555555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.cancelar-button:hover {
+  background-color: #333333;
+}
+
+.botoes{
+  margin-left: 90px;
+  margin-bottom: 20px;
+}

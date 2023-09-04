@@ -18,6 +18,7 @@ import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-ini
 import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
 import { ListarEmpresaComponent } from './componentes/empresas/listar-empresa/listar-empresa.component';
 import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga.component';
+import { VagaComponent } from './componentes/vagas/vaga/vaga.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga
     PaginaInicialEmpresaComponent,
     CadastrarOportunidadeComponent,
     ListarEmpresaComponent,
-    ListarVagaComponent
+    ListarVagaComponent,
+    VagaComponent
   ],
   imports: [
     BrowserModule,

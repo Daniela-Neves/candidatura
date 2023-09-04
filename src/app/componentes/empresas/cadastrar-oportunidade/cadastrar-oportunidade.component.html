@@ -4,35 +4,38 @@
         <div class="cadastro-form">
             <label for="nomeVaga">Nome da vaga</label>
             <input type="text" id="nomeVaga" class="cadastro-input">
-            
+
             <label for="tipoContratacao">Tipo de contratação</label>
             <select id="tipoContratacao" class="cadastro-input">
                 <option value="CLT">CLT</option>
                 <option value="PJ">PJ</option>
             </select>
-            
+
             <label for="dataPublicacao">Data de publicação</label>
             <input type="date" id="dataPublicacao" class="cadastro-input">
-            
+
             <label for="cidade">Cidade</label>
             <input type="text" id="cidade" class="cadastro-input">
-            
+
             <label for="estado">Estado</label>
             <input type="text" id="estado" class="cadastro-input">
-            
+
             <label for="remuneracao">Remuneração</label>
             <input type="text" id="remuneracao" class="cadastro-input">
-            
+
             <label for="sobreAVaga">Sobre a vaga</label>
             <textarea id="sobreAVaga" class="cadastro-textarea"></textarea>
-            
+
             <label for="responsabilidades">Responsabilidades e atribuições</label>
             <textarea id="responsabilidades" class="cadastro-textarea"></textarea>
-            
+
             <label for="qualificacoes">Qualificações desejadas</label>
             <textarea id="qualificacoes" class="cadastro-textarea"></textarea>
-            
-            <button class="cadastro-button">Cadastre</button>
+
+            <div class="botoes">
+              <button (click)="criarOportunidade()" class="cadastro-button">Cadastre</button>
+              <button (click)="cancelar()" class="cancelar-button">Cancelar</button>
+          </div>
         </div>
     </div>
 </body>
