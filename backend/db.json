@@ -19,13 +19,6 @@
       "id": 6
     },
     {
-      "email": "Daniela",
-      "nome": "Dani",
-      "sobrenome": "Souza",
-      "senha": "4567",
-      "id": 7
-    },
-    {
       "email": "dani@gmail.com",
       "nome": "Dani",
       "sobrenome": "Neves",
@@ -40,6 +33,13 @@
       "id": 9
     },
     {
+      "email": "geovanne.macedo@gmail.com",
+      "nome": "Geovanne",
+      "sobrenome": "Macedo",
+      "senha": "aaa",
+      "id": 10
+    },
+    {
       "email": "",
       "nome": "",
       "sobrenome": "",
@@ -47,5 +47,30 @@
       "id": 11
     }
   ],
-  "vagas": []
+  "vagas": [
+    {
+      "nome": "RH",
+      "tipoContratacao": "CLT",
+      "dataPublicacao": "2023-08-29",
+      "cidade": "São Paulo",
+      "estado": "São Paulo",
+      "remuneracao": "40000",
+      "sobreAVaga": "Oportunidade em RH",
+      "responsabilidades": "",
+      "qualificacoes": "",
+      "id": 2
+    },
+    {
+      "nome": "Designer de interiores",
+      "tipoContratacao": "PJ",
+      "dataPublicacao": "2023-09-06",
+      "cidade": "São Paulo",
+      "estado": "São Paulo",
+      "remuneracao": "50000",
+      "sobreAVaga": "Designer de interiores para projetos empresariais",
+      "responsabilidades": "Design",
+      "qualificacoes": "Curso de designer",
+      "id": 3
+    }
+  ]
 }

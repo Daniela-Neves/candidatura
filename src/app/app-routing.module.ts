@@ -18,7 +18,7 @@ const routes: Routes = [
     {
         path: '',
         component: PerfisComponent
-        //component: ExcluirCandidatoComponent
+        //component: PaginaInicialEmpresaComponent
         // component: ListarCandidatoComponent,
     },
     {
