@@ -15,6 +15,7 @@ export class CriarEmpresaComponent {
     razaoSocial:'',
     endereco:'',
     numero:'',
+    email:'',
     senha:'',
     confirmacaoSenha:''
   }

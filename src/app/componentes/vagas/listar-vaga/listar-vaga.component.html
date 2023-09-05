@@ -1,0 +1,23 @@
+<body>
+    <div class="vaga-container">
+        <h1 class="vaga-heading">Vagas Disponíveis</h1>
+
+        <div class="mural" *ngIf="listaVagas.length > 0, else semVagas">
+            <div class="vaga-info" *ngFor="let vagas of listaVagas">
+              <app-vaga [vagas]="vagas"></app-vaga>
+            </div>
+          </div>
+          <button routerLink="/paginaInicialEmpresa" class="voltar">
+            Voltar
+          </button>
+    </div>
+
+
+    <ng-template #semVagas>
+      <div class="ff-inter sem-vagas">
+        Sem vagas cadastradas
+  </div>
+    </ng-template>
+
+
+</body>

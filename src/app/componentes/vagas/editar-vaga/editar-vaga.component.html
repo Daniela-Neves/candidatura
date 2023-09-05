@@ -1,0 +1,42 @@
+<p>editar-vaga works!</p>
+<body>
+  <div class="editar-container">
+      <h1 class="editar-heading">Cadastre novas oportunidades</h1>
+      <div class="editar-form">
+          <label for="nomeVaga">Nome da vaga</label>
+          <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="editar-input">
+
+          <label for="tipoContratacao">Tipo de contratação</label>
+          <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="editar-input">
+              <option value="CLT">CLT</option>
+              <option value="PJ">PJ</option>
+          </select>
+
+          <label for="dataPublicacao">Data de publicação</label>
+          <input [(ngModel)]="vaga.dataPublicacao" name="dataPublicacao" type="date" id="dataPublicacao" class="editar-input">
+
+          <label for="cidade">Cidade</label>
+          <input [(ngModel)]="vaga.cidade" name="cidade" type="text" id="cidade" class="editar-input">
+
+          <label for="estado">Estado</label>
+          <input [(ngModel)]="vaga.estado" name="estado" type="text" id="estado" class="editar-input">
+
+          <label for="remuneracao">Remuneração</label>
+          <input [(ngModel)]="vaga.remuneracao" name="remuneracao" type="text" id="remuneracao" class="editar-input">
+
+          <label for="sobreAVaga">Sobre a vaga</label>
+          <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="editar-textarea"></textarea>
+
+          <label for="responsabilidades">Responsabilidades e atribuições</label>
+          <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="editar-textarea"></textarea>
+
+          <label for="qualificacoes">Qualificações desejadas</label>
+          <textarea [(ngModel)]="vaga.qualificacoes" name="qualificacoes" id="qualificacoes" class="editar-textarea"></textarea>
+
+          <div class="botoes">
+            <button (click)="editarEmpresa()" class="editar-button">Editar</button>
+            <button (click)="cancelar()" class="cancelar-button">Cancelar</button>
+        </div>
+      </div>
+  </div>
+</body>

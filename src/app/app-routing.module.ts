@@ -4,16 +4,21 @@ import {CriarCandidatoComponent} from './componentes/candidatos/criar-candidato/
 import {ListarCandidatoComponent} from './componentes/candidatos/listar-candidato/listar-candidato.component';
 import {ExcluirCandidatoComponent} from './componentes/candidatos/excluir-candidato/excluir-candidato.component';
 import {EditarCandidatoComponent} from './componentes/candidatos/editar-candidato/editar-candidato.component';
-import {LoginComponent} from './componentes/login/login.component';
+import {LoginComponent} from './componentes/candidatos/login/login.component';
 import {PerfisComponent} from './componentes/perfis/perfis.component';
 import {LoginEmpresaComponent} from './componentes/empresas/login-empresa/login-empresa.component';
 import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
 import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
+import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
+import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga.component';
+import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
+import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga.component';
 
 const routes: Routes = [
     {
         path: '',
         component: PerfisComponent
+        //component: ExcluirCandidatoComponent
         // component: ListarCandidatoComponent,
     },
     {
@@ -27,23 +32,23 @@ const routes: Routes = [
     {
         path: 'listarCandidato',
         component: ListarCandidatoComponent
-    }, 
+    },
     {
         path: 'candidatos/excluirCandidato/:id',
         component: ExcluirCandidatoComponent
-    }, 
+    },
     {
         path: 'candidatos/editarCandidato/:id',
         component: EditarCandidatoComponent
-    }, 
+    },
     {
         path: 'candidato',
         component: LoginComponent
-    }, 
+    },
     {
         path: 'criarEmpresa',
-        component: CriarCandidatoComponent
-    }, 
+        component: CriarEmpresaComponent
+    },
     {
         path: 'loginEmpresa',
         component: LoginEmpresaComponent
@@ -55,19 +60,31 @@ const routes: Routes = [
     // {
     //     path: 'acompanhamento-vagas',
     //     component: AcompanhamentoVagasComponent
-    // }, 
+    // },
     // {
     //     path: 'acompanhamento-candidatos',
     //     component: AcompanhamentoCandidatosComponent
-    // }, 
+    // },
     {
         path: 'cadastrar-oportunidades',
         component: CadastrarOportunidadeComponent
-    }
+    },
     // {
     //     path: 'alterar-dados',
     //     component: AlterarDadosComponent
     // }
+    {
+      path:'listarVagas',
+      component: ListarVagaComponent
+    },
+    {
+      path: 'vagas/excluirVaga/:id',
+      component: ExcluirVagaComponent
+  },
+  {
+    path:'vagas/editarVaga/:id',
+    component: EditarVagaComponent
+  }
 ];
 
 @NgModule({

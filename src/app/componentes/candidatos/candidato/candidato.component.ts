@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Candidato } from '../candidato';
-import { CandidatoService } from '../candidato.service';
-import { Router } from 'express';
+
 
 @Component({
   selector: 'app-candidato',

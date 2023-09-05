@@ -40,7 +40,7 @@ export class ExcluirCandidatoComponent implements OnInit{
   }
 
   cancelar() {
-    this.router.navigate(['/listarPensamento'])
+    this.router.navigate(['/listarCandidato'])
   }
 
 }
