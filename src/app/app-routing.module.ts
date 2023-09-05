@@ -12,6 +12,7 @@ import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-ini
 import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
 import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga.component';
 import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
+import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga.component';
 
 const routes: Routes = [
     {
@@ -80,6 +81,10 @@ const routes: Routes = [
       path: 'vagas/excluirVaga/:id',
       component: ExcluirVagaComponent
   },
+  {
+    path:'vagas/editarVaga/:id',
+    component: EditarVagaComponent
+  }
 ];
 
 @NgModule({

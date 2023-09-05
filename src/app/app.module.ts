@@ -20,6 +20,8 @@ import { ListarEmpresaComponent } from './componentes/empresas/listar-empresa/li
 import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga.component';
 import { VagaComponent } from './componentes/vagas/vaga/vaga.component';
 import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
+import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-v
     ListarEmpresaComponent,
     ListarVagaComponent,
     VagaComponent,
-    ExcluirVagaComponent
+    ExcluirVagaComponent,
+    EditarVagaComponent,
   ],
   imports: [
     BrowserModule,

@@ -50,7 +50,7 @@
   "vagas": [
     {
       "id": 0,
-      "nome": "Dev",
+      "nome": "Novo Nome",
       "tipoContratacao": "CLT",
       "dataPublicacao": "21/12/1997",
       "cidade": "Nhandeara",
@@ -59,6 +59,18 @@
       "sobreAVaga": "Desenvolver",
       "responsabilidades": "Desenvolver",
       "qualificacoes": "Contar até 3"
+    },
+    {
+      "nome": "Lego",
+      "tipoContratacao": "",
+      "dataPublicacao": "",
+      "cidade": "",
+      "estado": "",
+      "remuneracao": "",
+      "sobreAVaga": "",
+      "responsabilidades": "",
+      "qualificacoes": "",
+      "id": 1
     }
   ]
 }
