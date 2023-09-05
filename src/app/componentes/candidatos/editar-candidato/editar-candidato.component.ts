@@ -38,7 +38,8 @@ export class EditarCandidatoComponent implements OnInit{
     email:'',
     nome:'',
     sobrenome:'',
-    senha:''
+    senha:'',
+    confirmacaoSenha: ''
   }
 
 }

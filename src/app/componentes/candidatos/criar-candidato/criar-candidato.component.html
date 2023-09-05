@@ -10,20 +10,20 @@
     <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
     <form>
       <input
-        type="textarea"
-        class="input"
-        id="email"
-        name="email"
-        placeholder="Email"
-        [(ngModel)]="candidato.email">
-
-        <input
           type="text"
           class="input"
           id="nome"
           name="nome"
           placeholder="Nome"
           [(ngModel)]="candidato.nome">
+
+      <input
+        type="textarea"
+        class="input"
+        id="email"
+        name="email"
+        placeholder="Email"
+        [(ngModel)]="candidato.email">
 
         <input
           type="text"
@@ -40,6 +40,14 @@
           name="senha"
           placeholder="Senha"
           [(ngModel)]="candidato.senha">
+
+          <input
+          type="text"
+          class="input"
+          id="confirmacaoSenha"
+          name="confirmacaoSenha"
+          placeholder="Confirme a Senha"
+          [(ngModel)]="candidato.confirmacaoSenha">
 
         <div class="acoes">
           <button (click)="criarCandidato()" class="botao">Cadastrar</button>

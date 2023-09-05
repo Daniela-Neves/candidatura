@@ -14,7 +14,8 @@ export class CriarCandidatoComponent {
     email:'',
     nome:'',
     sobrenome:'',
-    senha:''
+    senha:'',
+    confirmacaoSenha:''
   }
 
   constructor(private service: CandidatoService, private router: Router){

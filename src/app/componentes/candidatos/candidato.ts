@@ -4,4 +4,5 @@ export interface Candidato{
   sobrenome:string
   email:string
   senha:string
+  confirmacaoSenha:string
 }

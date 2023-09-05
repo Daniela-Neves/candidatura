@@ -14,7 +14,8 @@ export class CandidatoComponent implements OnInit{
     nome: 'Gabriel',
     sobrenome: 'Morais',
     email: 'gabrielc_morais@hotmail.com',
-    senha: '1234'
+    senha: '1234',
+    confirmacaoSenha: '1234'
   }
 
   constructor(){
