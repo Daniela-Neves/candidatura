@@ -11,6 +11,7 @@ import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar
 import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
 import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
 import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga.component';
+import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
 
 const routes: Routes = [
     {
@@ -74,7 +75,11 @@ const routes: Routes = [
     {
       path:'listarVagas',
       component: ListarVagaComponent
-    }
+    },
+    {
+      path: 'vagas/excluirVaga/:id',
+      component: ExcluirVagaComponent
+  },
 ];
 
 @NgModule({

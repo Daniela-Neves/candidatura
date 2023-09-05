@@ -19,4 +19,8 @@ export class PaginaInicialEmpresaComponent {
     this.router.navigate(['/listarVagas'])
   }
 
+  listarCandidatos() {
+    this.router.navigate(['/listarCandidato'])
+  }
+
 }
