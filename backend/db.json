@@ -47,30 +47,5 @@
       "id": 11
     }
   ],
-  "vagas": [
-    {
-      "id": 0,
-      "nome": "Novo Nome",
-      "tipoContratacao": "CLT",
-      "dataPublicacao": "21/12/1997",
-      "cidade": "Nhandeara",
-      "estado": "SP",
-      "remuneracao": "1200",
-      "sobreAVaga": "Desenvolver",
-      "responsabilidades": "Desenvolver",
-      "qualificacoes": "Contar até 3"
-    },
-    {
-      "nome": "Lego",
-      "tipoContratacao": "",
-      "dataPublicacao": "",
-      "cidade": "",
-      "estado": "",
-      "remuneracao": "",
-      "sobreAVaga": "",
-      "responsabilidades": "",
-      "qualificacoes": "",
-      "id": 1
-    }
-  ]
+  "vagas": []
 }
