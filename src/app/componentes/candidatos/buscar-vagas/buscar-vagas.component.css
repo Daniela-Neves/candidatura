@@ -1,0 +1,84 @@
+/* Estilos para a página */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'PT Mono', monospace;
+}
+
+/* Estilos para o filtro à esquerda */
+.filtro-container {
+    width: 20%;
+    padding: 20px;
+    background-color: #333333;
+    color: white;
+}
+
+.filtro-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.filtro-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.aplicar-button {
+    width: 100%;
+    background-color: #555555;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.aplicar-button:hover {
+    background-color: #333333;
+}
+
+/* Estilos para o centro da página */
+.centro-container {
+    width: 80%;
+    padding: 20px;
+}
+
+.centro-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.centro-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.lista-vagas .vaga {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.lista-vagas .vaga h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.lista-vagas .vaga .detalhes-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lista-vagas .vaga .detalhes-link:hover {
+    text-decoration: underline;
+}

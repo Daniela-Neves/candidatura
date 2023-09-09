@@ -22,6 +22,7 @@ import { VagaComponent } from './componentes/vagas/vaga/vaga.component';
 import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
 import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga.component';
 import { MenuCandidatoComponent } from './componentes/candidatos/menu-candidato/menu-candidato.component';
+import { BuscarVagasComponent } from './componentes/candidatos/buscar-vagas/buscar-vagas.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { MenuCandidatoComponent } from './componentes/candidatos/menu-candidato/
     ExcluirVagaComponent,
     EditarVagaComponent,
     MenuCandidatoComponent,
+    BuscarVagasComponent,
   ],
   imports: [
     BrowserModule,
