@@ -72,6 +72,23 @@
     align-items: center;
     overflow: hidden;
   }
+
+  .v177_1568 :hover {
+    cursor: pointer;
+  }
+
+  .v177_1569 :hover {
+    cursor: pointer;
+  }
+
+  .v177_1593 :hover {
+    cursor: pointer;
+  }
+
+  .v200_180 :hover {
+    cursor: pointer;
+  }
+
   .v177_1569 {
     width: 524px;
     height: 61px;
@@ -99,7 +116,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
   }
   .v177_1571 {
     width: 100%;
@@ -260,7 +277,7 @@
     left: 0px;
     overflow: hidden;
   }
-  
+
   .logout {
     width: 100px;
     height: 40px;
@@ -279,7 +296,7 @@
     align-items: center;
     overflow: hidden;
   }
-  
+
   .logout-txt {
     width: 100%;
     color: rgba(217,217,217,1);
