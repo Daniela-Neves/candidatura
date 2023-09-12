@@ -60,6 +60,19 @@
       "qualificacoes": "teste",
       "modalidade": "Hibrido",
       "id": 1
+    },
+    {
+      "nome": "Dev fullstack",
+      "tipoContratacao": "CLT",
+      "dataPublicacao": "2023-09-12",
+      "cidade": "São Paulo",
+      "estado": "São Paulo",
+      "remuneracao": "60000",
+      "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
+      "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
+      "qualificacoes": "Conhecimento em java e angular",
+      "modalidade": "HomeOffice",
+      "id": 2
     }
   ]
 }

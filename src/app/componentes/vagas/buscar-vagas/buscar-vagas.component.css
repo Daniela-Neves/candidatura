@@ -116,6 +116,7 @@ body {
   padding-right: 20px;
   scroll-behavior: smooth;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 .lista-vagas::-webkit-scrollbar {
@@ -134,7 +135,7 @@ body {
 
 @media (max-width: 760px)  {
   .fundo1{
-    background-color: #ccc;
+    /* background-color: #ccc; */
   }
 
   body{
@@ -155,7 +156,7 @@ body {
 
 @media (max-width: 470px)  {
   .fundo1{
-    background-color: #007BFF;
+    /* background-color: #007BFF; */
     height: 1000px;
   }
 
