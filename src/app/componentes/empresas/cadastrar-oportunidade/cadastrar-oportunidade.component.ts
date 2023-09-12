@@ -19,7 +19,8 @@ export class CadastrarOportunidadeComponent {
   remuneracao:'',
   sobreAVaga:'',
   responsabilidades:'',
-  qualificacoes:''
+  qualificacoes:'',
+  modalidade:''
   }
 
   constructor(private service: VagasService, private router: Router){

@@ -49,28 +49,17 @@
   ],
   "vagas": [
     {
-      "nome": "RH",
-      "tipoContratacao": "CLT",
-      "dataPublicacao": "2023-08-29",
-      "cidade": "São Paulo",
-      "estado": "São Paulo",
-      "remuneracao": "40000",
-      "sobreAVaga": "Oportunidade em RH",
-      "responsabilidades": "",
-      "qualificacoes": "",
-      "id": 2
-    },
-    {
-      "nome": "Designer de interiores",
+      "nome": "teste",
       "tipoContratacao": "PJ",
-      "dataPublicacao": "2023-09-06",
-      "cidade": "São Paulo",
-      "estado": "São Paulo",
-      "remuneracao": "50000",
-      "sobreAVaga": "Designer de interiores para projetos empresariais",
-      "responsabilidades": "Design",
-      "qualificacoes": "Curso de designer",
-      "id": 3
+      "dataPublicacao": "2023-09-13",
+      "cidade": "teste",
+      "estado": "teste",
+      "remuneracao": "teste",
+      "sobreAVaga": "teste",
+      "responsabilidades": "teste",
+      "qualificacoes": "teste",
+      "modalidade": "Hibrido",
+      "id": 1
     }
   ]
 }

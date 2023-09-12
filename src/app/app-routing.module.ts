@@ -14,7 +14,8 @@ import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga
 import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
 import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga.component';
 import { MenuCandidatoComponent } from './componentes/candidatos/menu-candidato/menu-candidato.component';
-import { BuscarVagasComponent } from './componentes/candidatos/buscar-vagas/buscar-vagas.component';
+import { BuscarVagasComponent } from './componentes/vagas/buscar-vagas/buscar-vagas.component';
+import { DetalhesVagaComponent } from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
 
 const routes: Routes = [
     {
@@ -94,6 +95,10 @@ const routes: Routes = [
   {
     path:'buscar-vagas',
     component: BuscarVagasComponent
+  },
+  {
+    path: 'vagas/detalhes/:id',
+    component: DetalhesVagaComponent
   }
 ];
 

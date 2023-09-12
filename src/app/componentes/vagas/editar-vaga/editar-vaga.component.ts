@@ -19,7 +19,8 @@ export class EditarVagaComponent implements OnInit{
     remuneracao:'',
     sobreAVaga:'',
     responsabilidades:'',
-    qualificacoes:''
+    qualificacoes:'',
+    modalidade:''
     }
 
 

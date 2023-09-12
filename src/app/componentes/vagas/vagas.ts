@@ -9,4 +9,5 @@ export interface Vagas{
   sobreAVaga:string
   responsabilidades:string
   qualificacoes:string
+  modalidade:string
 }

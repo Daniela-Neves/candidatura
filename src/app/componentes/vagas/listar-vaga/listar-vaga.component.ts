@@ -50,6 +50,7 @@ export class ListarVagaComponent implements OnInit{
     sobreAVaga:'',
     responsabilidades:'',
     qualificacoes:'',
+    modalidade:''
   }
 
 }
