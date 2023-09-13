@@ -73,6 +73,19 @@
       "qualificacoes": "Conhecimento em java e angular",
       "modalidade": "HomeOffice",
       "id": 2
+    },
+    {
+      "nome": "teste",
+      "tipoContratacao": "CLT",
+      "dataPublicacao": "2023-09-14",
+      "cidade": "teste",
+      "estado": "teste",
+      "remuneracao": "teste",
+      "sobreAVaga": "teste",
+      "responsabilidades": "teste",
+      "qualificacoes": "teste",
+      "modalidade": "HomeOffice",
+      "id": 3
     }
   ]
 }

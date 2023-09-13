@@ -76,7 +76,7 @@ body {
 }
 
 .centro-input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -151,6 +151,10 @@ body {
   .centro-container{
     width: 90%;
     padding-right: 20%;
+  }
+
+  .centro-input{
+    width: 100%;
   }
 }
 

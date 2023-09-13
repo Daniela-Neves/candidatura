@@ -1,14 +1,34 @@
+<body class="fundo1">
 <div class="detalhes-vaga">
-  <h1>{{ vaga.nome }}</h1>
-  <p><strong>Tipo de Contratação:</strong> {{ vaga.tipoContratacao }}</p>
-  <p><strong>Data de Publicação:</strong> {{ vaga.dataPublicacao }}</p>
-  <p><strong>Cidade:</strong> {{ vaga.cidade }}</p>
-  <p><strong>Estado:</strong> {{ vaga.estado }}</p>
-  <p><strong>Remuneração:</strong> {{ vaga.remuneracao }}</p>
-  <h2>Sobre a Vaga</h2>
-  <p>{{ vaga.sobreAVaga }}</p>
-  <h2>Responsabilidades e Atribuições</h2>
-  <p>{{ vaga.responsabilidades }}</p>
-  <h2>Qualificações Desejadas</h2>
-  <p>{{ vaga.qualificacoes }}</p>
+  <div class="header-vaga">
+    <h1>{{ vaga.nome }}</h1>
+    <p>Vaga publicada em {{ vaga.dataPublicacao }}</p>
+    <div class="local">
+      <img src="../../../../assets/images/icons8-visita-50.png" alt="Ícone local" class="icon"> <p>Local: {{ vaga.cidade }}</p>
+      <img src="../../../../assets/images/icons8-procurar-empregos-50.png" alt="Ícone local" class="icon"><p>Tipo de Contratação: {{ vaga.tipoContratacao }}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="vaga">
+    <h2>Sobre a Vaga</h2>
+    <p>{{ vaga.sobreAVaga }}</p>
+    <h2>Responsabilidades e Atribuições</h2>
+    <p>{{ vaga.responsabilidades }}</p>
+    <h2>Qualificações Desejadas</h2>
+    <p>{{ vaga.qualificacoes }}</p>
+    <p>Remuneração: {{ vaga.remuneracao }}</p>
+  </div>
+  <hr>
+  <!-- <p><strong>Estado:</strong> {{ vaga.estado }}</p> -->
+
+    <h1>Conheça mais sobre a empresa</h1>
+  <div class="info-empresa">
+    <a href=""><img src="../../../../assets/images/icons8-navegador-de-internet-50.png" alt="Ícone site" class="icon"><p>Site institucional</p></a>
+
+    <a href=""><p>LinkedIn</p></a>
+  </div>
+
+  <a href="">Candidatar-se a vaga</a>
+
 </div>
+</body>
