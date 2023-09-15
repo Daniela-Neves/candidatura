@@ -34,12 +34,36 @@ export class EditarCandidatoComponent implements OnInit{
     this.router.navigate(['/listarCandidato'])
   }
 
-  candidato:Candidato={
-    email:'',
-    nome:'',
-    sobrenome:'',
-    senha:'',
-    confirmacaoSenha: ''
-  }
+    candidato:Candidato={
+      id: 0,
+      nome: '',
+      sobrenome: '',
+      email: '',
+      senha: '',
+      confirmacaoSenha: '',
+      dataNascimento: '',
+      genero: '',
+      deficiencias: {
+        fisica: false,
+        auditiva: false,
+        visual: false,
+        intelectual: false,
+        autista: false,
+      },
+      endereco: {
+        cep: '',
+        endereco: '',
+        numero: '',
+        cidade: '',
+        estado: '',
+      },
+      linkedin: '',
+      formacao: '',
+      curso: '',
+      inicioFormacao: '',
+      fimFormacao: '',
+      idiomas: [{ idioma: '', nivel: '' }],
+      certificados: [],
+    };
 
 }

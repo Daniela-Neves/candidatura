@@ -104,7 +104,11 @@ const routes: Routes = [
   {
     path:'formulario-candidatura',
     component: FormularioCandidaturaComponent
-  }
+  },
+  {
+    path: 'candidatos/formulario-candidatura/:id',
+    component: FormularioCandidaturaComponent
+}
 ];
 
 @NgModule({

@@ -8,16 +8,41 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './excluir-candidato.component.html',
   styleUrls: ['./excluir-candidato.component.css']
 })
+
 export class ExcluirCandidatoComponent implements OnInit{
 
-  candidato:Candidato={
-    id:0,
-    nome:'',
-    sobrenome:'',
-    email:'',
-    senha:'',
-    confirmacaoSenha:''
-  }
+    candidato:Candidato={
+      id: 0,
+      nome: '',
+      sobrenome: '',
+      email: '',
+      senha: '',
+      confirmacaoSenha: '',
+      dataNascimento: '',
+      genero: '',
+      deficiencias: {
+        fisica: false,
+        auditiva: false,
+        visual: false,
+        intelectual: false,
+        autista: false,
+      },
+      endereco: {
+        cep: '',
+        endereco: '',
+        numero: '',
+        cidade: '',
+        estado: '',
+      },
+      linkedin: '',
+      formacao: '',
+      curso: '',
+      inicioFormacao: '',
+      fimFormacao: '',
+      idiomas: [{ idioma: '', nivel: '' }],
+      certificados: [],
+    };
+
 
   constructor(
     private service: CandidatoService,
