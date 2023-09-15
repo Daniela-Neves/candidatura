@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Vagas } from './vagas';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })

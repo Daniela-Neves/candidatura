@@ -16,6 +16,7 @@ import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga
 import { MenuCandidatoComponent } from './componentes/candidatos/menu-candidato/menu-candidato.component';
 import { BuscarVagasComponent } from './componentes/vagas/buscar-vagas/buscar-vagas.component';
 import { DetalhesVagaComponent } from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
+import { FormularioCandidaturaComponent } from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
 
 const routes: Routes = [
     {
@@ -99,6 +100,10 @@ const routes: Routes = [
   {
     path: 'vagas/detalhes/:id',
     component: DetalhesVagaComponent
+  },
+  {
+    path:'formulario-candidatura',
+    component: FormularioCandidaturaComponent
   }
 ];
 

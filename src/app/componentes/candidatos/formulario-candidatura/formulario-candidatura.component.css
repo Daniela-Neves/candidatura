@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.formulario-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.adicionar-button,
+.salvar-button {
+  display: block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  cursor: pointer;
+}
+
+.adicionar-button:hover,
+.salvar-button:hover {
+  background-color: #0056b3;
+}
+
+.salvar-button {
+  margin-bottom: 20px;
+}
+
+.salvar-button:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Estilizando os checkboxes */
+.checkbox-label {
+  display: block;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}
