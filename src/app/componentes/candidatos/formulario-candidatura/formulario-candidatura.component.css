@@ -1,6 +1,21 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+.fundo1 {
+  margin: 0;
+  display: flex;
+  font-family: 'Roboto', monospace;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background: rgba(46,46,56,1); */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow-y: scroll;
+}
+
+.form-dados{
+  padding: 20px;
 }
 
 h2 {
@@ -20,6 +35,35 @@ label {
   margin-top: 5px;
   margin-bottom: 10px;
   box-sizing: border-box;
+}
+
+.secao{
+  background-color: rgb(235, 235, 235);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.secao h2{
+  background-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form-dados input{
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* .form-dados input[type = checkbox]{
+  border: #0056b3;
+
+} */
+
+.check-deficiencia{
+  display: flex;
+  width: 100%;
+  justify-content:space-around;
 }
 
 .adicionar-button,
