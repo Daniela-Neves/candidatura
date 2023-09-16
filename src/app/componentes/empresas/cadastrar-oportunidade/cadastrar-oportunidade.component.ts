@@ -28,7 +28,7 @@ export class CadastrarOportunidadeComponent {
   }
 
   criarOportunidade(){
-    this.service.criar(this.vaga).subscribe(()=>{
+    this.service.criar(1,this.vaga).subscribe(()=>{
       this.router.navigate(['/paginaInicialEmpresa'])
     })
   }
