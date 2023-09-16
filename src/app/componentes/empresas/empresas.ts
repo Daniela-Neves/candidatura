@@ -1,3 +1,5 @@
+import { Vagas } from "../vagas/vagas"
+
 export interface Empresas{
   id?:number
   cnpj:string
@@ -7,4 +9,5 @@ export interface Empresas{
   email:string
   senha:string
   confirmacaoSenha:string
+  vagas: Vagas[]
 }
