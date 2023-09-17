@@ -10,6 +10,9 @@ export class CandidatoService {
 
   private readonly API = 'http://localhost:3000/candidatos'
 
+//   private apiUrl = 'http://localhost:4000/api/salvar-dados'; // Substitua pela URL correta
+//  teste mongo
+
   constructor(private http: HttpClient) { }
 
   listar(): Observable<Candidato[]> {
@@ -33,5 +36,9 @@ export class CandidatoService {
   editar(candidato: Candidato): Observable<Candidato>{
     const url = `${this.API}/${candidato.id}`
     return this.http.put<Candidato>(url, candidato)
+  }
+
+  cadastrarCandidato(candidato: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, candidato);
   }
 }

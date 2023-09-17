@@ -3,8 +3,33 @@
     {
       "id": 2,
       "nome": "Gabriel",
-      "sobrenome": "Morais",
-      "email": "gabrielc_morais@hotmail.com"
+      "sobrenome": "Silva",
+      "email": "gabrielsilva",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "dataNascimento": "2023-09-06",
+      "genero": "Outro",
+      "identificacao": "Parda(o)",
+      "deficiencias": {
+        "fisica": true,
+        "auditiva": true,
+        "visual": true,
+        "intelectual": false,
+        "autista": false
+      },
+      "endereco": "yuu",
+      "linkedin": "inuin",
+      "formacao": "",
+      "curso": "",
+      "inicioFormacao": "",
+      "fimFormacao": "",
+      "idiomas": [
+        {
+          "idioma": "",
+          "nivel": ""
+        }
+      ],
+      "certificados": []
     },
     {
       "id": 4,

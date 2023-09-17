@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Candidato } from '../candidato';
 import { CandidatoService } from '../candidato.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,11 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./formulario-candidatura.component.css'],
 })
 
-export class FormularioCandidaturaComponent {
-  dadosPessoais: any = {};
+export class FormularioCandidaturaComponent implements OnInit{
   certificados: any[] = [];
   // idiomas: any[] = [{ idioma: '', nivel: '' }];
 
+  // dadosPessoais: any = {
+  //   // deficiencias: {
+  //   //   fisica: false,
+  //   //   auditiva: false,
+  //   //   visual: false,
+  //   //   intelectual: false,
+  //   //   autista: false,
+  //   // },
+  // };
   constructor(
     private service: CandidatoService,
     private router: Router,
@@ -22,8 +30,16 @@ export class FormularioCandidaturaComponent {
 
   }
 
-  candidato:Candidato={
-    id: 0,
+  ngOnInit(): void {
+    const id = '2';
+    // const id = this.route.snapshot.paramMap.get('id')
+    this.service.buscarPorId(parseInt(id!)).subscribe((candidato) => {
+      this.candidato = candidato
+    })
+  }
+
+  candidato : Candidato = {
+    id: 2,
     nome: '',
     sobrenome: '',
     email: '',
@@ -31,39 +47,60 @@ export class FormularioCandidaturaComponent {
     confirmacaoSenha: '',
     dataNascimento: '',
     genero: '',
+    identificacao: '',
     deficiencias: {
-      fisica: false,
-      auditiva: false,
-      visual: false,
-      intelectual: false,
-      autista: false,
+        fisica: false,
+        auditiva: false,
+        visual: false,
+        intelectual: false,
+        autista: false
     },
     endereco: {
-      cep: '',
-      endereco: '',
-      numero: '',
-      cidade: '',
-      estado: '',
+        cep: '',
+        endereco: '',
+        numero: '',
+        cidade: '',
+        estado: ''
     },
     linkedin: '',
-    formacao: '',
-    curso: '',
-    inicioFormacao: '',
-    fimFormacao: '',
-    idiomas: [{ idioma: '', nivel: '' }],
-    certificados: [],
-  };
+    formacao: {
+        fundamental: '',
+        ensinoMedio: '',
+        ensinoSuperior: '',
+        mestrado: '',
+        doutorado: '',
+        inicio: '',
+        fim: ''
+    },
+    idiomas: {
+        idioma: '',
+        nivel: ''
+    },
+    certificados: {
+        nome: '',
+        organizacao: '',
+        dataEmissao: ''
+    },
+    experiencia: {
+        titulo: '',
+        tipoEmprego: '',
+        nomeEmpresa: '',
+        inicio: '',
+        fim: ''
+    }
+};
 
 
-  finalizarCandidatura(){
+  finalizarCandidatura() {
     this.service.editar(this.candidato).subscribe(() => {
-      this.router.navigate(['/menu-candidato'])
-    })
+      alert('Currículo preenchido com sucesso!');
+      this.router.navigate(['/menu-candidato']);
+    });
   }
 
-  saveDadosPessoais() {
-    console.log('Dados pessoais salvos:', this.dadosPessoais);
-  }
+  // saveDadosPessoais() {
+  //   console.log('Dados pessoais salvos:', this.dadosPessoais);
+  // }
 
   saveExperienciaAcademica() {
     console.log('Experiência acadêmica salva.');
@@ -84,5 +121,6 @@ export class FormularioCandidaturaComponent {
   adicionarCertificado() {
     this.certificados.push({});
   }
+
 
 }

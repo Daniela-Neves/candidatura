@@ -16,28 +16,48 @@ export class CandidatoComponent implements OnInit {
     confirmacaoSenha: '1234',
     dataNascimento: '',
     genero: '',
+    identificacao: '',
     deficiencias: {
-      fisica: false,
-      auditiva: false,
-      visual: false,
-      intelectual: false,
-      autista: false,
+        fisica: false,
+        auditiva: false,
+        visual: false,
+        intelectual: false,
+        autista: false
     },
     endereco: {
-      cep: '',
-      endereco: '',
-      numero: '',
-      cidade: '',
-      estado: '',
+        cep: '',
+        endereco: '',
+        numero: '',
+        cidade: '',
+        estado: ''
     },
     linkedin: '',
-    formacao: '',
-    curso: '',
-    inicioFormacao: '',
-    fimFormacao: '',
-    idiomas: [{ idioma: '', nivel: '' }],
-    certificados: [],
-  };
+    formacao: {
+        fundamental: '',
+        ensinoMedio: '',
+        ensinoSuperior: '',
+        mestrado: '',
+        doutorado: '',
+        inicio: '',
+        fim: ''
+    },
+    idiomas: {
+        idioma: '',
+        nivel: ''
+    },
+    certificados: {
+        nome: '',
+        organizacao: '',
+        dataEmissao: ''
+    },
+    experiencia: {
+        titulo: '',
+        tipoEmprego: '',
+        nomeEmpresa: '',
+        inicio: '',
+        fim: ''
+    }
+};
 
   constructor() {}
 
