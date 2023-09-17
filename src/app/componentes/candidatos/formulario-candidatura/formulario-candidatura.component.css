@@ -41,6 +41,7 @@ label {
   background-color: rgb(235, 235, 235);
   border-radius: 20px;
   padding: 10px;
+  margin-bottom: 40px;
 }
 
 .secao h2{
@@ -49,10 +50,35 @@ label {
   padding: 10px;
 }
 
+.secao button{
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.secao button:hover{
+  background-color: rgba(27, 200, 65, 1);
+  border-style: solid;
+  border-color: #383838;
+  cursor: pointer;
+  color: #fff;
+}
+
 .form-dados input{
   border: none;
   border-radius: 10px;
   padding: 5px;
+}
+
+.finalizar{
+  background-color: rgba(27, 200, 65, 1);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bold;
+  border-color: black;
 }
 
 /* .form-dados input[type = checkbox]{
@@ -97,4 +123,10 @@ label {
 
 .checkbox-label input {
   margin-right: 10px;
+}
+
+@media (max-width:850px) {
+  .check-deficiencia{
+    flex-direction: column;
+  }
 }

@@ -1,4 +1,147 @@
 {
+  "empresas": [
+    {
+      "id": 1,
+      "cnpj": "12345678910",
+      "razaoSocial": "Amor",
+      "endereco": "Avenida Rua",
+      "numero": "12",
+      "email": "email@email.com",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "vagas": [
+        {
+          "nome": "teste",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "teste",
+          "estado": "teste",
+          "remuneracao": "1",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "Hibrido",
+          "id": 1
+        },
+        {
+          "nome": "Dev fullstack",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-12",
+          "cidade": "São Paulo",
+          "estado": "São Paulo",
+          "remuneracao": "60000",
+          "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
+          "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
+          "qualificacoes": "Conhecimento em java e angular",
+          "modalidade": "HomeOffice",
+          "id": 2
+        },
+        {
+          "nome": "teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-14",
+          "cidade": "teste",
+          "estado": "teste",
+          "remuneracao": "1000",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "HomeOffice",
+          "id": 3
+        },
+        {
+          "id": 0,
+          "nome": "testezinho",
+          "tipoContratacao": "",
+          "dataPublicacao": "",
+          "cidade": "",
+          "estado": "",
+          "remuneracao": "1",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": ""
+        },
+        {
+          "id": 0,
+          "nome": "teste6",
+          "tipoContratacao": "",
+          "dataPublicacao": "",
+          "cidade": "",
+          "estado": "",
+          "remuneracao": "",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": ""
+        },
+        {
+          "id": 0,
+          "nome": "fdsfsad",
+          "tipoContratacao": "",
+          "dataPublicacao": "",
+          "cidade": "",
+          "estado": "",
+          "remuneracao": "",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "cnpj": "12345678910",
+      "razaoSocial": "Amor",
+      "endereco": "Avenida Rua",
+      "numero": "12",
+      "email": "email@email.com",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "vagas": [
+        {
+          "nome": "teste",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "teste",
+          "estado": "teste",
+          "remuneracao": "1",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "Hibrido",
+          "id": 1
+        },
+        {
+          "nome": "Dev fullstack",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-12",
+          "cidade": "São Paulo",
+          "estado": "São Paulo",
+          "remuneracao": "60000",
+          "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
+          "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
+          "qualificacoes": "Conhecimento em java e angular",
+          "modalidade": "HomeOffice",
+          "id": 2
+        },
+        {
+          "nome": "teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-14",
+          "cidade": "teste",
+          "estado": "teste",
+          "remuneracao": "1000",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "HomeOffice",
+          "id": 3
+        }
+      ]
+    }
+  ],
   "candidatos": [
     {
       "id": 2,
@@ -70,47 +213,6 @@
       "sobrenome": "",
       "senha": "",
       "id": 11
-    }
-  ],
-  "vagas": [
-    {
-      "nome": "teste",
-      "tipoContratacao": "PJ",
-      "dataPublicacao": "2023-09-13",
-      "cidade": "teste",
-      "estado": "teste",
-      "remuneracao": "teste",
-      "sobreAVaga": "teste",
-      "responsabilidades": "teste",
-      "qualificacoes": "teste",
-      "modalidade": "Hibrido",
-      "id": 1
-    },
-    {
-      "nome": "Dev fullstack",
-      "tipoContratacao": "CLT",
-      "dataPublicacao": "2023-09-12",
-      "cidade": "São Paulo",
-      "estado": "São Paulo",
-      "remuneracao": "60000",
-      "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
-      "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
-      "qualificacoes": "Conhecimento em java e angular",
-      "modalidade": "HomeOffice",
-      "id": 2
-    },
-    {
-      "nome": "teste",
-      "tipoContratacao": "CLT",
-      "dataPublicacao": "2023-09-14",
-      "cidade": "teste",
-      "estado": "teste",
-      "remuneracao": "teste",
-      "sobreAVaga": "teste",
-      "responsabilidades": "teste",
-      "qualificacoes": "teste",
-      "modalidade": "HomeOffice",
-      "id": 3
     }
   ]
 }

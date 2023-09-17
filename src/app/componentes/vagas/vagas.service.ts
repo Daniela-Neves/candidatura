@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class VagasService {
 
-  private readonly API = 'http://localhost:3000/vagas'
+  private readonly API = 'http://localhost:3000/empresas'
 
   constructor(private http: HttpClient) { }
 
@@ -17,8 +17,9 @@ export class VagasService {
     return this.http.get<Vagas[]>(this.API)
   }
 
-  criar(vagas: Vagas):Observable<Vagas>{
-    return this.http.post<Vagas>(this.API, vagas)
+  criar(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
+    const url = `${this.API}/${idEmpresa}/vagas`;
+    return this.http.post<Vagas>(url, novaVaga);
   }
 
   excluir(id:number):Observable<Vagas>{

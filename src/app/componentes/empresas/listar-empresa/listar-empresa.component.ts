@@ -41,7 +41,8 @@ export class ListarEmpresaComponent implements OnInit{
     numero:'',
     email:'',
     senha:'',
-    confirmacaoSenha:''
+    confirmacaoSenha:'',
+    vagas:[]
   }
 
 }

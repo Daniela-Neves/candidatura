@@ -5,7 +5,7 @@
         <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt="">
       </div>
       <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div>
-  
+
       <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
       <form>
         <input
@@ -15,7 +15,7 @@
           name="cnpj"
           placeholder="CNPJ"
           [(ngModel)]="empresa.cnpj">
-  
+
           <input
             type="text"
             class="input"
@@ -23,7 +23,7 @@
             name="razaoSocial"
             placeholder="Razão Social"
             [(ngModel)]="empresa.razaoSocial">
-  
+
           <input
             type="text"
             class="input"
@@ -47,7 +47,7 @@
             name="email"
             placeholder="Email"
             [(ngModel)]="empresa.email">
-  
+
           <input
             type="text"
             class="input"
@@ -63,7 +63,7 @@
             name="confirmacaoSenha"
             placeholder="Confirmação de Senha"
             [(ngModel)]="empresa.confirmacaoSenha">
-  
+
           <div class="acoes">
             <button (click)="editarEmpresa()" routerLink="/listarEmpresa" class="botao">Editar</button>
             <button (click)="cancelar()" class="botao">Cancelar</button>
@@ -71,6 +71,5 @@
         </form>
     </div>
   </section>
-  
-  
-  
+
+

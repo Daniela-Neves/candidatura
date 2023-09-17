@@ -17,7 +17,8 @@ export class CriarEmpresaComponent {
     numero:'',
     email:'',
     senha:'',
-    confirmacaoSenha:''
+    confirmacaoSenha:'',
+    vagas:[]
   }
 
   constructor(private service: EmpresasService, private router: Router){

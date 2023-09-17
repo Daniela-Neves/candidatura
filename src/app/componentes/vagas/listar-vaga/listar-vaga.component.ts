@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vagas } from '../vagas';
 import { VagasService } from '../vagas.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EmpresasService } from '../../empresas/empresas.service';
 
 @Component({
   selector: 'app-listar-vaga',
@@ -15,7 +16,7 @@ export class ListarVagaComponent implements OnInit{
   constructor(
     private service: VagasService,
     private router: Router,
-    private route: ActivatedRoute
+    private empresaService: EmpresasService
     ){
 
   }
@@ -25,8 +26,8 @@ export class ListarVagaComponent implements OnInit{
     //   this.vagas = vagas
     // })
 
-    this.service.listar().subscribe((listaVagas) => {
-      this.listaVagas = listaVagas
+    this.empresaService.buscarPorId(1).subscribe((empresa) => {
+      this.listaVagas = empresa.vagas
     })
   }
 
