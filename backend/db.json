@@ -51,7 +51,58 @@
         "id": 3
       }
     ]
-    }
+    },
+    {
+      "id":2,
+      "cnpj":"109876543210",
+      "razaoSocial":"Odio",
+      "endereco":"Rua Avenida",
+      "numero":"12",
+      "email":"email@gotmail.com",
+      "senha":"123",
+      "confirmacaoSenha":"123",
+      "vagas":[
+        {
+          "nome": "teste",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "teste",
+          "estado": "teste",
+          "remuneracao": "1",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "Hibrido",
+          "id": 4
+        },
+        {
+          "nome": "Dev fullstack",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-12",
+          "cidade": "São Paulo",
+          "estado": "São Paulo",
+          "remuneracao": "60000",
+          "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
+          "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
+          "qualificacoes": "Conhecimento em java e angular",
+          "modalidade": "HomeOffice",
+          "id": 5
+        },
+        {
+          "nome": "teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-14",
+          "cidade": "teste",
+          "estado": "teste",
+          "remuneracao": "1000",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "HomeOffice",
+          "id": 6
+        }
+      ]
+      }
   ],
   "candidatos": [
     {
