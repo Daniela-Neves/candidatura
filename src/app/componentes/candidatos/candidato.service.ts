@@ -38,7 +38,7 @@ export class CandidatoService {
     return this.http.put<Candidato>(url, candidato)
   }
 
-  cadastrarCandidato(candidato: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, candidato);
-  }
+  // cadastrarCandidato(candidato: any): Observable<any> {
+  //   return this.http.post<any>(this.apiUrl, candidato);
+  // }
 }
