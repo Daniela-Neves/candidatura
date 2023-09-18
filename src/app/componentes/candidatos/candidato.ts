@@ -33,15 +33,15 @@ export interface Candidato {
     };
     idiomas: [
         {
-            idioma: '',
-            nivel: ''
+            idioma: string,
+            nivel: string
         }
     ],
     certificados: [
         {
-            nome: '',
-            organizacao: '',
-            dataEmissao: ''
+            nome: string,
+            organizacao: string,
+            dataEmissao: string
         }
     ],
     experiencia: {
