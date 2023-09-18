@@ -1,9 +1,11 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Vagas } from '../../vagas/vagas';
 import { VagasService } from '../../vagas/vagas.service';
-import { Router } from '@angular/router';
+
 import { EmpresasService } from '../empresas.service';
 import { Empresas } from '../empresas';
+
 
 @Component({
   selector: 'app-cadastrar-oportunidade',
@@ -43,7 +45,7 @@ export class CadastrarOportunidadeComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.empresaService.buscarPorId(1).subscribe((empresa) => {
+    this.empresaService.buscarPorId(1).subscribe((empresa: Empresas) => {
       this.empresa = empresa
     })
   }
@@ -53,11 +55,13 @@ export class CadastrarOportunidadeComponent implements OnInit{
     // this.empresaService.criarVaga(1,this.vaga).subscribe(()=>{
     //   this.router.navigate(['/paginaInicialEmpresa'])
     // })
+    this.vaga.id = this.service.gerarID()
     this.empresa.vagas.push(this.vaga)
     this.empresaService.editar(this.empresa).subscribe(() => {
+      this.router.navigate(['/paginaInicialEmpresa']);
     });
 
-    this.router.navigate(['/paginaInicialEmpresa']);
+
   }
 
   cancelar(){
