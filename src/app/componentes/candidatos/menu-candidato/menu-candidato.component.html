@@ -3,12 +3,12 @@
         <div class="v177_1573">
             <div class="v177_1574"></div>
         </div>
-        <button class="logout">
+        <button class="logout" routerLink="/login">
             <span class="logout-txt">Logout</span>
         </button>
 
 
-        <span class="v177_1565">Olá, [nome do usuario]!</span>
+        <span class="v177_1565">Olá, {{ candidato.nome }}!</span>
         <span class="v177_1566">Seja bem-vindo(a) a área de administrativa da Ernst & Young</span>
         <span class="v177_1567">Veja as vagas que já foram cadastradas, cadastre novas oportunidades ou acompanhe o status dos candidatos.</span>
 
@@ -22,13 +22,13 @@
             <div class="v177_1599"></div>
         </button>
 
-        <button class="v177_1593" routerLink="/formulario-candidatura">
+        <button class="v177_1593" [routerLink]="['/formulario-curriculo', candidato.id]">
             <span class="v177_1594">Currículo</span>
             <div class="v177_1597"></div>
         </button>
-
-        <button class="v200_180" routerLink="/candidatos/editarCandidato/{{candidato.id}}">
-            <span class="v200_181">Alterar dados cadastrais</span>
+        
+            <button class="v200_180" [routerLink]="['/candidatos/editarCandidato', candidato.id]">
+                <span class="v200_181">Alterar dados cadastrais</span>
             <div class="v200_182"></div>
         </button>
 

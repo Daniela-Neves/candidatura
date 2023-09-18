@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 })
 export class CriarCandidatoComponent {
 
+  confirmacaoSenhaDigitada: string = '';
+
   candidato : Candidato = {
     id: 0,
     nome: '',
     sobrenome: '',
     email: '',
     senha: '',
-    confirmacaoSenha: '',
     dataNascimento: '',
     genero: '',
     identificacao: '',
@@ -44,15 +45,19 @@ export class CriarCandidatoComponent {
         inicio: '',
         fim: ''
     },
-    idiomas: {
-        idioma: '',
-        nivel: ''
-    },
-    certificados: {
-        nome: '',
-        organizacao: '',
-        dataEmissao: ''
-    },
+    idiomas: [
+      {
+          idioma: '',
+          nivel: ''
+      }
+  ],
+  certificados: [
+      {
+          nome: '',
+          organizacao: '',
+          dataEmissao: ''
+      }
+  ],
     experiencia: {
         titulo: '',
         tipoEmprego: '',
@@ -66,11 +71,19 @@ export class CriarCandidatoComponent {
 
   }
 
-  criarCandidato(){
+  criarCandidato() {
+    // Verifica se a senha e a confirmação de senha correspondem
+    if (this.candidato.senha !== this.confirmacaoSenhaDigitada) {
+      alert('A senha e a confirmação de senha não correspondem.');
+      return;
+    }
+  
+    // Chama o serviço para criar o candidato
     this.service.criar(this.candidato).subscribe(() => {
-      this.router.navigate(['/listarCandidato'])
-    })
+      this.router.navigate(['/listarCandidato']);
+    });
   }
+  
 
   cancelar() {
     this.router.navigate(['/listarCandidato'])

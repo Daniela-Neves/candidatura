@@ -1,6 +1,6 @@
 <body class="fundo1">
     <div class="form-dados">
-      <form (ngSubmit)="finalizarCandidatura()">
+      <form (ngSubmit)="finalizarCurriculo()">
         <div class="secao">
                 <h2>Dados Pessoais</h2>
                 <label for="dataNascimento">Data de Nascimento:</label>
@@ -89,41 +89,38 @@
                 <h2>
             Idiomas
             </h2>
-            <!-- <form (ngSubmit)="saveIdiomas()"> -->
-                <label for="idioma"> Idioma:</label>
-            <select id="idioma"  name="idioma" class="formulario-input">
-                <option value="ingles">Inglês</option>
-                <option value="espanhol">Espanhol</option>
-                <option value="frances">Francês</option>
-                <option value="alemao">Alemão</option>
-                <option value="portugues">Português</option>
-                <!-- Adicione outros idiomas conforme necessário -->
-            </select>
-
-            <label for="nivelIdioma">Nível:</label>
-            <select id="nivelIdioma" name="nivelIdioma" class="formulario-input">
-                <option value="basico">Básico</option>
-                <option value="intermediario">Intermediário</option>
-                <option value="avancado">Avançado</option>
-            </select>
-
-            <!-- <button type="button" (click)="adicionarIdioma()">Adicionar Idioma</button> -->
-            <button type="button">Adicionar Idioma</button>
+            <div *ngFor="let idioma of candidato.idiomas; let i = index">
+                <label for="idioma{{i}}">Idioma:</label>
+                <select id="idioma{{i}}" name="idioma" class="formulario-input" [(ngModel)]="idioma.idioma">
+                    <option value="ingles">Inglês</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="frances">Francês</option>
+                    <option value="alemao">Alemão</option>
+                    <option value="portugues">Português</option>
+                </select>
+            
+                <label for="nivelIdioma{{i}}">Nível:</label>
+                <select id="nivelIdioma{{i}}" name="nivelIdioma" class="formulario-input" [(ngModel)]="idioma.nivel">
+                    <option value="basico">Básico</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+            <button type="button" (click)="adicionarIdioma()">Adicionar Idioma</button>
+            
 
             <!-- <button type="submit">Salvar</button> -->
             <!-- </form> -->
 
             <h2>Certificados</h2>
-            <!-- <form (ngSubmit)="saveCertificados()"> -->
-            <label for="certificado">Certificado:</label>
-            <input type="text" id="certificado" name="certificado" class="formulario-input" placeholder="Nome do certificado"/>
-
-            <button type="button">
-                Adicionar Certificado
-            </button>
-
+            <div *ngFor="let certificado of candidato.certificados; let i = index">
+                <label for="certificado{{i}}">Certificado:</label>
+                <input type="text" id="certificado{{i}}" name="certificado" class="formulario-input" placeholder="Nome do certificado" [(ngModel)]="certificado.nome">
+            </div>
+            <button type="button" (click)="adicionarCertificado()">Adicionar Certificado</button>
+            
             <!-- <button class="salvar-button">Salvar</button> -->
-            <button routerLink="">Finalizar Candidatura</button>
+            <button>Finalizar Currículo</button>
 
         </form>
     </div>

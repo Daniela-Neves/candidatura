@@ -1,10 +1,9 @@
 export interface Candidato {
-    id?: number;
+    id: number;
     nome: string;
     sobrenome: string;
     email: string;
     senha: string;
-    confirmacaoSenha: string;
     dataNascimento: string;
     genero: string;
     identificacao: string;
@@ -32,15 +31,19 @@ export interface Candidato {
         inicio: string;
         fim: string;
     };
-    idiomas: {
-        idioma: string;
-        nivel: string;
-    };
-    certificados: {
-        nome: string;
-        organizacao: string;
-        dataEmissao: string;
-    };
+    idiomas: [
+        {
+            idioma: '',
+            nivel: ''
+        }
+    ],
+    certificados: [
+        {
+            nome: '',
+            organizacao: '',
+            dataEmissao: ''
+        }
+    ],
     experiencia: {
         titulo: string;
         tipoEmprego: string;

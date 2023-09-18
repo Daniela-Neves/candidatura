@@ -13,7 +13,6 @@ export class CandidatoComponent implements OnInit {
     sobrenome: 'Morais',
     email: 'gabrielc_morais@hotmail.com',
     senha: '1234',
-    confirmacaoSenha: '1234',
     dataNascimento: '',
     genero: '',
     identificacao: '',
@@ -41,15 +40,19 @@ export class CandidatoComponent implements OnInit {
         inicio: '',
         fim: ''
     },
-    idiomas: {
-        idioma: '',
-        nivel: ''
-    },
-    certificados: {
-        nome: '',
-        organizacao: '',
-        dataEmissao: ''
-    },
+    idiomas: [
+        {
+            idioma: '',
+            nivel: ''
+        }
+    ],
+    certificados: [
+        {
+            nome: '',
+            organizacao: '',
+            dataEmissao: ''
+        }
+    ],
     experiencia: {
         titulo: '',
         tipoEmprego: '',

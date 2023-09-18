@@ -7,22 +7,23 @@ import {EditarCandidatoComponent} from './componentes/candidatos/editar-candidat
 import {LoginComponent} from './componentes/candidatos/login/login.component';
 import {PerfisComponent} from './componentes/perfis/perfis.component';
 import {LoginEmpresaComponent} from './componentes/empresas/login-empresa/login-empresa.component';
-import { CadastrarOportunidadeComponent } from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
-import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
-import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
-import { ListarVagaComponent } from './componentes/vagas/listar-vaga/listar-vaga.component';
-import { ExcluirVagaComponent } from './componentes/vagas/excluir-vaga/excluir-vaga.component';
-import { EditarVagaComponent } from './componentes/vagas/editar-vaga/editar-vaga.component';
-import { MenuCandidatoComponent } from './componentes/candidatos/menu-candidato/menu-candidato.component';
-import { BuscarVagasComponent } from './componentes/vagas/buscar-vagas/buscar-vagas.component';
-import { DetalhesVagaComponent } from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
-import { FormularioCandidaturaComponent } from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
+import {CadastrarOportunidadeComponent} from './componentes/empresas/cadastrar-oportunidade/cadastrar-oportunidade.component';
+import {PaginaInicialEmpresaComponent} from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';
+import {CriarEmpresaComponent} from './componentes/empresas/criar-empresa/criar-empresa.component';
+import {ListarVagaComponent} from './componentes/vagas/listar-vaga/listar-vaga.component';
+import {ExcluirVagaComponent} from './componentes/vagas/excluir-vaga/excluir-vaga.component';
+import {EditarVagaComponent} from './componentes/vagas/editar-vaga/editar-vaga.component';
+import {MenuCandidatoComponent} from './componentes/candidatos/menu-candidato/menu-candidato.component';
+import {BuscarVagasComponent} from './componentes/vagas/buscar-vagas/buscar-vagas.component';
+import {DetalhesVagaComponent} from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
+import {FormularioCandidaturaComponent} from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
+import {FormularioCurriculoComponent} from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 
 const routes: Routes = [
     {
         path: '',
         component: PerfisComponent
-        //component: PaginaInicialEmpresaComponent
+        // component: PaginaInicialEmpresaComponent
         // component: ListarCandidatoComponent,
     },
     {
@@ -30,36 +31,33 @@ const routes: Routes = [
         component: PerfisComponent
     },
     {
-        path: 'criarCandidato',
-        component: CriarCandidatoComponent
-    },
-    {
-        path: 'listarCandidato',
-        component: ListarCandidatoComponent
-    },
-    {
-        path: 'candidatos/excluirCandidato/:id',
-        component: ExcluirCandidatoComponent
-    },
-    {
-        path: 'candidatos/editarCandidato/:id',
-        component: EditarCandidatoComponent
-    },
-    {
-        path: 'candidato',
+        path: 'login',
         component: LoginComponent
     },
     {
+        path: 'criarCandidato',
+        component: CriarCandidatoComponent
+    }, {
+        path: 'listarCandidato',
+        component: ListarCandidatoComponent
+    }, {
+        path: 'candidatos/excluirCandidato/:id',
+        component: ExcluirCandidatoComponent
+    }, {
+        path: 'candidatos/editarCandidato/:id',
+        component: EditarCandidatoComponent
+    }, {
+        path: 'candidato',
+        component: LoginComponent
+    }, {
         path: 'criarEmpresa',
         component: CriarEmpresaComponent
-    },
-    {
+    }, {
         path: 'loginEmpresa',
         component: LoginEmpresaComponent
-    },
-    {
-      path: 'paginaInicialEmpresa',
-      component: PaginaInicialEmpresaComponent
+    }, {
+        path: 'paginaInicialEmpresa',
+        component: PaginaInicialEmpresaComponent
     },
     // {
     //     path: 'acompanhamento-vagas',
@@ -78,37 +76,33 @@ const routes: Routes = [
     //     component: AlterarDadosComponent
     // }
     {
-      path:'listarVagas',
-      component: ListarVagaComponent
-    },
-    {
-      path: 'vagas/excluirVaga/:id',
-      component: ExcluirVagaComponent
-  },
-  {
-    path:'vagas/editarVaga/:id',
-    component: EditarVagaComponent
-  },
-  {
-    path:'menu-candidato',
-    component: MenuCandidatoComponent
-  },
-  {
-    path:'buscar-vagas',
-    component: BuscarVagasComponent
-  },
-  {
-    path: 'vagas/detalhes/:id',
-    component: DetalhesVagaComponent
-  },
-  {
-    path:'formulario-candidatura',
-    component: FormularioCandidaturaComponent
-  },
-  {
-    path: 'candidatos/formulario-candidatura/:id',
-    component: FormularioCandidaturaComponent
-}
+        path: 'listarVagas',
+        component: ListarVagaComponent
+    }, {
+        path: 'vagas/excluirVaga/:id',
+        component: ExcluirVagaComponent
+    }, {
+        path: 'vagas/editarVaga/:id',
+        component: EditarVagaComponent
+    }, {
+        path: 'menu-candidato/:id',
+        component: MenuCandidatoComponent
+    }, {
+        path: 'buscar-vagas',
+        component: BuscarVagasComponent
+    }, {
+        path: 'vagas/detalhes/:id',
+        component: DetalhesVagaComponent
+    }, {
+        path: 'formulario-candidatura/:id',
+        component: FormularioCandidaturaComponent
+    }, {
+        path: 'formulario-curriculo/:id',
+        component: FormularioCurriculoComponent
+    }, {
+        path: 'detalhes-vaga',
+        component: DetalhesVagaComponent
+    }
 ];
 
 @NgModule({

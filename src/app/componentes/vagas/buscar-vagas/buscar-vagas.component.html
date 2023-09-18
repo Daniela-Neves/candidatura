@@ -3,13 +3,14 @@
     <div class="filtro-container">
         <h2>Filtros</h2>
         <label for="estado">Estado:</label>
-        <input type="text" id="estado" class="filtro-input">
+        <input type="text" id="estado" class="filtro-input" [(ngModel)]="filtros.estado">
+
 
         <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" class="filtro-input">
+        <input type="text" id="cidade" class="filtro-input" [(ngModel)]="filtros.cidade">
 
         <label for="nomeEmpresa">Nome da Empresa:</label>
-        <input type="text" id="nomeEmpresa" class="filtro-input">
+        <input type="text" id="nomeEmpresa" class="filtro-input" [(ngModel)]="filtros.nomeEmpresa">
 
         <label for="tipoVaga">Tipo de Vaga:</label>
         <select id="tipoVaga" class="filtro-input">
@@ -33,7 +34,7 @@
             <option value="Híbrido">Híbrido</option>
         </select>
 
-        <button class="aplicar-button">Aplicar</button>
+        <button class="aplicar-button" (click)="aplicarFiltros()">Aplicar</button>
     </div>
 
     <div class="centro-container">

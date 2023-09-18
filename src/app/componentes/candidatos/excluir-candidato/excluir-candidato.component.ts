@@ -17,7 +17,6 @@ export class ExcluirCandidatoComponent implements OnInit{
     sobrenome: '',
     email: '',
     senha: '',
-    confirmacaoSenha: '',
     dataNascimento: '',
     genero: '',
     identificacao: '',
@@ -45,15 +44,19 @@ export class ExcluirCandidatoComponent implements OnInit{
         inicio: '',
         fim: ''
     },
-    idiomas: {
-        idioma: '',
-        nivel: ''
-    },
-    certificados: {
-        nome: '',
-        organizacao: '',
-        dataEmissao: ''
-    },
+    idiomas: [
+      {
+          idioma: '',
+          nivel: ''
+      }
+  ],
+  certificados: [
+      {
+          nome: '',
+          organizacao: '',
+          dataEmissao: ''
+      }
+  ],
     experiencia: {
         titulo: '',
         tipoEmprego: '',

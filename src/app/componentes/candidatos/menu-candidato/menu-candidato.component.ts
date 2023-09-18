@@ -7,11 +7,14 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class MenuCandidatoComponent implements OnInit {
 
     constructor(private service : CandidatoService, private router : Router, private route : ActivatedRoute) {}
+   
     ngOnInit(): void {
-        const id = this.route.snapshot.paramMap.get('id')
-        this.service.buscarPorId(parseInt(id !)).subscribe((candidato) => {
-            this.candidato = candidato
-        })
+        const id = this.route.snapshot.paramMap.get('id');
+        if (id) {
+            this.service.buscarPorId(parseInt(id)).subscribe((candidato) => {
+                this.candidato = candidato;
+            });
+        }
     }
 
     editarCandidato() {
@@ -30,7 +33,6 @@ export class MenuCandidatoComponent implements OnInit {
         sobrenome: '',
         email: '',
         senha: '',
-        confirmacaoSenha: '',
         dataNascimento: '',
         genero: '',
         identificacao: '',
@@ -58,15 +60,19 @@ export class MenuCandidatoComponent implements OnInit {
             inicio: '',
             fim: ''
         },
-        idiomas: {
-            idioma: '',
-            nivel: ''
-        },
-        certificados: {
-            nome: '',
-            organizacao: '',
-            dataEmissao: ''
-        },
+        idiomas: [
+            {
+                idioma: '',
+                nivel: ''
+            }
+        ],
+        certificados: [
+            {
+                nome: '',
+                organizacao: '',
+                dataEmissao: ''
+            }
+        ],
         experiencia: {
             titulo: '',
             tipoEmprego: '',

@@ -27,7 +27,17 @@
     <a href=""><img src="../../../../assets/images/linkedin.png" alt="ícone LinkedIn" class="icon icon-site">LinkedIn</a>
   </div>
 
-  <button class="candidatar"><a href=""><img src="../../../../assets/images/logotipo-do-telegram.png " alt="Link candidatar-se" class="icon-button">Candidatar-se a vaga</a></button>
+  <!-- <button class="candidatar">
+    <a [routerLink]="['/formulario-candidatura', candidato.id]">
+      <img src="../../../../assets/images/logotipo-do-telegram.png " alt="Link candidatar-se" class="icon-button">Candidatar-se a vaga
+    </a>
+  </button>
+ -->
+
+  
+  <button class="candidatar" [routerLink]="['/formulario-candidatura', candidato.id]">
+    <span>Candidatar-se a vaga</span>
+</button>
 
 </div>
 </body>

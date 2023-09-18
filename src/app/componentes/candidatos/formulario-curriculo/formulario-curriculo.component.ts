@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Candidato } from '../candidato';
-import { CandidatoService } from '../candidato.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {CandidatoService} from '../candidato.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Candidato} from '../candidato';
 
-@Component({
-  selector: 'app-formulario-candidatura',
-  templateUrl: './formulario-candidatura.component.html',
-  styleUrls: ['./formulario-candidatura.component.css'],
-})
-export class FormularioCandidaturaComponent implements OnInit {
+@Component({selector: 'app-formulario-curriculo', templateUrl: './formulario-curriculo.component.html', styleUrls: ['./formulario-curriculo.component.css']})
+
+export class FormularioCurriculoComponent implements OnInit {
     certificados : any[] = [];
     // idiomas: any[] = [{ idioma: '', nivel: '' }];
 
@@ -77,12 +74,36 @@ export class FormularioCandidaturaComponent implements OnInit {
     };
 
 
-    finalizarCandidatura() {
+    finalizarCurriculo() {
         this.service.editar(this.candidato).subscribe(() => {
-          alert('Candidatura enviada com sucesso!');
-          this.router.navigate(['/detalhes-vaga', this.candidato.id]);
+            alert('Currículo preenchido com sucesso!');
+            this.router.navigate(['/menu-candidato', this.candidato.id]);
         });
     }
+
+    // saveDadosPessoais() {
+    // console.log('Dados pessoais salvos:', this.dadosPessoais);
+    // }
+
+    // saveExperienciaAcademica() {
+    // console.log('Experiência acadêmica salva.');
+    // }
+
+    // saveIdiomas() {
+    // console.log('Idiomas salvos.');
+    // }
+
+    // saveCertificados() {
+    // console.log('Certificados salvos.');
+    // }
+
+    // adicionarIdioma() {
+    // this.idiomas.push({});
+    // }
+
+    // adicionarCertificado() {
+    // this.certificados.push({});
+    // }
 
     adicionarIdioma() {
         this.candidato.idiomas.push({ idioma: '', nivel: '' });

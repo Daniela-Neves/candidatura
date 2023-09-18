@@ -13,6 +13,18 @@ export class BuscarVagasComponent implements OnInit {
   vagas: Vagas[] = [];
   empresas : Empresas[] = [];
 
+
+    // Filtros
+    filtros = {
+      estado: '',
+      cidade: '',
+      nomeEmpresa: '',
+      tipoVaga: '',
+      remuneracao: '',
+      modalidade: ''
+    };
+    
+
   constructor(private vagaService: VagasService, private empresaService: EmpresasService) { }
 
   ngOnInit(): void {
@@ -43,4 +55,50 @@ export class BuscarVagasComponent implements OnInit {
 
     
   }
+
+  aplicarFiltros() {
+    let vagasFiltradas: Vagas[] = [];
+  
+    for (const empresa of this.empresas) {
+      vagasFiltradas = vagasFiltradas.concat(empresa.vagas);
+    }
+  
+    vagasFiltradas = vagasFiltradas.filter(vaga => {
+      return (
+        (!this.filtros.estado || vaga.estado === this.filtros.estado) &&
+        (!this.filtros.cidade || vaga.cidade === this.filtros.cidade) &&
+        (!this.filtros.nomeEmpresa || vaga.nome === this.filtros.nomeEmpresa) &&
+        (!this.filtros.tipoVaga || vaga.tipoContratacao === this.filtros.tipoVaga) &&
+      this.filtroRemuneracao(vaga.remuneracao) &&
+      (!this.filtros.modalidade || vaga.modalidade === this.filtros.modalidade)
+//ALTERAR AQUI PARA NOME FANTASIA QUANDO EXISTIR NO PROJETO
+
+      );
+    });
+  
+    this.vagas = vagasFiltradas;
+  }
+
+
+  filtroRemuneracao(remuneracao: string): boolean {
+    if (!this.filtros.remuneracao) return true;
+  
+    const faixas = this.filtros.remuneracao.split('-');
+    const valorMinimo = parseFloat(faixas[0]);
+    const valorMaximo = parseFloat(faixas[1]);
+  
+    if (isNaN(valorMinimo) && isNaN(valorMaximo)) return true;
+  
+    const salario = parseFloat(remuneracao.replace('R$', '').replace('.', '').replace(',', '.'));
+  
+    if (isNaN(salario)) return false;
+  
+    if (!isNaN(valorMinimo) && salario < valorMinimo) return false;
+    if (!isNaN(valorMaximo) && salario > valorMaximo) return false;
+  
+    return true;
+  }
+ 
+  
+  
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VagasService } from '../vagas.service';
 import { Vagas } from '../vagas';
+import { Candidato } from '../../candidatos/candidato';
 
 
 @Component({
@@ -30,6 +31,61 @@ export class DetalhesVagaComponent implements OnInit {
     qualificacoes:"",
     modalidade:"",
   }
+
+  candidato : Candidato = {
+    id: 0,
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: '',
+    dataNascimento: '',
+    genero: '',
+    identificacao: '',
+    deficiencias: {
+        fisica: false,
+        auditiva: false,
+        visual: false,
+        intelectual: false,
+        autista: false
+    },
+    endereco: {
+        cep: '',
+        endereco: '',
+        numero: '',
+        cidade: '',
+        estado: ''
+    },
+    linkedin: '',
+    formacao: {
+        fundamental: '',
+        ensinoMedio: '',
+        ensinoSuperior: '',
+        mestrado: '',
+        doutorado: '',
+        inicio: '',
+        fim: ''
+    },
+    idiomas: [
+      {
+          idioma: '',
+          nivel: ''
+      }
+  ],
+  certificados: [
+      {
+          nome: '',
+          organizacao: '',
+          dataEmissao: ''
+      }
+  ],
+    experiencia: {
+        titulo: '',
+        tipoEmprego: '',
+        nomeEmpresa: '',
+        inicio: '',
+        fim: ''
+    }
+};
 
 
   ngOnInit(): void {

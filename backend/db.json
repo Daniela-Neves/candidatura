@@ -87,6 +87,19 @@
           "responsabilidades": "",
           "qualificacoes": "",
           "modalidade": ""
+        },
+        {
+          "id": 0,
+          "nome": "Teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "Sao Paulo",
+          "estado": "Sao Paulo",
+          "remuneracao": "1000",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": "Presencial"
         }
       ]
     },
@@ -161,7 +174,7 @@
         "autista": false
       },
       "endereco": "yuu",
-      "linkedin": "inuin",
+      "linkedin": "bibibi",
       "formacao": "",
       "curso": "",
       "inicioFormacao": "",
@@ -206,13 +219,6 @@
       "sobrenome": "Macedo",
       "senha": "aaa",
       "id": 10
-    },
-    {
-      "email": "",
-      "nome": "",
-      "sobrenome": "",
-      "senha": "",
-      "id": 11
     }
   ]
 }

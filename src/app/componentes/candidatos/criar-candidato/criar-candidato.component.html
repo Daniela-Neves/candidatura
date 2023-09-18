@@ -34,7 +34,7 @@
           [(ngModel)]="candidato.sobrenome">
 
         <input
-          type="text"
+          type="password"
           class="input"
           id="senha"
           name="senha"
@@ -42,12 +42,12 @@
           [(ngModel)]="candidato.senha">
 
           <input
-          type="text"
+          type="password"
           class="input"
           id="confirmacaoSenha"
           name="confirmacaoSenha"
           placeholder="Confirme a Senha"
-          [(ngModel)]="candidato.confirmacaoSenha">
+          [(ngModel)]="confirmacaoSenhaDigitada">
 
         <div class="acoes">
           <button (click)="criarCandidato()" class="botao">Cadastrar</button>
