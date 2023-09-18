@@ -13,6 +13,19 @@ export class VagasService {
 
   constructor(private http: HttpClient) { }
 
+  gerarID():number{
+    let id: number;
+    do {
+      id = Math.floor(Math.random() * 1000000);
+    } while (this.existeIdNaLista(id));
+
+    return id;
+  }
+
+  existeIdNaLista(id: number): boolean {
+    return false;
+  }
+
   listar(): Observable<Vagas[]> {
     return this.http.get<Vagas[]>(this.API)
   }

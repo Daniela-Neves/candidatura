@@ -17,6 +17,8 @@ export class EmpresasService {
     return this.http.get<Empresas[]>(this.API)
   }
 
+
+
   criarVaga(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
     const url = `${this.API}/${idEmpresa}/vagas`;
 
