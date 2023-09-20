@@ -18,6 +18,8 @@ import {BuscarVagasComponent} from './componentes/vagas/buscar-vagas/buscar-vaga
 import {DetalhesVagaComponent} from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
 import {FormularioCandidaturaComponent} from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
 import {FormularioCurriculoComponent} from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
+import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
+import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
 
 const routes: Routes = [
     {
@@ -102,6 +104,12 @@ const routes: Routes = [
     }, {
         path: 'detalhes-vaga',
         component: DetalhesVagaComponent
+    }, {
+        path: 'login-em',
+        component: LoginEmComponent
+    }, {
+        path: 'menu-em',
+        component: MenuEmComponent
     }
 ];
 

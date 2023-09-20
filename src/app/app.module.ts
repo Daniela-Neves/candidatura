@@ -26,6 +26,8 @@ import { BuscarVagasComponent } from './componentes/vagas/buscar-vagas/buscar-va
 import { DetalhesVagaComponent } from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
 import { FormularioCandidaturaComponent } from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
 import { FormularioCurriculoComponent } from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
+import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
+import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { FormularioCurriculoComponent } from './componentes/candidatos/formulari
     DetalhesVagaComponent,
     FormularioCandidaturaComponent,
     FormularioCurriculoComponent,
+    MenuEmComponent,
+    LoginEmComponent,
   ],
   imports: [
     BrowserModule,
