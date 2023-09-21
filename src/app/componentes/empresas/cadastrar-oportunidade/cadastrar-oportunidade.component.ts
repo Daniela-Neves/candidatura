@@ -21,11 +21,13 @@ export class CadastrarOportunidadeComponent implements OnInit{
   dataPublicacao:'',
   cidade:'',
   estado:'',
-  remuneracao:'',
+  salario:'',
   sobreAVaga:'',
   responsabilidades:'',
   qualificacoes:'',
-  modalidade:''
+  modalidade:'',
+  candidatos: [],
+  statusProcesso:''
   }
 
   constructor(private service: VagasService, private router: Router, private empresaService: EmpresasService){

@@ -16,11 +16,13 @@ export class VagaComponent implements OnInit{
   dataPublicacao:'21/12/1997',
   cidade:'Nhandeara',
   estado:'SP',
-  remuneracao:'1200',
+  salario:'1200',
   sobreAVaga:'Desenvolver',
   responsabilidades:'Desenvolver',
   qualificacoes:'Contar até 3',
-  modalidade:'Presencial'
+  modalidade:'Presencial',
+  candidatos: [],
+  statusProcesso:'FINALIZADO'
 
   }
 

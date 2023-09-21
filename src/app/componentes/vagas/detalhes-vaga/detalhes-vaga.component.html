@@ -16,7 +16,7 @@
     <p>{{ vaga.responsabilidades }}</p>
     <h2>Qualificações Desejadas</h2>
     <p>{{ vaga.qualificacoes }}</p>
-    <p>Remuneração: {{ vaga.remuneracao }}</p>
+    <p>Salário: {{ vaga.salario }}</p>
   </div>
   <hr>
   <!-- <p><strong>Estado:</strong> {{ vaga.estado }}</p> -->
@@ -34,7 +34,7 @@
   </button>
  -->
 
-  
+
   <button class="candidatar" [routerLink]="['/formulario-candidatura', candidato.id]">
     <span>Candidatar-se a vaga</span>
 </button>

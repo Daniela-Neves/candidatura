@@ -19,17 +19,18 @@ export class DetalhesVagaComponent implements OnInit {
   ) { }
 
   vaga:Vagas = {
-    // id?":number"
-    nome:"",
-    tipoContratacao:"",
-    dataPublicacao:"",
-    cidade:"",
-    estado:"",
-    remuneracao:"",
-    sobreAVaga:"",
-    responsabilidades:"",
-    qualificacoes:"",
-    modalidade:"",
+  nome:'',
+  tipoContratacao:'',
+  dataPublicacao:'',
+  cidade:'',
+  estado:'',
+  salario:'',
+  sobreAVaga:'',
+  responsabilidades:'',
+  qualificacoes:'',
+  modalidade:'',
+  candidatos: [],
+  statusProcesso:''
   }
 
   candidato : Candidato = {
