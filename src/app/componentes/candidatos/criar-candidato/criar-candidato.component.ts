@@ -72,21 +72,19 @@ export class CriarCandidatoComponent {
   }
 
   criarCandidato() {
-    // Verifica se a senha e a confirmação de senha correspondem
     if (this.candidato.senha !== this.confirmacaoSenhaDigitada) {
       alert('A senha e a confirmação de senha não correspondem.');
       return;
     }
   
-    // Chama o serviço para criar o candidato
     this.service.criar(this.candidato).subscribe(() => {
-      this.router.navigate(['/listarCandidato']);
+      this.router.navigate(['/login']);
     });
   }
   
 
   cancelar() {
-    this.router.navigate(['/listarCandidato'])
+    this.router.navigate(['/login'])
   }
 
 }
