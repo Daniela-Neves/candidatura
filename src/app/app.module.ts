@@ -28,6 +28,15 @@ import { FormularioCandidaturaComponent } from './componentes/candidatos/formula
 import { FormularioCurriculoComponent } from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
+import { CadastroEmComponent } from './componentes/everymind/cadastro-em/cadastro-em.component';
+import { CadastroEmCadComponent } from './componentes/everymind/cadastro-em-cad/cadastro-em-cad.component';
+import { CadastroEmAltComponent } from './componentes/everymind/cadastro-em-alt/cadastro-em-alt.component';
+import { CadastroEmExcludeComponent } from './componentes/everymind/cadastro-em-exclude/cadastro-em-exclude.component';
+import { CadastroEmExcludeMsgComponent } from './componentes/everymind/cadastro-em-exclude-msg/cadastro-em-exclude-msg.component';
+import { CadastroEmXmlComponent } from './componentes/everymind/cadastro-em-xml/cadastro-em-xml.component';
+import { CadastroEmAcmMetricasComponent } from './componentes/everymind/cadastro-em-acm-metricas/cadastro-em-acm-metricas.component';
+import { CadastroEmAcmMetricasTodaComponent } from './componentes/everymind/cadastro-em-acm-metricas-toda/cadastro-em-acm-metricas-toda.component';
+import { CadastroEmAcmMetricasEspecComponent } from './componentes/everymind/cadastro-em-acm-metricas-espec/cadastro-em-acm-metricas-espec.component';
 
 
 @NgModule({
@@ -56,6 +65,15 @@ import { LoginEmComponent } from './componentes/everymind/login-em/login-em.comp
     FormularioCurriculoComponent,
     MenuEmComponent,
     LoginEmComponent,
+    CadastroEmComponent,
+    CadastroEmCadComponent,
+    CadastroEmAltComponent,
+    CadastroEmExcludeComponent,
+    CadastroEmExcludeMsgComponent,
+    CadastroEmXmlComponent,
+    CadastroEmAcmMetricasComponent,
+    CadastroEmAcmMetricasTodaComponent,
+    CadastroEmAcmMetricasEspecComponent,
   ],
   imports: [
     BrowserModule,

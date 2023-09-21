@@ -20,6 +20,16 @@ import {FormularioCandidaturaComponent} from './componentes/candidatos/formulari
 import {FormularioCurriculoComponent} from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
+import { CadastroEmComponent } from './componentes/everymind/cadastro-em/cadastro-em.component';
+import { CadastroEmCadComponent } from './componentes/everymind/cadastro-em-cad/cadastro-em-cad.component';
+import { CadastroEmAltComponent } from './componentes/everymind/cadastro-em-alt/cadastro-em-alt.component';
+import { CadastroEmExcludeComponent } from './componentes/everymind/cadastro-em-exclude/cadastro-em-exclude.component';
+import { CadastroEmExcludeMsgComponent } from './componentes/everymind/cadastro-em-exclude-msg/cadastro-em-exclude-msg.component';
+import { CadastroEmXmlComponent } from './componentes/everymind/cadastro-em-xml/cadastro-em-xml.component';
+import { CadastroEmAcmMetricasComponent } from './componentes/everymind/cadastro-em-acm-metricas/cadastro-em-acm-metricas.component';
+import { CadastroEmAcmMetricasTodaComponent } from './componentes/everymind/cadastro-em-acm-metricas-toda/cadastro-em-acm-metricas-toda.component';
+import { CadastroEmAcmMetricasEspecComponent } from './componentes/everymind/cadastro-em-acm-metricas-espec/cadastro-em-acm-metricas-espec.component';
+
 
 const routes: Routes = [
     {
@@ -110,7 +120,35 @@ const routes: Routes = [
     }, {
         path: 'menu-em',
         component: MenuEmComponent
+    }, {
+        path: 'cadastro-em',
+        component: CadastroEmComponent
+    }, {
+        path: 'cadastro-em-cad',
+        component: CadastroEmCadComponent
+    }, {
+        path: 'cadastro-em-alt',
+        component: CadastroEmAltComponent
+    }, {
+        path: 'cadastro-em-exclude',
+        component: CadastroEmExcludeComponent
+    }, {
+        path: 'cadastro-em-exclude-msg',
+        component: CadastroEmExcludeMsgComponent
+    }, {
+        path: 'cadastro-em-xml',
+        component: CadastroEmXmlComponent
+    }, {
+        path: 'cadastro-em-acm-metricas',
+        component: CadastroEmAcmMetricasComponent
+    }, {
+        path: 'cadastro-em-acm-metricas-toda',
+        component: CadastroEmAcmMetricasTodaComponent
+    }, {
+        path: 'cadastro-em-acm-metricas-espec',
+        component: CadastroEmAcmMetricasEspecComponent
     }
+    
 ];
 
 @NgModule({
