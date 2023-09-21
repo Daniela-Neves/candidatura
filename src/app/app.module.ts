@@ -37,6 +37,13 @@ import { CadastroEmXmlComponent } from './componentes/everymind/cadastro-em-xml/
 import { CadastroEmAcmMetricasComponent } from './componentes/everymind/cadastro-em-acm-metricas/cadastro-em-acm-metricas.component';
 import { CadastroEmAcmMetricasTodaComponent } from './componentes/everymind/cadastro-em-acm-metricas-toda/cadastro-em-acm-metricas-toda.component';
 import { CadastroEmAcmMetricasEspecComponent } from './componentes/everymind/cadastro-em-acm-metricas-espec/cadastro-em-acm-metricas-espec.component';
+import { PaginaInicialCandidatoComponent } from './componentes/candidatos/pagina-inicial-candidato/pagina-inicial-candidato.component';
+import { VagasCadastradaComponent } from './componentes/candidatos/vagas-cadastrada/vagas-cadastrada.component';
+import { AcompanhamentoVagaComponent } from './componentes/candidatos/acompanhamento-vaga/acompanhamento-vaga.component';
+import { AnalisarPerfilComponent } from './componentes/candidatos/analisar-perfil/analisar-perfil.component';
+import { PerfilCandidatoComponent } from './componentes/candidatos/perfil-candidato/perfil-candidato.component';
+import { AnaliseTesteComponent } from './componentes/candidatos/analise-teste/analise-teste.component';
+import { CentralFeedbackComponent } from './componentes/candidatos/central-feedback/central-feedback.component';
 
 
 @NgModule({
@@ -74,6 +81,13 @@ import { CadastroEmAcmMetricasEspecComponent } from './componentes/everymind/cad
     CadastroEmAcmMetricasComponent,
     CadastroEmAcmMetricasTodaComponent,
     CadastroEmAcmMetricasEspecComponent,
+    PaginaInicialCandidatoComponent,
+    VagasCadastradaComponent,
+    AcompanhamentoVagaComponent,
+    AnalisarPerfilComponent,
+    PerfilCandidatoComponent,
+    AnaliseTesteComponent,
+    CentralFeedbackComponent,
   ],
   imports: [
     BrowserModule,

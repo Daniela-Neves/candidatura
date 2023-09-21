@@ -6,7 +6,9 @@
             <input type="password" placeholder="Senha" class="login-input" [(ngModel)]="candidato.senha">
         </div>
 
-        <button class="login-button" (click)="realizarLogin()">Entrar</button>
+        <!-- <button class="login-button" (click)="realizarLogin()">Entrar</button> -->
+        <button class="login-button" routerLink="/pagina-inicial-candidato" >Entrar</button>
+        
 
         <p class="signup-link">Você ainda não tem uma conta? <a routerLink="/criarCandidato">Cadastre-se</a></p>
         <p class="forgot-password-link"><a href="#">Esqueceu a senha?</a></p>
