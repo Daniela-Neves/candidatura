@@ -42,16 +42,18 @@ export class ListarVagaComponent implements OnInit{
   }
 
   vagas:Vagas={
-    nome:'',
-    tipoContratacao:'',
-    dataPublicacao:'',
-    cidade:'',
-    estado:'',
-    remuneracao:'',
-    sobreAVaga:'',
-    responsabilidades:'',
-    qualificacoes:'',
-    modalidade:''
+  nome:'',
+  tipoContratacao:'',
+  dataPublicacao:'',
+  cidade:'',
+  estado:'',
+  salario:'',
+  sobreAVaga:'',
+  responsabilidades:'',
+  qualificacoes:'',
+  modalidade:'',
+  candidatos: [],
+  statusProcesso:''
   }
 
 }

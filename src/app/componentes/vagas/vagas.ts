@@ -1,3 +1,5 @@
+import { Candidato } from "../candidatos/candidato"
+
 export interface Vagas{
   id?:number
   nome:string
@@ -5,9 +7,11 @@ export interface Vagas{
   dataPublicacao:string
   cidade:string
   estado:string
-  remuneracao:string
+  salario:string
   sobreAVaga:string
   responsabilidades:string
   qualificacoes:string
   modalidade:string
+  candidatos: Candidato[]
+  statusProcesso:string
 }

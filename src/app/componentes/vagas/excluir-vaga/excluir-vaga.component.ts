@@ -12,16 +12,18 @@ export class ExcluirVagaComponent {
 
   vaga:Vagas={
     id:0,
-    nome:'',
-    tipoContratacao:'',
-    dataPublicacao:'',
-    cidade:'',
-    estado:'',
-    remuneracao:'',
-    sobreAVaga:'',
-    responsabilidades:'',
-    qualificacoes:'',
-    modalidade:''
+  nome:'',
+  tipoContratacao:'',
+  dataPublicacao:'',
+  cidade:'',
+  estado:'',
+  salario:'',
+  sobreAVaga:'',
+  responsabilidades:'',
+  qualificacoes:'',
+  modalidade:'',
+  candidatos: [],
+  statusProcesso:''
     }
 
   constructor(
