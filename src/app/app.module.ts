@@ -56,6 +56,10 @@ import { ProcessoPausadoComponent } from './componentes/candidatos/processo-paus
 import { ProcessoPausadoFinalizadoComponent } from './componentes/candidatos/processo-pausado-finalizado/processo-pausado-finalizado.component';
 import { ProcessoExcluidoComponent } from './componentes/candidatos/processo-excluido/processo-excluido.component';
 import { ProcessoExcluidoFinalizadoComponent } from './componentes/candidatos/processo-excluido-finalizado/processo-excluido-finalizado.component';
+import { EntrevistaRhComponent } from './componentes/candidatos/entrevista-rh/entrevista-rh.component';
+import { AprovadosRhComponent } from './componentes/candidatos/aprovados-rh/aprovados-rh.component';
+import { EntrevistaGestorComponent } from './componentes/candidatos/entrevista-gestor/entrevista-gestor.component';
+import { AprovadosGestorComponent } from './componentes/candidatos/aprovados-gestor/aprovados-gestor.component';
 
 
 @NgModule({
@@ -112,6 +116,10 @@ import { ProcessoExcluidoFinalizadoComponent } from './componentes/candidatos/pr
     ProcessoPausadoFinalizadoComponent,
     ProcessoExcluidoComponent,
     ProcessoExcluidoFinalizadoComponent,
+    EntrevistaRhComponent,
+    AprovadosRhComponent,
+    EntrevistaGestorComponent,
+    AprovadosGestorComponent,
   ],
   imports: [
     BrowserModule,
