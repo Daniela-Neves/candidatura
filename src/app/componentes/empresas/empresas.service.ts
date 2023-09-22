@@ -10,6 +10,7 @@ import { Vagas } from '../vagas/vagas';
 export class EmpresasService {
 
   private readonly API = 'http://localhost:3000/empresas'
+  private readonly API = 'http://localhost:3000/empresas'
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +40,9 @@ export class EmpresasService {
     return this.http.get<Empresas>(url)
   }
 
+  editar(empresa: Empresas): Observable<Empresas>{
+    const url = `${this.API}/${empresa.id}`
+    return this.http.put<Empresas>(url, empresa)
   editar(empresa: Empresas): Observable<Empresas>{
     const url = `${this.API}/${empresa.id}`
     return this.http.put<Empresas>(url, empresa)
