@@ -44,18 +44,6 @@ import { AnalisarPerfilComponent } from './componentes/candidatos/analisar-perfi
 import { PerfilCandidatoComponent } from './componentes/candidatos/perfil-candidato/perfil-candidato.component';
 import { AnaliseTesteComponent } from './componentes/candidatos/analise-teste/analise-teste.component';
 import { CentralFeedbackComponent } from './componentes/candidatos/central-feedback/central-feedback.component';
-import { CandidatoReprovadoComponent } from './componentes/candidatos/candidato-reprovado/candidato-reprovado.component';
-import { AgendamentoRhComponent } from './componentes/candidatos/agendamento-rh/agendamento-rh.component';
-import { AgendamentoGestorComponent } from './componentes/candidatos/agendamento-gestor/agendamento-gestor.component';
-import { ReprovadoRhComponent } from './componentes/candidatos/reprovado-rh/reprovado-rh.component';
-import { AprovadoVagaComponent } from './componentes/candidatos/aprovado-vaga/aprovado-vaga.component';
-import { ReprovadoGestorComponent } from './componentes/candidatos/reprovado-gestor/reprovado-gestor.component';
-import { FinalizarVagaComponent } from './componentes/candidatos/finalizar-vaga/finalizar-vaga.component';
-import { ProcessoFinalizadoComponent } from './componentes/candidatos/processo-finalizado/processo-finalizado.component';
-import { ProcessoPausadoComponent } from './componentes/candidatos/processo-pausado/processo-pausado.component';
-import { ProcessoPausadoFinalizadoComponent } from './componentes/candidatos/processo-pausado-finalizado/processo-pausado-finalizado.component';
-import { ProcessoExcluidoComponent } from './componentes/candidatos/processo-excluido/processo-excluido.component';
-import { ProcessoExcluidoFinalizadoComponent } from './componentes/candidatos/processo-excluido-finalizado/processo-excluido-finalizado.component';
 
 
 @NgModule({
@@ -100,18 +88,6 @@ import { ProcessoExcluidoFinalizadoComponent } from './componentes/candidatos/pr
     PerfilCandidatoComponent,
     AnaliseTesteComponent,
     CentralFeedbackComponent,
-    CandidatoReprovadoComponent,
-    AgendamentoRhComponent,
-    AgendamentoGestorComponent,
-    ReprovadoRhComponent,
-    AprovadoVagaComponent,
-    ReprovadoGestorComponent,
-    FinalizarVagaComponent,
-    ProcessoFinalizadoComponent,
-    ProcessoPausadoComponent,
-    ProcessoPausadoFinalizadoComponent,
-    ProcessoExcluidoComponent,
-    ProcessoExcluidoFinalizadoComponent,
   ],
   imports: [
     BrowserModule,
