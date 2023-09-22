@@ -35,18 +35,21 @@ export class ListarEmpresaComponent implements OnInit{
   }
 
   empresa:Empresas={
-  cnpj:'',
-  razaoSocial:'',
-  nomeFantasia:'',
-  endereco:'',
-  numero:'',
-  cep:'',
-  email:'',
-  senha:'',
-  confirmacaoSenha:'',
-  vagas: [],
-  linkedin:'',
-  siteInstitucional:''
+    id:0,
+    cnpj:'',
+    razaoSocial:'',
+    nomeFantasia:'',
+    endereco:{
+      cep:'',
+      rua:'',
+      numero:0,
+      cidade:'',
+      estado:''    
+    },
+    email:'',
+    senha:'',
+    linkedin:'',
+    siteInstitucional:''
   }
 
 }

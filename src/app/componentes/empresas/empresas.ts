@@ -1,17 +1,19 @@
 import { Vagas } from "../vagas/vagas"
 
 export interface Empresas{
-  id?:number
+  id:number
   cnpj:string
   razaoSocial:string
   nomeFantasia?:string,
-  endereco:string
-  numero:string
-  cep:string,
+  endereco:{
+    cep:string,
+    rua:string,
+    numero:number,
+    cidade:string,
+    estado:string    
+  },
   email:string
   senha:string
-  confirmacaoSenha:string
-  vagas: Vagas[],
   linkedin:string,
   siteInstitucional:string
 }

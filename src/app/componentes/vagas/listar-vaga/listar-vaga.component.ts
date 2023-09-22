@@ -27,7 +27,7 @@ export class ListarVagaComponent implements OnInit{
     // })
 
     this.empresaService.buscarPorId(1).subscribe((empresa) => {
-      this.listaVagas = empresa.vagas
+      // this.listaVagas = empresa.vagas
     })
   }
 

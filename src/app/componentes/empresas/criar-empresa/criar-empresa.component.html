@@ -39,7 +39,7 @@
           id="endereco"
           name="endereco"
           placeholder="Endereço"
-          [(ngModel)]="empresa.endereco">
+          [(ngModel)]="empresa.endereco.rua">
 
           <input
           type="text"
@@ -47,7 +47,7 @@
           id="numero"
           name="numero"
           placeholder="Número"
-          [(ngModel)]="empresa.numero">
+          [(ngModel)]="empresa.endereco.numero">
 
           <input
           type="text"
@@ -55,7 +55,7 @@
           id="cep"
           name="cep"
           placeholder="CEP"
-          [(ngModel)]="empresa.cep">
+          [(ngModel)]="empresa.endereco.cep">
 
           <input
           type="text"
@@ -78,8 +78,8 @@
           class="input"
           id="confirmacaoSenha"
           name="confirmacaoSenha"
-          placeholder="Confirme a Senha"
-          [(ngModel)]="empresa.confirmacaoSenha">
+          placeholder="Confirme a Senha">
+          <!-- [(ngModel)]="empresa.confirmacaoSenha"> -->
 
           <input
           type="text"

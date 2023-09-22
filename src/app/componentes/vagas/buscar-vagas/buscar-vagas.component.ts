@@ -35,7 +35,7 @@ export class BuscarVagasComponent implements OnInit {
       // Para cada empresa eu varro a vagas e então listo elas
       this.empresas.forEach(empresa => {
         // this.vagas = empresa.vagas
-        this.vagas.push(...empresa.vagas)
+        // this.vagas.push(...empresa.vagas)
 
       });
 
@@ -60,7 +60,7 @@ export class BuscarVagasComponent implements OnInit {
     let vagasFiltradas: Vagas[] = [];
 
     for (const empresa of this.empresas) {
-      vagasFiltradas = vagasFiltradas.concat(empresa.vagas);
+      // vagasFiltradas = vagasFiltradas.concat(empresa.vagas);
     }
 
     vagasFiltradas = vagasFiltradas.filter(vaga => {

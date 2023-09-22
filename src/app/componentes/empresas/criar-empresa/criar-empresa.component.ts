@@ -11,16 +11,19 @@ import { Router } from '@angular/router';
 export class CriarEmpresaComponent {
 
   empresa:Empresas={
+    id:0,
     cnpj:'',
     razaoSocial:'',
     nomeFantasia:'',
-    endereco:'',
-    numero:'',
-    cep:'',
+    endereco:{
+      cep:'',
+      rua:'',
+      numero:0,
+      cidade:'',
+      estado:''    
+    },
     email:'',
     senha:'',
-    confirmacaoSenha:'',
-    vagas: [],
     linkedin:'',
     siteInstitucional:''
   }

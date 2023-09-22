@@ -153,6 +153,21 @@
           "id": 3
         }
       ]
+    },
+    {
+      "cnpj": "1234564874",
+      "razaoSocial": "Minha empresa",
+      "nomeFantasia": "OJogos",
+      "endereco": "",
+      "numero": "69",
+      "cep": "123654",
+      "email": "empresa@gmail.com",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "vagas": [],
+      "linkedin": "N tenho",
+      "siteInstitucional": "",
+      "id": 3
     }
   ],
   "candidatos": [

@@ -35,16 +35,19 @@ export class CadastrarOportunidadeComponent implements OnInit{
   }
 
   empresa:Empresas={
+    id:0,
     cnpj:'',
     razaoSocial:'',
     nomeFantasia:'',
-    endereco:'',
-    numero:'',
-    cep:'',
+    endereco:{
+      cep:'',
+      rua:'',
+      numero:0,
+      cidade:'',
+      estado:''    
+    },
     email:'',
     senha:'',
-    confirmacaoSenha:'',
-    vagas: [],
     linkedin:'',
     siteInstitucional:''
   }
@@ -62,7 +65,7 @@ export class CadastrarOportunidadeComponent implements OnInit{
     //   this.router.navigate(['/paginaInicialEmpresa'])
     // })
     this.vaga.id = this.service.gerarID()
-    this.empresa.vagas.push(this.vaga)
+    // this.empresa.vagas.push(this.vaga)
     this.empresaService.editar(this.empresa).subscribe(() => {
       this.router.navigate(['/paginaInicialEmpresa']);
     });

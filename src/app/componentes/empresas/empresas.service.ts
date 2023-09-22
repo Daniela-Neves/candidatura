@@ -9,7 +9,7 @@ import { Vagas } from '../vagas/vagas';
 })
 export class EmpresasService {
 
-  private readonly API = 'http://localhost:3000/empresas'
+  private readonly API = 'http://localhost:5277/Empresa'
 
   constructor(private http: HttpClient) { }
 
