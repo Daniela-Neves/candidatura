@@ -50,7 +50,7 @@ body {
 }
 
 .cadastro-button {
-    background-color: #555555;
+    background-color: green;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -81,4 +81,22 @@ body {
 .botoes{
   margin-left: 90px;
   margin-bottom: 20px;
+}
+
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.botao__desabilitado {
+  background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }

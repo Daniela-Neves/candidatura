@@ -126,6 +126,42 @@
           "responsabilidades": "",
           "qualificacoes": "",
           "modalidade": ""
+        },
+        {
+          "nome": "novo teste",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "1997-12-21",
+          "cidade": "fdsa",
+          "estado": "sp",
+          "salario": "100",
+          "modalidade": "Hibrido",
+          "sobreAVaga": "dasaas",
+          "responsabilidades": "dada",
+          "qualificacoes": "dsadasda"
+        },
+        {
+          "nome": "Teste de Minas",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "1997-12-21",
+          "cidade": "Mineirinho",
+          "estado": "MG",
+          "salario": "1220",
+          "modalidade": "HomeOffice",
+          "sobreAVaga": "fdsfsd",
+          "responsabilidades": "fdsfds",
+          "qualificacoes": "fdsfdsfdsfdsfds"
+        },
+        {
+          "nome": "Vaguinha",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "1997-12-21",
+          "cidade": "dasfda",
+          "estado": "SP",
+          "salario": "1",
+          "modalidade": "HomeOffice",
+          "sobreAVaga": "fdsfas",
+          "responsabilidades": "fadsfas",
+          "qualificacoes": "fdasfdsafasd"
         }
       ]
     },

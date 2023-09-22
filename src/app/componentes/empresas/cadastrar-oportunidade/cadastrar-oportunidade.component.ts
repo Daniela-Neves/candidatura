@@ -5,7 +5,7 @@ import { VagasService } from '../../vagas/vagas.service';
 
 import { EmpresasService } from '../empresas.service';
 import { Empresas } from '../empresas';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -37,8 +37,6 @@ export class CadastrarOportunidadeComponent implements OnInit{
   statusProcesso:''
   }
 
-
-
   empresa:Empresas={
     cnpj:'',
     razaoSocial:'',
@@ -56,9 +54,25 @@ export class CadastrarOportunidadeComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      tipoContratacao: ['', Validators.required],
+      dataPublicacao: ['', Validators.required],
+      cidade: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      estado: ['', Validators.compose([Validators.required, Validators.maxLength(2), Validators.minLength(2), Validators.pattern(/^[A-Z]+$/)])],
+      salario: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern('[0-9]+'), // Aceita apenas números
+      ]),],
+      modalidade: ['', Validators.required],
+      sobreAVaga: ['', Validators.required],
+      responsabilidades: ['', Validators.required],
+      qualificacoes: ['', Validators.required],
+    });
+
     this.empresaService.buscarPorId(1).subscribe((empresa: Empresas) => {
-      this.empresa = empresa
-    })
+      this.empresa = empresa;
+    });
   }
 
 
@@ -66,17 +80,29 @@ export class CadastrarOportunidadeComponent implements OnInit{
     // this.empresaService.criarVaga(1,this.vaga).subscribe(()=>{
     //   this.router.navigate(['/paginaInicialEmpresa'])
     // })
-    this.vaga.id = this.service.gerarID()
-    this.empresa.vagas.push(this.vaga)
+    if(this.formulario.valid){
+      const novaVaga = this.formulario.value
+      this.vaga.id = this.service.gerarID()
+    this.empresa.vagas.push(novaVaga)
     this.empresaService.editar(this.empresa).subscribe(() => {
       this.router.navigate(['/paginaInicialEmpresa']);
     });
+    }
 
 
   }
 
   cancelar(){
     this.router.navigate(['/paginaInicialEmpresa'])
+  }
+
+  habilitarBotao():string{
+    if(this.formulario.valid){
+      return 'cadastro-button'
+    }
+    else{
+      return 'botao__desabilitado'
+    }
   }
 
 }

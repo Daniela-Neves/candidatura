@@ -1,48 +1,96 @@
 <body>
     <div class="cadastro-container">
         <h1 class="cadastro-heading">Cadastre novas oportunidades</h1>
-        <div class="cadastro-form">
+        <form [formGroup]="formulario" class="cadastro-form">
             <label for="nomeVaga">Nome da vaga</label>
-            <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="cadastro-input">
+            <input formControlName="nome" type="text" id="nomeVaga" class="cadastro-input">
+            <div class="mensagem__erro" *ngIf="formulario.get('nome')?.errors?.['required'] && formulario.get('nome')?.touched">
+              *Campo obrigatório!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('nome')?.errors?.['minlength'] && formulario.get('nome')?.touched">
+              *Esse campo deve ter pelo menos 3 caracteres
+            </div>
 
             <label for="tipoContratacao">Tipo de contratação</label>
-            <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="cadastro-input">
+            <select formControlName="tipoContratacao" id="tipoContratacao" class="cadastro-input">
                 <option value="CLT">CLT</option>
                 <option value="PJ">PJ</option>
             </select>
+            <div class="mensagem__erro" *ngIf="formulario.get('tipoContratacao')?.errors?.['required'] && formulario.get('tipoContratacao')?.touched">
+              *Campo obrigatório!
+            </div>
 
             <label for="dataPublicacao">Data de publicação</label>
-            <input [(ngModel)]="vaga.dataPublicacao" name="dataPublicacao" type="date" id="dataPublicacao" class="cadastro-input">
+            <input formControlName="dataPublicacao" type="date" id="dataPublicacao" class="cadastro-input">
+            <div class="mensagem__erro" *ngIf="formulario.get('dataPublicacao')?.errors?.['required'] && formulario.get('dataPublicacao')?.touched">
+              *Campo obrigatório!
+            </div>
 
             <label for="cidade">Cidade</label>
-            <input [(ngModel)]="vaga.cidade" name="cidade" type="text" id="cidade" class="cadastro-input">
+            <input formControlName="cidade" type="text" id="cidade" class="cadastro-input">
+            <div class="mensagem__erro" *ngIf="formulario.get('cidade')?.errors?.['required'] && formulario.get('cidade')?.touched">
+              *Campo obrigatório!
+            </div>
 
-            <label for="estado">Estado</label>
-            <input [(ngModel)]="vaga.estado" name="estado" type="text" id="estado" class="cadastro-input">
+            <label for="estado">Estado (Sigla)</label>
+            <input formControlName="estado" type="text" id="estado" class="cadastro-input">
+            <div class="mensagem__erro" *ngIf="formulario.get('estado')?.errors?.['required'] && formulario.get('estado')?.touched">
+              *Campo obrigatório!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('estado')?.errors?.['maxlength'] && formulario.get('estado')?.touched">
+              *Esse campo deve ter apenas 2 caracteres!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('estado')?.errors?.['minlength'] && formulario.get('estado')?.touched">
+              *Esse campo deve ter pelo menos 2 caracteres!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('estado')?.errors?.['pattern'] && formulario.get('estado')?.touched">
+              *Esse campo deve ter apenas letras maiúsculas!
+            </div>
 
             <label for="salario">Salário</label>
-            <input [(ngModel)]="vaga.salario" name="salario" type="text" id="salario" class="cadastro-input">
+            <input formControlName="salario" type="text" id="salario" class="cadastro-input">
+            <div class="mensagem__erro" *ngIf="formulario.get('salario')?.errors?.['required'] && formulario.get('salario')?.touched">
+              *Campo obrigatório!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('salario')?.errors?.['pattern'] && formulario.get('salario')?.touched">
+              *Esse campo deve ter apenas valores numéricos!
+            </div>
 
             <label for="modalidade">Modalidade</label>
-            <select [(ngModel)]="vaga.modalidade" name="modalidade" id="modalidade" class="cadastro-input">
+            <select formControlName="modalidade" id="modalidade" class="cadastro-input">
               <option value="Presencial">Presencial</option>
               <option value="Hibrido">Híbrido</option>
               <option value="HomeOffice">Home Office</option>
             </select>
+            <div class="mensagem__erro" *ngIf="formulario.get('modalidade')?.errors?.['required'] && formulario.get('modalidade')?.touched">
+              *Campo obrigatório!
+            </div>
 
             <label for="sobreAVaga">Sobre a vaga</label>
-            <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
+            <textarea formControlName="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
+            <div class="mensagem__erro" *ngIf="formulario.get('sobreAVaga')?.errors?.['required'] && formulario.get('sobreAVaga')?.touched">
+              *Campo obrigatório!
+            </div>
 
             <label for="responsabilidades">Responsabilidades e atribuições</label>
-            <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="cadastro-textarea"></textarea>
+            <textarea formControlName="responsabilidades" id="responsabilidades" class="cadastro-textarea"></textarea>
+            <div class="mensagem__erro" *ngIf="formulario.get('responsabilidades')?.errors?.['required'] && formulario.get('responsabilidades')?.touched">
+              *Campo obrigatório!
+            </div>
 
             <label for="qualificacoes">Qualificações desejadas</label>
-            <textarea [(ngModel)]="vaga.qualificacoes" name="qualificacoes" id="qualificacoes" class="cadastro-textarea"></textarea>
+            <textarea formControlName="qualificacoes" id="qualificacoes" class="cadastro-textarea"></textarea>
+            <div class="mensagem__erro" *ngIf="formulario.get('qualificacoes')?.errors?.['required'] && formulario.get('qualificacoes')?.touched">
+              *Campo obrigatório!
+            </div>
 
             <div class="botoes">
-              <button (click)="criarOportunidade()" class="cadastro-button">Cadastre</button>
+              <button
+                [disabled]="!formulario.valid"
+                (click)="criarOportunidade()"
+                [ngClass]="habilitarBotao()">Cadastre</button>
               <button (click)="cancelar()" class="cancelar-button">Cancelar</button>
           </div>
-        </div>
+        </form>
     </div>
 </body>
