@@ -12,7 +12,6 @@ import { ExcluirCandidatoComponent } from './componentes/candidatos/excluir-cand
 import { EditarCandidatoComponent } from './componentes/candidatos/editar-candidato/editar-candidato.component';
 import { PerfisComponent } from './componentes/perfis/perfis.component';
 import { LoginComponent } from './componentes/candidatos/login/login.component';
-import { LoginComponent } from './componentes/candidatos/login/login.component';
 import { LoginEmpresaComponent } from './componentes/empresas/login-empresa/login-empresa.component';
 import { CriarEmpresaComponent } from './componentes/empresas/criar-empresa/criar-empresa.component';
 import { PaginaInicialEmpresaComponent } from './componentes/empresas/pagina-inicial-empresa/pagina-inicial-empresa.component';

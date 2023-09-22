@@ -1,69 +1,48 @@
 <body>
-    <div class="cadastro-container">
-        <h1 class="cadastro-heading">Cadastre novas oportunidades</h1>
-        <div class="cadastro-form">
-            <label for="nomeVaga">Nome da vaga</label>
-            <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="cadastro-input">
+  <div class="cadastro-container">
+      <h1 class="cadastro-heading">Cadastre novas oportunidades</h1>
+      <div class="cadastro-form">
+          <label for="nomeVaga">Nome da vaga</label>
+          <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="cadastro-input">
 
-            <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="cadastro-input">
+          <label for="tipoContratacao">Tipo de contratação</label>
+          <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="cadastro-input">
+              <option value="CLT">CLT</option>
+              <option value="PJ">PJ</option>
+          </select>
 
-            <label for="tipoContratacao">Tipo de contratação</label>
-            <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="cadastro-input">
-            <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="cadastro-input">
-                <option value="CLT">CLT</option>
-                <option value="PJ">PJ</option>
-            </select>
+          <label for="dataPublicacao">Data de publicação</label>
+          <input [(ngModel)]="vaga.dataPublicacao" name="dataPublicacao" type="date" id="dataPublicacao" class="cadastro-input">
 
+          <label for="cidade">Cidade</label>
+          <input [(ngModel)]="vaga.cidade" name="cidade" type="text" id="cidade" class="cadastro-input">
 
-            <label for="dataPublicacao">Data de publicação</label>
-            <input [(ngModel)]="vaga.dataPublicacao" name="dataPublicacao" type="date" id="dataPublicacao" class="cadastro-input">
+          <label for="estado">Estado</label>
+          <input [(ngModel)]="vaga.estado" name="estado" type="text" id="estado" class="cadastro-input">
 
-            <input [(ngModel)]="vaga.dataPublicacao" name="dataPublicacao" type="date" id="dataPublicacao" class="cadastro-input">
+          <label for="remuneracao">Remuneração</label>
+          <input [(ngModel)]="vaga.remuneracao" name="remuneracao" type="text" id="remuneracao" class="cadastro-input">
 
-            <label for="cidade">Cidade</label>
-            <input [(ngModel)]="vaga.cidade" name="cidade" type="text" id="cidade" class="cadastro-input">
+          <label for="modalidade">Modalidade</label>
+          <select [(ngModel)]="vaga.modalidade" name="modalidade" id="modalidade" class="cadastro-input">
+            <option value="Presencial">Presencial</option>
+            <option value="Hibrido">Híbrido</option>
+            <option value="HomeOffice">Home Office</option>
+          </select>
 
-            <input [(ngModel)]="vaga.cidade" name="cidade" type="text" id="cidade" class="cadastro-input">
+          <label for="sobreAVaga">Sobre a vaga</label>
+          <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
 
-            <label for="estado">Estado</label>
-            <input [(ngModel)]="vaga.estado" name="estado" type="text" id="estado" class="cadastro-input">
+          <label for="responsabilidades">Responsabilidades e atribuições</label>
+          <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="cadastro-textarea"></textarea>
 
-            <input [(ngModel)]="vaga.estado" name="estado" type="text" id="estado" class="cadastro-input">
+          <label for="qualificacoes">Qualificações desejadas</label>
+          <textarea [(ngModel)]="vaga.qualificacoes" name="qualificacoes" id="qualificacoes" class="cadastro-textarea"></textarea>
 
-            <label for="remuneracao">Remuneração</label>
-            <input [(ngModel)]="vaga.remuneracao" name="remuneracao" type="text" id="remuneracao" class="cadastro-input">
-
-            <label for="modalidade">Modalidade</label>
-            <select [(ngModel)]="vaga.modalidade" name="modalidade" id="modalidade" class="cadastro-input">
-              <option value="Presencial">Presencial</option>
-              <option value="Hibrido">Híbrido</option>
-              <option value="HomeOffice">Home Office</option>
-            </select>
-
-            <label for="sobreAVaga">Sobre a vaga</label>
-            <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
-
-            <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
-
-            <label for="responsabilidades">Responsabilidades e atribuições</label>
-            <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="cadastro-textarea"></textarea>
-
-            <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="cadastro-textarea"></textarea>
-
-            <label for="qualificacoes">Qualificações desejadas</label>
-            <textarea [(ngModel)]="vaga.qualificacoes" name="qualificacoes" id="qualificacoes" class="cadastro-textarea"></textarea>
-
-            <div class="botoes">
-              <button (click)="criarOportunidade()" class="cadastro-button">Cadastre</button>
-              <button (click)="cancelar()" class="cancelar-button">Cancelar</button>
-          </div>
-            <textarea [(ngModel)]="vaga.qualificacoes" name="qualificacoes" id="qualificacoes" class="cadastro-textarea"></textarea>
-
-            <div class="botoes">
-              <button (click)="criarOportunidade()" class="cadastro-button">Cadastre</button>
-              <button (click)="cancelar()" class="cancelar-button">Cancelar</button>
-          </div>
+          <div class="botoes">
+            <button (click)="criarOportunidade()" class="cadastro-button">Cadastre</button>
+            <button (click)="cancelar()" class="cancelar-button">Cancelar</button>
         </div>
-    </div>
+      </div>
+  </div>
 </body>
-
