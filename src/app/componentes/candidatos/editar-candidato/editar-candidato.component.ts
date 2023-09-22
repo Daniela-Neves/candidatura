@@ -10,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditarCandidatoComponent implements OnInit{
 
+  confirmacaoSenhaDigitada: string = '';
+
   constructor(
     private service: CandidatoService,
     private router: Router,
@@ -25,20 +27,27 @@ export class EditarCandidatoComponent implements OnInit{
   }
 
   editarCandidato(){
+    if (this.candidato.senha !== this.confirmacaoSenhaDigitada) {
+      alert('A senha e a confirmação de senha não correspondem.');
+      return;
+    }
+
     this.service.editar(this.candidato).subscribe(() => {
-      this.router.navigate(['/listarCandidato'])
+      this.router.navigate(['/menu-candidato', this.candidato.id]);
+
     })
   }
 
   cancelar(){
-    this.router.navigate(['/listarCandidato'])
+    this.router.navigate(['/menu-candidato', this.candidato.id]);
   }
 
-  candidato:Candidato={
-    email:'',
-    nome:'',
-    sobrenome:'',
-    senha:''
-  }
+  candidato : Candidato = {
+    id: 0,
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: ''
+};
 
 }

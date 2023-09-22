@@ -10,25 +10,34 @@ import { Router } from '@angular/router';
 })
 export class CriarCandidatoComponent {
 
-  candidato:Candidato={
-    email:'',
-    nome:'',
-    sobrenome:'',
-    senha:''
-  }
+  confirmacaoSenhaDigitada: string = '';
+
+  candidato : Candidato = {
+    id: 0,
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: ''
+};
 
   constructor(private service: CandidatoService, private router: Router){
 
   }
 
-  criarCandidato(){
+  criarCandidato() {
+    if (this.candidato.senha !== this.confirmacaoSenhaDigitada) {
+      alert('A senha e a confirmação de senha não correspondem.');
+      return;
+    }
+  
     this.service.criar(this.candidato).subscribe(() => {
-      this.router.navigate(['/listarCandidato'])
-    })
+      this.router.navigate(['/login']);
+    });
   }
+  
 
   cancelar() {
-    this.router.navigate(['/listarCandidato'])
+    this.router.navigate(['/login'])
   }
 
 }

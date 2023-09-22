@@ -1,0 +1,154 @@
+<body class="fundo1">
+    <div class="form-dados">
+        <form (ngSubmit)="finalizarCurriculo()">
+            <div class="secao">
+                <h2>Dados Pessoais</h2>
+
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" [(ngModel)]="curriculo.dataNascimento" required/>
+
+                <label for="genero">Gênero:</label>
+                <select id="genero" [(ngModel)]="curriculo.genero" name="genero" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Transgênero">Transgênero</option>
+                    <option value="Não Binário">Não Binário</option>
+                    <option value="Outro">Outro</option>
+                    <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+
+                <label for="identificacao">Como você se identifica racial/etnicamente?</label>
+                <select id="identificacao" [(ngModel)]="curriculo.raca" name="identificacao" required>
+                    <option value="Preta(o) ou Negra(o)">Preta(o) ou Negra(o)</option>
+                    <option value="Branca(o)">Branca(o)</option>
+                    <option value="Parda(o)">Parda(o)</option>
+                    <option value="Indígena ou Nativa(o)">Indígena ou Nativa(o)</option>
+                    <option value="Amarela(o) ou Asiática(o)">Amarela(o) ou Asiática(o)</option>
+                    <option value="Árabe ou Oriente Médio">Árabe ou Oriente Médio</option>
+                    <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+
+                <label for="deficiencia">Deficiência:</label>
+                <div class="check-deficiencia">
+                    <label><input type="checkbox" name="fisica" value="Física" [(ngModel)]="curriculo.deficiencias.fisica"/>
+                        Física</label>
+                    <label><input type="checkbox" name="auditiva" value="Auditiva" [(ngModel)]="curriculo.deficiencias.auditiva"/>
+                        Auditiva</label>
+                    <label><input type="checkbox" name="visual" value="Visual" [(ngModel)]="curriculo.deficiencias.visual"/>
+                        Visual</label>
+                    <label><input type="checkbox" name="intelectual" value="Intelectual" [(ngModel)]="curriculo.deficiencias.intelectual"/>
+                        Intelectual</label>
+                    <label><input type="checkbox" name="autista" value="Autista" [(ngModel)]="curriculo.deficiencias.autista"/>
+                        Transtorno do Espectro Autista (TEA)</label>
+                </div>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" [(ngModel)]="curriculo.endereco.cep" class="formulario-input" placeholder="Digite o CEP"/>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.endereco" class="formulario-input" placeholder="Digite o endereço"/>
+
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" [(ngModel)]="curriculo.endereco.numero" class="formulario-input" placeholder="Número"/>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" [(ngModel)]="curriculo.endereco.cidade" class="formulario-input" placeholder="Cidade"/>
+
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" [(ngModel)]="curriculo.endereco.estado" class="formulario-input" placeholder="Estado"/>
+
+                <label for="linkedin">LinkedIn:</label>
+                <input type="text" id="linkedin" name="linkedin" [(ngModel)]="curriculo.linkedin" class="formulario-input" placeholder="Insira o LinkedIn"/>
+
+                <button type="button" (click)="salvarDadosPessoais()">Salvar</button>
+
+            </div>
+
+            <h2>Experiência Profissional</h2>
+            <div *ngFor="let experiencia of experienciasProfissionais; let i = index">
+                <div class="experiencia-item">
+                    <label for="titulo{{i}}">Título:</label>
+                    <input type="text" id="titulo{{i}}" name="titulo" class="formulario-input" [(ngModel)]="experiencia.titulo">
+            
+                    <label for="tipoEmprego{{i}}">Tipo de Emprego:</label>
+                    <input type="text" id="tipoEmprego{{i}}" name="tipoEmprego" class="formulario-input" [(ngModel)]="experiencia.tipoEmprego">
+            
+                    <label for="nomeEmpresa{{i}}">Nome da Empresa:</label>
+                    <input type="text" id="nomeEmpresa{{i}}" name="nomeEmpresa" class="formulario-input" [(ngModel)]="experiencia.nomeEmpresa">
+            
+                    <label for="inicio{{i}}">Início:</label>
+                    <input type="date" id="inicio{{i}}" name="inicio" class="formulario-input" [(ngModel)]="experiencia.inicio">
+            
+                    <label for="fim{{i}}">Fim:</label>
+                    <input type="date" id="fim{{i}}" name="fim" class="formulario-input" [(ngModel)]="experiencia.fim">
+            
+                    <button type="button" (click)="excluirExperienciaProfissional(i)">Excluir</button>
+                </div>
+            </div>
+            <button type="button" (click)="adicionarExperienciaProfissional()">Adicionar Experiência Profissional</button>
+            <button type="button" (click)="salvarExperienciasProfissionais()">Salvar</button>
+            
+
+            <h2>Experiência Acadêmica</h2>
+            <div *ngFor="let experiencia of experienciasAcademicas; let i = index">
+                <div class="experiencia-item">
+                    <label for="nivelFormacao{{i}}">Nível de Formação:</label>
+                    <input type="text" id="nivelFormacao{{i}}" name="nivelFormacao" class="formulario-input" [(ngModel)]="experiencia.nivelFormacao">
+            
+                    <label for="curso{{i}}">Curso:</label>
+                    <input type="text" id="curso{{i}}" name="curso" class="formulario-input" [(ngModel)]="experiencia.curso">
+            
+                    <label for="dataInicio{{i}}">Data de Início:</label>
+                    <input type="date" id="dataInicio{{i}}" name="dataInicio" class="formulario-input" [(ngModel)]="experiencia.dataInicio">
+            
+                    <label for="dataFim{{i}}">Data de Fim:</label>
+                    <input type="date" id="dataFim{{i}}" name="dataFim" class="formulario-input" [(ngModel)]="experiencia.dataFim">
+            
+                    <button type="button" (click)="excluirExperienciaAcademica(i)">Excluir</button>
+                </div>
+            </div>
+            <button type="button" (click)="adicionarExperienciaAcademica()">Adicionar Experiência Acadêmica</button>
+            <button type="button" (click)="salvarExperienciaAcademica()">Salvar</button>
+
+            
+            <h2>Idiomas</h2>
+            <div *ngFor="let idioma of idiomas; let i = index">
+                <div class="idioma-item">
+                    <label for="idioma{{i}}">Idioma:</label>
+                    <input type="text" id="idioma{{i}}" name="idioma" class="formulario-input" [(ngModel)]="idioma.idiomaId">
+            
+                    <label for="nivelProficiencia{{i}}">Nível de Proficiência:</label>
+                    <input type="text" id="nivelProficiencia{{i}}" name="nivelProficiencia" class="formulario-input" [(ngModel)]="idioma.nivelProficiencia">
+            
+                    <button type="button" (click)="excluirIdioma(i)">Excluir</button>
+                </div>
+            </div>
+            <button type="button" (click)="adicionarIdioma()">Adicionar Idioma</button>
+            <button type="button" (click)="salvarIdioma()">Salvar</button>
+
+            
+
+            <h2>Certificados</h2>
+            <div *ngFor="let certificado of certificados; let i = index">
+                <div class="certificado-item">
+                    <label for="titulo{{i}}">Título:</label>
+                    <input type="text" id="titulo{{i}}" name="titulo" class="formulario-input" [(ngModel)]="certificado.titulo">
+            
+                    <label for="organizacao{{i}}">Organização:</label>
+                    <input type="text" id="organizacao{{i}}" name="organizacao" class="formulario-input" [(ngModel)]="certificado.organizacao">
+            
+                    <label for="dataEmissao{{i}}">Data de Emissão:</label>
+                    <input type="date" id="dataEmissao{{i}}" name="dataEmissao" class="formulario-input" [(ngModel)]="certificado.dataEmissao">
+            
+                    <button type="button" (click)="excluirCertificado(i)">Excluir</button>
+                </div>
+            </div>
+            <button type="button" (click)="adicionarCertificado()">Adicionar Certificado</button>
+            <button type="button" (click)="salvarCertificado()">Salvar</button>
+
+            
+            <button type="submit">Finalizar Currículo</button>
+
+        </form>
+    </div>
+</body>

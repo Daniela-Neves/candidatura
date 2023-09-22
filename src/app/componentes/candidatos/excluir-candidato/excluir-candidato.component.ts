@@ -10,13 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ExcluirCandidatoComponent implements OnInit{
 
-  candidato:Candidato={
-    id:0,
-    nome:'',
-    sobrenome:'',
-    email:'',
-    senha:''
-  }
+  candidato : Candidato = {
+    id: 0,
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: ''
+};
 
   constructor(
     private service: CandidatoService,

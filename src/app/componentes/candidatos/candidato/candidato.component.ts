@@ -15,14 +15,9 @@ export class CandidatoComponent implements OnInit{
     sobrenome: 'Morais',
     email: 'gabrielc_morais@hotmail.com',
     senha: '1234'
-  }
+};
 
-  constructor(){
+  constructor() {}
 
-  }
-
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }
