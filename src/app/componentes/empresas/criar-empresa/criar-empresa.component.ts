@@ -13,12 +13,16 @@ export class CriarEmpresaComponent {
   empresa:Empresas={
     cnpj:'',
     razaoSocial:'',
+    nomeFantasia:'',
     endereco:'',
     numero:'',
+    cep:'',
     email:'',
     senha:'',
     confirmacaoSenha:'',
-    vagas:[]
+    vagas: [],
+    linkedin:'',
+    siteInstitucional:''
   }
 
   constructor(private service: EmpresasService, private router: Router){

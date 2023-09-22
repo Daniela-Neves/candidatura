@@ -27,8 +27,7 @@ export class LoginComponent {
         (candidatoLogado) => {
           if (candidatoLogado) {
             console.log('Login bem-sucedido.');
-            this.router.navigate(['/menu-candidato']);
-          } else {
+            this.router.navigate(['/menu-candidato', candidatoLogado.id]);          } else {
             alert('Login falhou. E-mail ou senha incorretos.');
           }
         },

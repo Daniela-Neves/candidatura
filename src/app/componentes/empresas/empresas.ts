@@ -4,10 +4,14 @@ export interface Empresas{
   id?:number
   cnpj:string
   razaoSocial:string
+  nomeFantasia?:string,
   endereco:string
   numero:string
+  cep:string,
   email:string
   senha:string
   confirmacaoSenha:string
-  vagas: Vagas[]
+  vagas: Vagas[],
+  linkedin:string,
+  siteInstitucional:string
 }
