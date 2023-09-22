@@ -3,21 +3,36 @@ import { HttpClient } from '@angular/common/http'
 import { Vagas } from './vagas';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class VagasService {
 
-  private readonly API = 'http://localhost:3000/vagas'
+  private readonly API = 'http://localhost:3000/empresas'
 
   constructor(private http: HttpClient) { }
+
+  gerarID():number{
+    let id: number;
+    do {
+      id = Math.floor(Math.random() * 1000000);
+    } while (this.existeIdNaLista(id));
+
+    return id;
+  }
+
+  existeIdNaLista(id: number): boolean {
+    return false;
+  }
 
   listar(): Observable<Vagas[]> {
     return this.http.get<Vagas[]>(this.API)
   }
 
-  criar(vagas: Vagas):Observable<Vagas>{
-    return this.http.post<Vagas>(this.API, vagas)
+  criar(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
+    const url = `${this.API}/${idEmpresa}/vagas`;
+    return this.http.post<Vagas>(url, novaVaga);
   }
 
   excluir(id:number):Observable<Vagas>{

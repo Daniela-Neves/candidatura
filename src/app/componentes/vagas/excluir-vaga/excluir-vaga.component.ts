@@ -20,7 +20,8 @@ export class ExcluirVagaComponent {
     remuneracao:'',
     sobreAVaga:'',
     responsabilidades:'',
-    qualificacoes:''
+    qualificacoes:'',
+    modalidade:''
     }
 
   constructor(

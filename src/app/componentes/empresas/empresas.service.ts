@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Empresas } from './empresas';
 import { Observable } from 'rxjs';
+import { Vagas } from '../vagas/vagas';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class EmpresasService {
 
   listar(): Observable<Empresas[]> {
     return this.http.get<Empresas[]>(this.API)
+  }
+
+
+
+  criarVaga(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
+    const url = `${this.API}/${idEmpresa}/vagas`;
+
+    return this.http.post<Vagas>(url, novaVaga);
   }
 
   criar(empresa: Empresas):Observable<Empresas>{

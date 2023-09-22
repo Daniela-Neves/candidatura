@@ -19,7 +19,8 @@ export class VagaComponent implements OnInit{
   remuneracao:'1200',
   sobreAVaga:'Desenvolver',
   responsabilidades:'Desenvolver',
-  qualificacoes:'Contar até 3'
+  qualificacoes:'Contar até 3',
+  modalidade:'Presencial'
 
   }
 

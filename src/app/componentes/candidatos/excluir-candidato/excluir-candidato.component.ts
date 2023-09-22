@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './excluir-candidato.component.html',
   styleUrls: ['./excluir-candidato.component.css']
 })
+
 export class ExcluirCandidatoComponent implements OnInit{
 
   candidato : Candidato = {

@@ -1,0 +1,172 @@
+/* Estilos para a página */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'PT Mono', monospace;
+    background-color: rgba(46,46,56,1);
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.fundo1 {
+  width: 100%;
+  height: 100%;
+  background: rgba(46,46,56,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow-y: scroll;
+}
+
+
+/* Estilos para o filtro à esquerda */
+.filtro-container {
+    width: 20%;
+    padding: 20px;
+    /* background-color: rgba(46,46,56,1); */
+    color: white;
+}
+
+.filtro-container h2 {
+    color: rgb(240, 240, 11);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.filtro-input {
+    border: 3px solid rgba(240, 240, 11, 0.5);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    /* border: none; */
+    border-radius: 5px;
+}
+
+.aplicar-button {
+    width: 100%;
+    background-color: #555555;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.aplicar-button:hover {
+    background-color: #333333;
+}
+
+/* Estilos para o centro da página */
+.centro-container {
+    width: 80%;
+    padding: 10px;
+    padding-right: 40px;
+}
+
+.centro-container h1{
+  color: rgb(240, 240, 11);
+}
+
+.centro-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.centro-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.lista-vagas .vaga {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background-color: rgb(245, 249, 252);
+    width: 100%;
+}
+
+.lista-vagas .vaga h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.lista-vagas .vaga .detalhes-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lista-vagas .vaga .detalhes-link:hover {
+    text-decoration: underline;
+}
+
+.lista-vagas{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  scroll-behavior: smooth;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.lista-vagas::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* .lista-vagas::-webkit-scrollbar-track {
+  background: #ccc;
+} */
+
+.lista-vagas::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 240, 11);
+  border-radius: 30px;
+  /* border: 1px solid orange; */
+}
+
+@media (max-width: 760px)  {
+  .fundo1{
+    /* background-color: #ccc; */
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .filtro-container{
+    width: 90%;
+  }
+
+  .centro-container{
+    width: 90%;
+    padding-right: 20%;
+  }
+
+  .centro-input{
+    width: 100%;
+  }
+}
+
+@media (max-width: 470px)  {
+  .fundo1{
+    /* background-color: #007BFF; */
+    height: 1000px;
+  }
+
+  .centro-container{
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 60px; */
+  }
+}

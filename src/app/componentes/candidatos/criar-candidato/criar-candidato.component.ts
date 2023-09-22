@@ -30,13 +30,24 @@ export class CriarCandidatoComponent {
       return;
     }
   
+  criarCandidato() {
+    if (this.candidato.senha !== this.confirmacaoSenhaDigitada) {
+      alert('A senha e a confirmação de senha não correspondem.');
+      return;
+    }
+  
     this.service.criar(this.candidato).subscribe(() => {
+      this.router.navigate(['/login']);
+    });
       this.router.navigate(['/login']);
     });
   }
   
 
+  
+
   cancelar() {
+    this.router.navigate(['/login'])
     this.router.navigate(['/login'])
   }
 
