@@ -5,6 +5,7 @@ import { VagasService } from '../../vagas/vagas.service';
 
 import { EmpresasService } from '../empresas.service';
 import { Empresas } from '../empresas';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -13,6 +14,12 @@ import { Empresas } from '../empresas';
   styleUrls: ['./cadastrar-oportunidade.component.css']
 })
 export class CadastrarOportunidadeComponent implements OnInit{
+
+  formulario!: FormGroup;
+
+  constructor(private service: VagasService, private router: Router, private empresaService: EmpresasService, private formBuilder: FormBuilder){
+
+  }
 
   vaga:Vagas={
   id:0,
@@ -30,9 +37,7 @@ export class CadastrarOportunidadeComponent implements OnInit{
   statusProcesso:''
   }
 
-  constructor(private service: VagasService, private router: Router, private empresaService: EmpresasService){
 
-  }
 
   empresa:Empresas={
     cnpj:'',
