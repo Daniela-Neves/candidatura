@@ -1,5 +1,6 @@
 import { Candidato } from "../candidatos/candidato"
 
+
 export interface Vagas{
   id?:number
   nome:string
