@@ -59,7 +59,7 @@ export class CadastrarOportunidadeComponent implements OnInit{
       tipoContratacao: ['', Validators.required],
       dataPublicacao: ['', Validators.required],
       cidade: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-      estado: ['', Validators.compose([Validators.required, Validators.maxLength(2), Validators.minLength(2), Validators.pattern(/^[A-Z]+$/)])],
+      estado: ['', Validators.required],
       salario: ['', Validators.compose([
         Validators.required,
         Validators.pattern('[0-9]+'), // Aceita apenas números
