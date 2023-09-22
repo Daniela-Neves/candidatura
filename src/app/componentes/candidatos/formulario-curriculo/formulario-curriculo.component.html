@@ -1,0 +1,127 @@
+<body class="fundo1">
+    <div class="form-dados">
+      <form (ngSubmit)="finalizarCurriculo()">
+        <div class="secao">
+                <h2>Dados Pessoais</h2>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" [(ngModel)]="candidato.dataNascimento" required/>
+
+                <label for="genero">Gênero:</label>
+                <select id="genero" [(ngModel)]="candidato.genero" name="genero" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Transgênero">Transgênero</option>
+                    <option value="Não Binário">Não Binário</option>
+                    <option value="Outro">Outro</option>
+                    <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+
+                <label for="identificacao">Como você se identifica racial/etnicamente?</label>
+                <select id="identificacao" [(ngModel)]="candidato.identificacao" name="identificacao" required>
+                    <option value="Preta(o) ou Negra(o)">Preta(o) ou Negra(o)</option>
+                    <option value="Branca(o)">Branca(o)</option>
+                    <option value="Parda(o)">Parda(o)</option>
+                    <option value="Indígena ou Nativa(o)">Indígena ou Nativa(o)</option>
+                    <option value="Amarela(o) ou Asiática(o)">Amarela(o) ou Asiática(o)</option>
+                    <option value="Árabe ou Oriente Médio">Árabe ou Oriente Médio</option>
+                    <option value="Outra Etnia ou Raça">Outra Etnia ou Raça</option>
+                    <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+
+                <label for="deficiencia">Deficiência:</label>
+                <div class="check-deficiencia">
+                    <label><input type="checkbox"  name="fisica" value="Física" [(ngModel)]="candidato.deficiencias.fisica"/>
+                        Física</label>
+                    <label><input type="checkbox"  name="auditiva" value="Auditiva" [(ngModel)]="candidato.deficiencias.auditiva"/>
+                        Auditiva</label>
+                    <label><input type="checkbox"  name="visual" value="Visual" [(ngModel)]="candidato.deficiencias.visual"/>
+                        Visual</label>
+                    <label><input type="checkbox"  name="intelectual" value="Intelectual" [(ngModel)]="candidato.deficiencias.intelectual"/>
+                        Intelectual</label>
+                    <label><input type="checkbox"  name="autista" value="Autista" [(ngModel)]="candidato.deficiencias.autista"/>
+                        Transtorno do Espectro Autista (TEA)</label>
+                </div>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" [(ngModel)]="candidato.endereco.cep" class="formulario-input" placeholder="Digite o CEP"/>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" [(ngModel)]="candidato.endereco.endereco" class="formulario-input" placeholder="Digite o endereço"/>
+
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" [(ngModel)]="candidato.endereco.numero" class="formulario-input" placeholder="Número"/>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" [(ngModel)]="candidato.endereco.cidade" class="formulario-input" placeholder="Cidade"/>
+
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" [(ngModel)]="candidato.endereco.estado" class="formulario-input" placeholder="Estado"/>
+
+                <label for="linkedin">LinkedIn:</label>
+                <input type="text" id="linkedin" name="linkedin" [(ngModel)]="candidato.linkedin" class="formulario-input" placeholder="Insira o LinkedIn"/>
+
+            <!-- Botão de salvar para essa parte -->
+                <!-- <button class="salvar-button">Salvar</button> -->
+                <!-- </form> -->
+            </div>
+            <h2>Experiência Acadêmica</h2>
+            <!-- <form (ngSubmit)="saveExperienciaAcademica()"> -->
+            <label for="formacao">Formação:</label>
+            <select id="formacao"  name="formacao" class="formulario-input">
+                <option value="fundamental">Ensino Fundamental</option>
+                <option value="medio">Ensino Médio</option>
+                <option value="graduacao">Graduação</option>
+                <option value="posgraduacao">Pós-graduação</option>
+                <option value="mestrado">Mestrado</option>
+                <option value="doutorado">Doutorado</option>
+            </select>
+
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" name="curso" class="formulario-input" placeholder="Digite o curso"/>
+
+            <label for="inicio">Início:</label>
+            <input type="date" id="inicio" name="inicio" class="formulario-input" placeholder="Data de início"/>
+
+            <label for="fim">Fim:</label>
+            <input type="date" id="fim" name="fim" class="formulario-input" placeholder="Data de término"/>
+            <!-- <button type="submit">Salvar</button> -->
+            <!-- </form> -->
+                <h2>
+            Idiomas
+            </h2>
+            <div *ngFor="let idioma of candidato.idiomas; let i = index">
+                <label for="idioma{{i}}">Idioma:</label>
+                <select id="idioma{{i}}" name="idioma" class="formulario-input" [(ngModel)]="idioma.idioma">
+                    <option value="ingles">Inglês</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="frances">Francês</option>
+                    <option value="alemao">Alemão</option>
+                    <option value="portugues">Português</option>
+                </select>
+            
+                <label for="nivelIdioma{{i}}">Nível:</label>
+                <select id="nivelIdioma{{i}}" name="nivelIdioma" class="formulario-input" [(ngModel)]="idioma.nivel">
+                    <option value="basico">Básico</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+            <button type="button" (click)="adicionarIdioma()">Adicionar Idioma</button>
+            
+
+            <!-- <button type="submit">Salvar</button> -->
+            <!-- </form> -->
+
+            <h2>Certificados</h2>
+            <div *ngFor="let certificado of candidato.certificados; let i = index">
+                <label for="certificado{{i}}">Certificado:</label>
+                <input type="text" id="certificado{{i}}" name="certificado" class="formulario-input" placeholder="Nome do certificado" [(ngModel)]="certificado.nome">
+            </div>
+            <button type="button" (click)="adicionarCertificado()">Adicionar Certificado</button>
+            
+            <!-- <button class="salvar-button">Salvar</button> -->
+            <button>Finalizar Currículo</button>
+
+        </form>
+    </div>
+</body>

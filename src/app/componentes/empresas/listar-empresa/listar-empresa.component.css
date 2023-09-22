@@ -1,0 +1,112 @@
+.acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .fundo1 {
+    width: 100%;
+    height: 1300px;
+    background: rgba(46,46,56,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  .botao {
+    margin: 5px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: black;
+    color: yellow;
+    border:2px solid rgb(225, 225, 3);
+  }
+  
+  .botao:hover{
+    background-color: yellow;
+    color: black;
+  }
+  
+  .editar-empresas {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .recrutamentos{
+    margin: auto;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .ey-logo{
+    width: 200px;
+    height: 200px;
+  
+  }
+  
+  .recrutamentos img{
+    width: 100%; /* A imagem ocupa 100% da largura do elemento */
+    height: 100%; /* A imagem ocupa 100% da altura do elemento */
+    object-fit: cover;
+  }
+  
+  .editar-empresas form {
+    background: rgba(46,46,56,1);
+  
+    width: 600px;
+  
+    margin: auto;
+    margin-top: 50px;
+    border: none;
+    border-radius: 20px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    padding: 2rem;
+  
+  }
+  
+  .editar-empresas form label {
+    color: #154580;
+    font-weight: bold;
+    margin: 0 0 1rem;
+  }
+  
+  .editar-empresas form .input {
+    border: none;
+    height: 40px;
+    width: 491px;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 2rem;
+    background: rgb(205, 205, 205);
+    font-size: 18px;
+  
+  
+  
+  }
+  
+  .editar-empresas form .input:focus{
+    background-color: yellow;
+  }
+  
+  .editar-empresas form .input::placeholder{
+    color: black;
+    font-size: 18px;
+  }
+  
+  
+  .editar-empresas form .textarea {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 2rem;
+  }
+  

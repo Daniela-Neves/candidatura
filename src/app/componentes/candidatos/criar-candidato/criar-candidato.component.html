@@ -2,12 +2,29 @@
 
   <div class="fundo1">
     <div>
-      <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt="">
+      <!-- <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt=""> -->
+      <h1 style="font-family: 'Karla', sans-serif;">RECRUTAMENTOS</h1>
     </div>
     <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div>
 
     <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
     <form>
+      <input
+          type="text"
+          class="input"
+          id="nome"
+          name="nome"
+          placeholder="Nome"
+          [(ngModel)]="candidato.nome">
+
+          <input
+          type="text"
+          class="input"
+          id="sobrenome"
+          name="sobrenome"
+          placeholder="Sobrenome"
+          [(ngModel)]="candidato.sobrenome">
+
       <input
         type="textarea"
         class="input"
@@ -17,28 +34,20 @@
         [(ngModel)]="candidato.email">
 
         <input
-          type="text"
-          class="input"
-          id="nome"
-          name="nome"
-          placeholder="Nome"
-          [(ngModel)]="candidato.nome">
-
-        <input
-          type="text"
-          class="input"
-          id="sobrenome"
-          name="sobrenome"
-          placeholder="Sobrenome"
-          [(ngModel)]="candidato.sobrenome">
-
-        <input
-          type="text"
+          type="password"
           class="input"
           id="senha"
           name="senha"
           placeholder="Senha"
           [(ngModel)]="candidato.senha">
+
+          <input
+          type="password"
+          class="input"
+          id="confirmacaoSenha"
+          name="confirmacaoSenha"
+          placeholder="Confirme a Senha"
+          [(ngModel)]="confirmacaoSenhaDigitada">
 
         <div class="acoes">
           <button (click)="criarCandidato()" class="botao">Cadastrar</button>
@@ -47,5 +56,3 @@
       </form>
   </div>
 </section>
-
-

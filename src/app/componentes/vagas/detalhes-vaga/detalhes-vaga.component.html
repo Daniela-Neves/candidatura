@@ -1,0 +1,43 @@
+<body class="fundo1">
+<div class="detalhes-vaga">
+  <div class="header-vaga">
+    <h1>{{ vaga.nome }}</h1>
+    <p>Vaga publicada em {{ vaga.dataPublicacao }}</p>
+    <div class="local">
+      <img src="../../../../assets/images/icons8-visita-50.png" alt="Ícone local" class="icon"> <p>Local: {{ vaga.cidade }}</p>
+      <img src="../../../../assets/images/icons8-procurar-empregos-50.png" alt="Ícone local" class="icon"><p>Tipo de Contratação: {{ vaga.tipoContratacao }}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="vaga">
+    <h2>Sobre a Vaga</h2>
+    <p>{{ vaga.sobreAVaga }}</p>
+    <h2>Responsabilidades e Atribuições</h2>
+    <p>{{ vaga.responsabilidades }}</p>
+    <h2>Qualificações Desejadas</h2>
+    <p>{{ vaga.qualificacoes }}</p>
+    <p>Remuneração: {{ vaga.remuneracao }}</p>
+  </div>
+  <hr>
+  <!-- <p><strong>Estado:</strong> {{ vaga.estado }}</p> -->
+
+    <h2>Conheça mais sobre a empresa</h2>
+  <div class="info-empresa">
+    <a href=""><img src="../../../../assets/images/icons8-navegador-de-internet-50.png" alt="Ícone site" class="icon icon-site">Site institucional</a>
+    <a href=""><img src="../../../../assets/images/linkedin.png" alt="ícone LinkedIn" class="icon icon-site">LinkedIn</a>
+  </div>
+
+  <!-- <button class="candidatar">
+    <a [routerLink]="['/formulario-candidatura', candidato.id]">
+      <img src="../../../../assets/images/logotipo-do-telegram.png " alt="Link candidatar-se" class="icon-button">Candidatar-se a vaga
+    </a>
+  </button>
+ -->
+
+  
+  <button class="candidatar" [routerLink]="['/formulario-candidatura', candidato.id]">
+    <span>Candidatar-se a vaga</span>
+</button>
+
+</div>
+</body>
