@@ -68,7 +68,7 @@ export class BuscarVagasComponent implements OnInit {
         (!this.filtros.estado || vaga.estado === this.filtros.estado) &&
         (!this.filtros.cidade || vaga.cidade === this.filtros.cidade) &&
         (!this.filtros.nomeEmpresa || vaga.nome === this.filtros.nomeEmpresa) &&
-        (!this.filtros.tipoVaga || vaga.tipoContratacao === this.filtros.tipoVaga) &&
+        (!this.filtros.tipoVaga || vaga.tipoVaga === this.filtros.tipoVaga) &&
       this.filtroRemuneracao(vaga.salario) &&
       (!this.filtros.modalidade || vaga.modalidade === this.filtros.modalidade)
 //ALTERAR AQUI PARA NOME FANTASIA QUANDO EXISTIR NO PROJETO

@@ -70,7 +70,7 @@ const routes: Routes = [
     //     component: AcompanhamentoCandidatosComponent
     // },
     {
-        path: 'cadastrar-oportunidades',
+        path: 'cadastrar-oportunidades/:id',
         component: CadastrarOportunidadeComponent
     },
     // {

@@ -5,13 +5,13 @@
       <p>Vaga publicada em {{ vaga.dataPublicacao }}</p>
       <div class="local">
         <img src="../../../../assets/images/icons8-visita-50.png" alt="Ícone local" class="icon"> <p>Local: {{ vaga.cidade }}</p>
-        <img src="../../../../assets/images/icons8-procurar-empregos-50.png" alt="Ícone local" class="icon"><p>Tipo de Contratação: {{ vaga.tipoContratacao }}</p>
+        <img src="../../../../assets/images/icons8-procurar-empregos-50.png" alt="Ícone local" class="icon"><p>Tipo de Contratação: {{ vaga.tipoVaga }}</p>
       </div>
     </div>
     <hr>
     <div class="vaga">
       <h2>Sobre a Vaga</h2>
-      <p>{{ vaga.sobreAVaga }}</p>
+      <p>{{ vaga.descricao }}</p>
       <h2>Responsabilidades e Atribuições</h2>
       <p>{{ vaga.responsabilidades }}</p>
       <h2>Qualificações Desejadas</h2>

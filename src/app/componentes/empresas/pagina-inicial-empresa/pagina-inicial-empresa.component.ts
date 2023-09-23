@@ -60,4 +60,9 @@ export class PaginaInicialEmpresaComponent implements OnInit {
 //     })
 // }
 
+cadastrarVaga(){
+  const id = this.route.snapshot.paramMap.get('id');
+  this.router.navigate(['/cadastrar-oportunidades/',id])
+}
+
 }

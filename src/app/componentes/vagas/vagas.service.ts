@@ -9,29 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class VagasService {
 
-  private readonly API = 'http://localhost:3000/empresas'
+  private readonly API = 'http://localhost:5277/Vaga'
 
   constructor(private http: HttpClient) { }
 
-  gerarID():number{
-    let id: number;
-    do {
-      id = Math.floor(Math.random() * 1000000);
-    } while (this.existeIdNaLista(id));
-
-    return id;
-  }
-
-  existeIdNaLista(id: number): boolean {
-    return false;
-  }
 
   listar(): Observable<Vagas[]> {
     return this.http.get<Vagas[]>(this.API)
   }
 
-  criar(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
-    const url = `${this.API}/${idEmpresa}/vagas`;
+  criar(novaVaga: Vagas): Observable<Vagas> {
+    const url = `${this.API}`;
     return this.http.post<Vagas>(url, novaVaga);
   }
 

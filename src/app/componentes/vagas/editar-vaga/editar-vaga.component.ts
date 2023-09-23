@@ -11,17 +11,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarVagaComponent implements OnInit{
 
   vaga:Vagas={
+  empresaId:0,
   nome:'',
-  tipoContratacao:'',
+  tipoVaga:'',
   dataPublicacao:'',
   cidade:'',
   estado:'',
   salario:'',
-  sobreAVaga:'',
+  descricao:'',
   responsabilidades:'',
   qualificacoes:'',
   modalidade:'',
-  candidatos: [],
   statusProcesso:''
     }
 

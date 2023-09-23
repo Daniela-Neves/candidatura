@@ -19,17 +19,17 @@ export class DetalhesVagaComponent implements OnInit {
   ) { }
 
   vaga:Vagas = {
+  empresaId:0,
   nome:'',
-  tipoContratacao:'',
+  tipoVaga:'',
   dataPublicacao:'',
   cidade:'',
   estado:'',
   salario:'',
-  sobreAVaga:'',
+  descricao:'',
   responsabilidades:'',
   qualificacoes:'',
   modalidade:'',
-  candidatos: [],
   statusProcesso:''
   }
 
