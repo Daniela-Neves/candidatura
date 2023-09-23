@@ -58,7 +58,7 @@ const routes: Routes = [
         path: 'loginEmpresa',
         component: LoginEmpresaComponent
     }, {
-        path: 'paginaInicialEmpresa',
+        path: 'paginaInicialEmpresa/:id',
         component: PaginaInicialEmpresaComponent
     },
     // {
