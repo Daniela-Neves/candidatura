@@ -15,7 +15,7 @@ import { FormacaoAcademica } from './formacaoAcademica';
 export class CurriculoService {
 
   private readonly API = 'http://localhost:5277/Curriculo'
-  private readonly API_DadosPessoais = 'http://localhost:5277/DadosPessoais'
+  // private readonly API_DadosPessoais = 'http://localhost:5277/DadosPessoais'
   private readonly API_Idiomas = 'http://localhost:5277/Proficiencia'
   private readonly API_ExperienciaProfssional = 'http://localhost:5277/ExperienciaProfissional'
   private readonly API_FormacaoAcademica = 'http://localhost:5277/FormacaoAcademica'
@@ -56,33 +56,6 @@ export class CurriculoService {
   getCurriculos(): Observable<Curriculo[]> {
     return this.http.get<any>(this.API);
   }
-
-  // private curriculoLogadoIdSubject = new BehaviorSubject<number | null>(null);
-  // curriculoLogadoId$: Observable<number | null> = this.curriculoLogadoIdSubject.asObservable();
-
-  // private setCurriculoLogadoId(id: number | null) {
-  //   this.curriculoLogadoIdSubject.next(id);
-  // }
-  
-  // login(email: string, senha: string): Observable<Curriculo | null> {
-  //   return this.http.get<Curriculo[]>(`${this.API}?email=${email}&senha=${senha}`).pipe(
-  //     map(curriculos => {
-  //       if (curriculos && curriculos.length > 0) {
-  //         const curriculo = curriculos[0];
-  //         if (typeof curriculo.candidatoId === 'number') {
-  //           this.setCurriculoLogadoId(curriculo.candidatoId);
-  //           return curriculo;
-  //         } else {
-  //           console.error('O ID do curriculo não é um número:', curriculo.candidatoId);
-  //           return null;
-  //         }
-  //       }
-  //       this.setCurriculoLogadoId(null);
-  //       return null;
-  //     })
-  //   );
-  // }
-  
 
   salvarDadosPessoais(curriculo: Curriculo): Observable<any> {
     return this.http.post<any>(`${this.API}`, curriculo);
