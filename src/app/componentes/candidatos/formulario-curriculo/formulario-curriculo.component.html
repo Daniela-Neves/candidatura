@@ -1,6 +1,6 @@
 <body class="fundo1">
     <div class="form-dados">
-        <form (ngSubmit)="finalizarCurriculo()">
+        <form>
             <div class="secao">
                 <h2>Dados Pessoais</h2>
 
@@ -19,13 +19,13 @@
 
                 <label for="identificacao">Como você se identifica racial/etnicamente?</label>
                 <select id="identificacao" [(ngModel)]="curriculo.raca" name="identificacao" required>
-                    <option value="Preta(o) ou Negra(o)">Preta(o) ou Negra(o)</option>
-                    <option value="Branca(o)">Branca(o)</option>
-                    <option value="Parda(o)">Parda(o)</option>
-                    <option value="Indígena ou Nativa(o)">Indígena ou Nativa(o)</option>
-                    <option value="Amarela(o) ou Asiática(o)">Amarela(o) ou Asiática(o)</option>
-                    <option value="Árabe ou Oriente Médio">Árabe ou Oriente Médio</option>
-                    <option value="Prefiro não informar">Prefiro não informar</option>
+                    <option value="PRETO">Preta(o) ou Negra(o)</option>
+                    <option value="BRANCO">Branca(o)</option>
+                    <option value="PARDO">Parda(o)</option>
+                    <option value="INDIGENA">Indígena ou Nativa(o)</option>
+                    <option value="ASIATICO">Amarela(o) ou Asiática(o)</option>
+                    <option value="ARABE">Árabe ou Oriente Médio</option>
+                    <option value="NAO_INFORMAR">Prefiro não informar</option>
                 </select>
 
                 <label for="deficiencia">Deficiência:</label>
@@ -60,7 +60,7 @@
                 <label for="linkedin">LinkedIn:</label>
                 <input type="text" id="linkedin" name="linkedin" [(ngModel)]="curriculo.linkedin" class="formulario-input" placeholder="Insira o LinkedIn"/>
 
-                <button type="button" (click)="salvarDadosPessoais()">Salvar</button>
+                <button type="button" (click)="salvarDadosPessoais()">Salvar Dados Pessoais</button>
 
             </div>
 
