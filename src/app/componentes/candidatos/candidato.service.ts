@@ -48,12 +48,12 @@ export class CandidatoService {
     return this.http.get<any>(this.API);
   }
 
-  private candidatoLogadoIdSubject = new BehaviorSubject<number | null>(null);
-  candidatoLogadoId$: Observable<number | null> = this.candidatoLogadoIdSubject.asObservable();
+  // private candidatoLogadoIdSubject = new BehaviorSubject<number | null>(null);
+  // candidatoLogadoId$: Observable<number | null> = this.candidatoLogadoIdSubject.asObservable();
 
-  private setCandidatoLogadoId(id: number | null) {
-    this.candidatoLogadoIdSubject.next(id);
-  }
+  // private setCandidatoLogadoId(id: number | null) {
+  //   this.candidatoLogadoIdSubject.next(id);
+  // }
 
   
   login(email: string, senha: string): Observable<Candidato | null> {
@@ -77,16 +77,16 @@ export class CandidatoService {
   
 
 
-  private candidatoLogadoId: number | null = null;  // Inicializado como null
+//   private candidatoLogadoId: number | null = null;  // Inicializado como null
 
-// Método para definir o ID do candidato logado
-setLoggedCandidatoId(id: number | null) {
-  this.candidatoLogadoId = id;
-}
+// // Método para definir o ID do candidato logado
+// setLoggedCandidatoId(id: number | null) {
+//   this.candidatoLogadoId = id;
+// }
 
-// Método para obter o ID do candidato logado
-getLoggedCandidatoId(): number | null {
-  return this.candidatoLogadoId;
-}
+// // Método para obter o ID do candidato logado
+// getLoggedCandidatoId(): number | null {
+//   return this.candidatoLogadoId;
+// }
 
 }
