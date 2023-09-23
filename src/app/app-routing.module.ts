@@ -78,7 +78,7 @@ const routes: Routes = [
     //     component: AlterarDadosComponent
     // }
     {
-        path: 'listarVagas',
+        path: 'listarVagas/:id',
         component: ListarVagaComponent
     }, {
         path: 'vagas/excluirVaga/:id',

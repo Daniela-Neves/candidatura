@@ -47,7 +47,7 @@ export class PaginaInicialEmpresaComponent implements OnInit {
 }
 
   listarVagas(){
-    this.router.navigate(['/listarVagas'])
+    this.router.navigate(['/listarVagas/',this.route.snapshot.paramMap.get('id')])
   }
 
   listarCandidatos() {
