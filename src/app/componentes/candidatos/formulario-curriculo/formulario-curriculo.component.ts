@@ -13,12 +13,13 @@ export class FormularioCurriculoComponent implements OnInit {
 
     constructor(private service : CurriculoService, private router : Router, private route : ActivatedRoute) {}
 
+
     ngOnInit(): void {
-        const id = this.route.snapshot.paramMap.get('id')
-        this.service.buscarPorId(parseInt(id !)).subscribe((curriculo) => {
-            this.curriculo = curriculo
-        })
+      const id = this.route.snapshot.paramMap.get('id');
+      this.curriculo.candidatoId = Number(id);
     }
+  
+    
 
     curriculo : Curriculo = {
         candidatoId: 0,
@@ -41,30 +42,28 @@ export class FormularioCurriculoComponent implements OnInit {
         },
         linkedin: ''
     };
-
-
-    finalizarCurriculo() {
-        this.service.salvarDadosPessoais(this.curriculo).subscribe(() => {
-            this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(() => {
-                this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(() => {
-                    this.service.salvarIdioma(this.idiomas).subscribe(() => {
-                        this.service.salvarCertificado(this.certificados).subscribe(() => {
-                            alert('Currículo preenchido com sucesso!');
-                            this.router.navigate(['/menu-curriculo', this.curriculo.candidatoId]);
-                        }, error => this.handleError(error));
-                    }, error => this.handleError(error));
-                }, error => this.handleError(error));
-            }, error => this.handleError(error));
-        }, error => this.handleError(error));
-    }
     
+    finalizarCurriculo() {      
+        this.service.salvarDadosPessoais(this.curriculo).subscribe(() => {
+          this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(() => {
+            this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(() => {
+              this.service.salvarIdioma(this.idiomas).subscribe(() => {
+                this.service.salvarCertificado(this.certificados).subscribe(() => {
+                  alert('Currículo preenchido com sucesso!');
+                  this.router.navigate(['/menu-curriculo', this.curriculo.candidatoId]);
+                }, error => this.handleError(error));
+              }, error => this.handleError(error));
+            }, error => this.handleError(error));
+          }, error => this.handleError(error));
+        }, error => this.handleError(error));
+      }
+      
+
     private handleError(error: any) {
         console.error('Erro ao finalizar o currículo:', error);
         alert('Erro ao finalizar o currículo. Tente novamente mais tarde.');
     }
     
-    
-
 
     experienciasProfissionais: ExperienciaProfissional[] = [];
 
