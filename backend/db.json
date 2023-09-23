@@ -215,6 +215,36 @@
           "id": 3
         }
       ]
+    },
+    {
+      "id": 3,
+      "cnpj": "",
+      "razaoSocial": "",
+      "nomeFantasia": "",
+      "endereco": "",
+      "numero": "",
+      "cep": "",
+      "email": "",
+      "senha": "",
+      "confirmacaoSenha": "",
+      "vagas": [],
+      "linkedin": "",
+      "siteInstitucional": ""
+    },
+    {
+      "id": 4,
+      "cnpj": "",
+      "razaoSocial": "",
+      "nomeFantasia": "",
+      "endereco": "",
+      "numero": "",
+      "cep": "",
+      "email": "",
+      "senha": "",
+      "confirmacaoSenha": "",
+      "vagas": [],
+      "linkedin": "",
+      "siteInstitucional": ""
     }
   ],
   "candidatos": [

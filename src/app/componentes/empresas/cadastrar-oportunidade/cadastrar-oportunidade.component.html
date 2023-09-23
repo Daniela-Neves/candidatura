@@ -32,8 +32,6 @@
               *Campo obrigatório!
             </div>
 
-
-
             <label for="estado">Estado (Sigla)</label>
             <select formControlName="estado" id="estado" class="cadastro-input">
               <option value="AC">AC</option>
@@ -64,6 +62,9 @@
               <option value="SE">SE</option>
               <option value="TO">TO</option>
             </select>
+            <div class="mensagem__erro" *ngIf="formulario.get('estado')?.errors?.['required'] && formulario.get('estado')?.touched">
+              *Campo obrigatório!
+            </div>
 
 
             <label for="salario">Salário</label>

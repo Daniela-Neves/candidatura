@@ -36,6 +36,17 @@
     border:2px solid rgb(225, 225, 3);
   }
 
+  .botao__desabilitado {
+    margin: 5px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    border:2px solid rgb(225, 225, 3);
+  }
+
   .botao:hover{
     background-color: yellow;
     color: black;
@@ -137,4 +148,25 @@
 
 
 
+
+
+  }
+
+  .mensagem__erro {
+    font-size: 12px;
+    margin-left: 5px;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .botao__desabilitado {
+    background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
   }
