@@ -19,6 +19,15 @@ export class PaginaInicialEmpresaComponent implements OnInit {
 
   }
 
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log('este é o id',id);
+    
+        this.service.buscarPorId(Number(id)).subscribe((empresa) => {
+            this.empresa = empresa;
+        });
+}
+
   empresa:Empresas={
     id:0,
     cnpj:'',
@@ -37,14 +46,6 @@ export class PaginaInicialEmpresaComponent implements OnInit {
     siteInstitucional:''
   }
 
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-        this.service.buscarPorId(parseInt(id)).subscribe((empresa) => {
-            this.empresa = empresa;
-        });
-    }
-}
 
   listarVagas(){
     this.router.navigate(['/listarVagas/',this.route.snapshot.paramMap.get('id')])

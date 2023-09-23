@@ -42,13 +42,13 @@ export class ExcluirVagaComponent {
   excluirVaga(){
     if(this.vaga.id){
       this.service.excluir(this.vaga.id).subscribe(() => {
-        this.router.navigate(['/listarVagas'])
+        this.router.navigate(['/listarVagas/',this.route.snapshot.paramMap.get('idEmpresa')])
       })
     }
   }
 
   cancelar() {
-    this.router.navigate(['/listarVagas'])
+    this.router.navigate(['/listarVagas',this.route.snapshot.paramMap.get('idEmpresa')])
   }
 
 }

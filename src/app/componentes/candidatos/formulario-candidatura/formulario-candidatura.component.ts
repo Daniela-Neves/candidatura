@@ -89,13 +89,16 @@
     
     
         adicionarExperienciaAcademica() {
-            this.experienciasAcademicas.push({
-                candidatoId: 0, 
-                nivelFormacao: '',
-                curso: '',
-                dataInicio: '',
-                dataFim: ''
-            });
+          const newExperienciaAcademica: FormacaoAcademica = {
+            candidatoId: 0,
+            curriculo: this.curriculo,
+            nivelFormacao: '',
+            curso: '',
+            dataInicio: '',
+            dataFim: ''
+        };
+            this.experienciasAcademicas.push(newExperienciaAcademica)
+          //this.salvarExperienciasProfissionais(newExperienciaProfissional)
         }
     
         excluirExperienciaAcademica(index: number) {
@@ -142,10 +145,16 @@
             });
           }
         
-          salvarExperienciaAcademica() {
-            this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(response => {
-              console.log('Experiências Acadêmicas salvas:', response);
+          salvarExperienciaAcademica(experiencias:FormacaoAcademica[]) {
+            experiencias.forEach(experiencia => {
+              this.service.salvarExperienciaAcademica(experiencia).subscribe(response => {
+                console.log('Experiências Acadêmicas salvas:', response);
+              });
             });
+          }
+    
+          acionaExperienciasAcademica(){
+            this.salvarExperienciaAcademica(this.experienciasAcademicas)
           }
         
           salvarIdioma() {

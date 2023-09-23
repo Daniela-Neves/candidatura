@@ -90,7 +90,7 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarExperienciaProfissional()">Adicionar Experiência Profissional</button>
-            <button type="button" >Salvar</button>
+            <button type="button" (click)="acionaExperienciasProfissionais()">Salvar</button>
             
 
             <h2>Experiência Acadêmica</h2>
@@ -120,9 +120,9 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarExperienciaAcademica()">Adicionar Experiência Acadêmica</button>
-            <button type="button" (click)="salvarExperienciaAcademica()">Salvar</button>
+            <button type="button" (click)="acionaExperienciasAcademica()">Salvar</button>
 
-            
+
             <h2>Idiomas</h2>
             <div *ngFor="let idioma of idiomas; let i = index">
                 <div class="idioma-item">
