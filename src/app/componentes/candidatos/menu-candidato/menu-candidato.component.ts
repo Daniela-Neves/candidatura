@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class MenuCandidatoComponent implements OnInit {
 
     constructor(private service : CandidatoService, private router : Router, private route : ActivatedRoute) {}
-   
+
     ngOnInit(): void {
         const id = this.route.snapshot.paramMap.get('id');
         if (id) {
@@ -33,6 +33,7 @@ export class MenuCandidatoComponent implements OnInit {
         sobrenome: '',
         email: '',
         senha: '',
+        confirmacaoSenha:'',
         dataNascimento: '',
         genero: '',
         identificacao: '',

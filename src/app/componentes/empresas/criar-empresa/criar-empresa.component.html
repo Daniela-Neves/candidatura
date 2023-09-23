@@ -14,7 +14,8 @@
           class="input"
           id="cnpj"
           formControlName="cnpj"
-          placeholder="CNPJ">
+          placeholder="CNPJ"
+          [(ngModel)]="empresa.cnpj">
           <div class="mensagem__erro" *ngIf="formulario.get('cnpj')?.errors?.['required'] && formulario.get('cnpj')?.touched">
             *Campo obrigatório!
           </div>
@@ -33,7 +34,8 @@
             class="input"
             id="razaoSocial"
             formControlName="razaoSocial"
-            placeholder="Razão Social">
+            placeholder="Razão Social"
+            [(ngModel)]="empresa.razaoSocial">
             <div class="mensagem__erro" *ngIf="formulario.get('razaoSocial')?.errors?.['required'] && formulario.get('razaoSocial')?.touched">
               *Campo obrigatório!
             </div>
@@ -43,6 +45,7 @@
             class="input"
             id="nomeFantasia"
             formControlName="nomeFantasia"
+            [(ngModel)]="empresa.nomeFantasia"
             placeholder="Nome Fantasia (Opcional)">
 
           <input
@@ -50,7 +53,8 @@
             class="input"
             id="endereco"
             formControlName="endereco"
-            placeholder="Endereço">
+            placeholder="Endereço"
+            [(ngModel)]="empresa.endereco">
             <div class="mensagem__erro" *ngIf="formulario.get('endereco')?.errors?.['required'] && formulario.get('endereco')?.touched">
               *Campo obrigatório!
             </div>
@@ -60,7 +64,8 @@
             class="input"
             id="numero"
             formControlName="numero"
-            placeholder="Número">
+            placeholder="Número"
+            [(ngModel)]="empresa.numero">
             <div class="mensagem__erro" *ngIf="formulario.get('numero')?.errors?.['required'] && formulario.get('numero')?.touched">
               *Campo obrigatório!
             </div>
@@ -73,7 +78,8 @@
             class="input"
             id="cep"
             formControlName="cep"
-            placeholder="CEP">
+            placeholder="CEP"
+            [(ngModel)]="empresa.cep">
             <div class="mensagem__erro" *ngIf="formulario.get('cep')?.errors?.['required'] && formulario.get('cep')?.touched">
               *Campo obrigatório!
             </div>
@@ -92,7 +98,8 @@
             class="input"
             id="email"
             formControlName="email"
-            placeholder="Email">
+            placeholder="Email"
+            [(ngModel)]="empresa.email">
             <div class="mensagem__erro" *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">
               *Campo obrigatório!
             </div>
@@ -105,7 +112,8 @@
             class="input"
             id="senha"
             formControlName="senha"
-            placeholder="Senha">
+            placeholder="Senha"
+            [(ngModel)]="empresa.senha">
             <div class="mensagem__erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
               *Campo obrigatório!
             </div>
@@ -115,7 +123,8 @@
             class="input"
             id="confirmacaoSenha"
             formControlName="confirmacaoSenha"
-            placeholder="Confirme a Senha">
+            placeholder="Confirme a Senha"
+            [(ngModel)]="empresa.confirmacaoSenha">
             <div class="mensagem__erro" *ngIf="formulario.get('confirmacaoSenha')?.errors?.['required'] && formulario.get('confirmacaoSenha')?.touched">
               *Campo obrigatório!
             </div>
@@ -128,7 +137,8 @@
             class="input"
             id="linkedin"
             formControlName="linkedin"
-            placeholder="LinkedIn">
+            placeholder="LinkedIn"
+            [(ngModel)]="empresa.linkedin">
             <div class="mensagem__erro" *ngIf="formulario.get('linkedin')?.errors?.['required'] && formulario.get('linkedin')?.touched">
               *Campo obrigatório!
             </div>
@@ -138,7 +148,8 @@
             class="input"
             id="siteInstitucional"
             formControlName="siteInstitucional"
-            placeholder="Site Institucional">
+            placeholder="Site Institucional"
+            [(ngModel)]="empresa.siteInstitucional">
             <div class="mensagem__erro" *ngIf="formulario.get('siteInstitucional')?.errors?.['required'] && formulario.get('siteInstitucional')?.touched">
               *Campo obrigatório!
             </div>

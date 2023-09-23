@@ -27,6 +27,7 @@ export class FormularioCandidaturaComponent implements OnInit {
         sobrenome: '',
         email: '',
         senha: '',
+        confirmacaoSenha:'',
         dataNascimento: '',
         genero: '',
         identificacao: '',
@@ -87,7 +88,7 @@ export class FormularioCandidaturaComponent implements OnInit {
     adicionarIdioma() {
         this.candidato.idiomas.push({ idioma: '', nivel: '' });
     }
-    
+
     adicionarCertificado() {
         this.candidato.certificados.push({ nome: '', organizacao: '', dataEmissao: '' });
     }

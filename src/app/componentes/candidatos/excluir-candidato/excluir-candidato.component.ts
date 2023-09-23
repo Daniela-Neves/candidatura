@@ -17,6 +17,7 @@ export class ExcluirCandidatoComponent implements OnInit{
     sobrenome: '',
     email: '',
     senha: '',
+    confirmacaoSenha:'',
     dataNascimento: '',
     genero: '',
     identificacao: '',

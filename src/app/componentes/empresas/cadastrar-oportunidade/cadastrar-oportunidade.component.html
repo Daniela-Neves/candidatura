@@ -2,6 +2,7 @@
     <div class="cadastro-container">
         <h1 class="cadastro-heading">Cadastre novas oportunidades</h1>
         <form [formGroup]="formulario" class="cadastro-form">
+
             <label for="nomeVaga">Nome da vaga</label>
             <input formControlName="nome" type="text" id="nomeVaga" class="cadastro-input">
             <div class="mensagem__erro" *ngIf="formulario.get('nome')?.errors?.['required'] && formulario.get('nome')?.touched">

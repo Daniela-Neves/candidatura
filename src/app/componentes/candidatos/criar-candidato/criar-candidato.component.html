@@ -8,49 +8,73 @@
     <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div>
 
     <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
-    <form>
+    <form [formGroup]="formulario" class="cadastro-form">
       <input
           type="text"
           class="input"
           id="nome"
-          name="nome"
+          formControlName="nome"
           placeholder="Nome"
           [(ngModel)]="candidato.nome">
+          <div class="mensagem__erro" *ngIf="formulario.get('nome')?.errors?.['required'] && formulario.get('nome')?.touched">
+            *Campo obrigatório!
+          </div>
 
           <input
           type="text"
           class="input"
           id="sobrenome"
-          name="sobrenome"
+          formControlName="sobrenome"
           placeholder="Sobrenome"
           [(ngModel)]="candidato.sobrenome">
+          <div class="mensagem__erro" *ngIf="formulario.get('sobrenome')?.errors?.['required'] && formulario.get('sobrenome')?.touched">
+            *Campo obrigatório!
+          </div>
 
       <input
         type="textarea"
         class="input"
         id="email"
-        name="email"
+        formControlName="email"
         placeholder="Email"
         [(ngModel)]="candidato.email">
+        <div class="mensagem__erro" *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">
+          *Campo obrigatório!
+        </div>
+        <div class="mensagem__erro" *ngIf="formulario.get('email')?.errors?.['email'] && formulario.get('email')?.touched">
+          *Campo obrigatório!
+        </div>
 
         <input
           type="password"
           class="input"
           id="senha"
-          name="senha"
+          formControlName="senha"
           placeholder="Senha"
           [(ngModel)]="candidato.senha">
+          <div class="mensagem__erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
+            *Campo obrigatório!
+          </div>
 
           <input
           type="password"
           class="input"
           id="confirmacaoSenha"
-          name="confirmacaoSenha"
+          formControlName="confirmacaoSenha"
           placeholder="Confirme a Senha"
-          [(ngModel)]="confirmacaoSenhaDigitada">
+          [(ngModel)]="candidato.confirmacaoSenha">
+          <div class="mensagem__erro" *ngIf="formulario.get('confirmacaoSenha')?.errors?.['required'] && formulario.get('confirmacaoSenha')?.touched">
+            *Campo obrigatório!
+          </div>
+          <div class="mensagem__erro" *ngIf="formulario.get('confirmacaoSenha')?.errors?.['senhaNaoCoincide'] && formulario.get('confirmacaoSenha')?.touched">
+            *As senhas não coincidem.
+          </div>
 
         <div class="acoes">
-          <button (click)="criarCandidato()" class="botao">Cadastrar</button>
+
+          <button (click)="criarCandidato()"
+          [disabled]="!formulario.valid"
+          [ngClass]="habilitarBotao()">Cadastrar</button>
           <button (click)="cancelar()" class="botao">Cancelar</button>
         </div>
       </form>

@@ -4,6 +4,7 @@ export interface Candidato {
     sobrenome: string;
     email: string;
     senha: string;
+    confirmacaoSenha:string;
     dataNascimento: string;
     genero: string;
     identificacao: string;

@@ -39,6 +39,7 @@ export class DetalhesVagaComponent implements OnInit {
     sobrenome: '',
     email: '',
     senha: '',
+    confirmacaoSenha:'',
     dataNascimento: '',
     genero: '',
     identificacao: '',

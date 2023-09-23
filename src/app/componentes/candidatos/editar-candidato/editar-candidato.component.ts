@@ -40,6 +40,7 @@ export class EditarCandidatoComponent implements OnInit{
     sobrenome: '',
     email: '',
     senha: '',
+    confirmacaoSenha:'',
     dataNascimento: '',
     genero: '',
     identificacao: '',

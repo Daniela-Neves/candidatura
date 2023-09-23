@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Candidato } from '../candidato';
 import { CandidatoService } from '../candidato.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-candidato',
   templateUrl: './criar-candidato.component.html',
   styleUrls: ['./criar-candidato.component.css']
 })
-export class CriarCandidatoComponent {
+export class CriarCandidatoComponent implements OnInit{
 
-  confirmacaoSenhaDigitada: string = '';
+  formulario!: FormGroup
 
   candidato : Candidato = {
     id: 0,
@@ -18,6 +19,7 @@ export class CriarCandidatoComponent {
     sobrenome: '',
     email: '',
     senha: '',
+    confirmacaoSenha:'',
     dataNascimento: '',
     genero: '',
     identificacao: '',
@@ -67,21 +69,56 @@ export class CriarCandidatoComponent {
     }
 };
 
-  constructor(private service: CandidatoService, private router: Router){
+  constructor(private service: CandidatoService, private router: Router, private formBuilder: FormBuilder){
 
+  }
+  ngOnInit(): void {
+
+    this.formulario = this.formBuilder.group({
+      nome: ['', Validators.required],
+      sobrenome: ['', Validators.required],
+      email: ['', Validators.compose([
+        Validators.required,
+        Validators.email
+      ])],
+      senha: ['', Validators.required],
+      confirmacaoSenha: ['', Validators.required]
+    },
+    {
+      validators: this.senhaMatchValidator
+    })
+
+  }
+
+  senhaMatchValidator(form: FormGroup) {
+    const senha = form.get('senha');
+    const confirmacaoSenha = form.get('confirmacaoSenha');
+
+    if (senha && confirmacaoSenha && senha.value !== confirmacaoSenha.value) {
+      confirmacaoSenha.setErrors({ senhaNaoCoincide: true });
+    } else {
+      confirmacaoSenha!.setErrors(null);
+    }
   }
 
   criarCandidato() {
-    if (this.candidato.senha !== this.confirmacaoSenhaDigitada) {
-      alert('A senha e a confirmação de senha não correspondem.');
-      return;
+    if(this.formulario.valid){
+      this.service.criar(this.candidato).subscribe(() => {
+        this.router.navigate(['/login']);
+      });
     }
-  
-    this.service.criar(this.candidato).subscribe(() => {
-      this.router.navigate(['/login']);
-    });
+
   }
-  
+
+  habilitarBotao():string{
+    if(this.formulario.valid){
+      return 'botao'
+    }
+    else{
+      return 'botao__desabilitado'
+    }
+  }
+
 
   cancelar() {
     this.router.navigate(['/login'])
