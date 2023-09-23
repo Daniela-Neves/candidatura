@@ -53,33 +53,11 @@ export class FormularioCurriculoComponent implements OnInit {
         linkedin: ''
     };
     
-    // finalizarCurriculo() {      
-    //     this.service.salvarDadosPessoais(this.curriculo).subscribe(() => {
-    //       this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(() => {
-    //         this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(() => {
-    //           this.service.salvarIdioma(this.idiomas).subscribe(() => {
-    //             this.service.salvarCertificado(this.certificados).subscribe(() => {
-    //               alert('Currículo preenchido com sucesso!');
-    //               this.router.navigate(['/menu-curriculo', this.curriculo.candidatoId]);
-    //             }, error => this.handleError(error));
-    //           }, error => this.handleError(error));
-    //         }, error => this.handleError(error));
-    //       }, error => this.handleError(error));
-    //     }, error => this.handleError(error));
-    //   }
-      
-
-    // private handleError(error: any) {
-    //     console.error('Erro ao finalizar o currículo:', error);
-    //     alert('Erro ao finalizar o currículo. Tente novamente mais tarde.');
-    // }
-    
-
     experienciasProfissionais: ExperienciaProfissional[] = [];
 
     adicionarExperienciaProfissional() {
       const newExperienciaProfissional: ExperienciaProfissional = {
-        candidatoId: 0,
+        candidatoId: this.candidato.id,
         curriculo: this.curriculo,
         titulo: '',
         tipoEmprego: '',
@@ -88,7 +66,7 @@ export class FormularioCurriculoComponent implements OnInit {
         fim: ''
     };
         this.experienciasProfissionais.push(newExperienciaProfissional)
-        this.salvarExperienciasProfissionais(newExperienciaProfissional)
+      //this.salvarExperienciasProfissionais(newExperienciaProfissional)
     }
 
     excluirExperienciaProfissional(index: number) {
@@ -99,13 +77,16 @@ export class FormularioCurriculoComponent implements OnInit {
 
 
     adicionarExperienciaAcademica() {
-        this.experienciasAcademicas.push({
-            candidatoId: 0, 
-            nivelFormacao: '',
-            curso: '',
-            dataInicio: '',
-            dataFim: ''
-        });
+      const newExperienciaAcademica: FormacaoAcademica = {
+        candidatoId: this.candidato.id,
+        curriculo: this.curriculo,
+        nivelFormacao: '',
+        curso: '',
+        dataInicio: '',
+        dataFim: ''
+    };
+        this.experienciasAcademicas.push(newExperienciaAcademica)
+      //this.salvarExperienciasProfissionais(newExperienciaProfissional)
     }
 
     excluirExperienciaAcademica(index: number) {
@@ -147,16 +128,28 @@ export class FormularioCurriculoComponent implements OnInit {
         });
       }
     
-      salvarExperienciasProfissionais(experiencia:ExperienciaProfissional) {
-        this.service.salvarExperienciasProfissionais(experiencia).subscribe(response => {
-          console.log('Experiências Profissionais salvas:', response);
+      salvarExperienciasProfissionais(experiencias:ExperienciaProfissional[]) {
+        experiencias.forEach(experiencia => {
+          this.service.salvarExperienciasProfissionais(experiencia).subscribe(response => {
+            console.log('Experiências Profissionais salvas:', response);
+          });
         });
       }
-    
-      salvarExperienciaAcademica() {
-        this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(response => {
-          console.log('Experiências Acadêmicas salvas:', response);
+
+      acionaExperienciasProfissionais(){
+        this.salvarExperienciasProfissionais(this.experienciasProfissionais)
+      }
+
+      salvarExperienciaAcademica(experiencias:FormacaoAcademica[]) {
+        experiencias.forEach(experiencia => {
+          this.service.salvarExperienciaAcademica(experiencia).subscribe(response => {
+            console.log('Experiências Acadêmicas salvas:', response);
+          });
         });
+      }
+
+      acionaExperienciasAcademica(){
+        this.salvarExperienciaAcademica(this.experienciasAcademicas)
       }
     
       salvarIdioma() {
