@@ -61,7 +61,7 @@ export class CurriculoService {
     return this.http.post<any>(`${this.API}`, curriculo);
   }
 
-  salvarExperienciasProfissionais(experiencias: ExperienciaProfissional[]): Observable<any> {
+  salvarExperienciasProfissionais(experiencias: ExperienciaProfissional): Observable<any> {
     return this.http.post<any>(`${this.API_ExperienciaProfssional}`, experiencias);
   }
 

@@ -6,23 +6,33 @@ import { ExperienciaProfissional } from '../experienciaProfissional';
 import { FormacaoAcademica } from '../formacaoAcademica';
 import { Proficiencia } from '../proficiencia';
 import { Certificacao } from '../certificacao';
+import { Candidato } from '../candidato';
+import { CandidatoService } from '../candidato.service';
 
 @Component({selector: 'app-formulario-curriculo', templateUrl: './formulario-curriculo.component.html', styleUrls: ['./formulario-curriculo.component.css']})
 
 export class FormularioCurriculoComponent implements OnInit {
 
-    constructor(private service : CurriculoService, private router : Router, private route : ActivatedRoute) {}
-
-
+    constructor(private service : CurriculoService, private router : Router, private route : ActivatedRoute, private candidatoService:CandidatoService) {}
     ngOnInit(): void {
       const id = this.route.snapshot.paramMap.get('id');
       this.curriculo.candidatoId = Number(id);
+      this.candidatoService.buscarPorId(Number(id)).subscribe((candidato) => {
+        this.candidato = candidato
+      })
     }
   
-    
+    candidato : Candidato = {
+      id: 0,
+      nome: '',
+      sobrenome: '',
+      email: '',
+      senha: ''
+  };
 
     curriculo : Curriculo = {
         candidatoId: 0,
+        candidato:this.candidato,
         dataNascimento: '',
         genero: '',
         raca: '',
@@ -35,7 +45,7 @@ export class FormularioCurriculoComponent implements OnInit {
         },
         endereco: {
             cep: '',
-            endereco: '',
+            rua: '',
             numero: '',
             cidade: '',
             estado: ''
@@ -68,14 +78,17 @@ export class FormularioCurriculoComponent implements OnInit {
     experienciasProfissionais: ExperienciaProfissional[] = [];
 
     adicionarExperienciaProfissional() {
-        this.experienciasProfissionais.push({
-            candidatoId: 0,
-            titulo: '',
-            tipoEmprego: '',
-            nomeEmpresa: '',
-            inicio: '',
-            fim: ''
-        });
+      const newExperienciaProfissional: ExperienciaProfissional = {
+        candidatoId: 0,
+        curriculo: this.curriculo,
+        titulo: '',
+        tipoEmprego: '',
+        nomeEmpresa: '',
+        inicio: '',
+        fim: ''
+    };
+        this.experienciasProfissionais.push(newExperienciaProfissional)
+        this.salvarExperienciasProfissionais(newExperienciaProfissional)
     }
 
     excluirExperienciaProfissional(index: number) {
@@ -134,8 +147,8 @@ export class FormularioCurriculoComponent implements OnInit {
         });
       }
     
-      salvarExperienciasProfissionais() {
-        this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(response => {
+      salvarExperienciasProfissionais(experiencia:ExperienciaProfissional) {
+        this.service.salvarExperienciasProfissionais(experiencia).subscribe(response => {
           console.log('Experiências Profissionais salvas:', response);
         });
       }

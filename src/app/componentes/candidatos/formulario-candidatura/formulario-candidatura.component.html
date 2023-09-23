@@ -1,6 +1,6 @@
 <body class="fundo1">
     <div class="form-dados">
-        <form (ngSubmit)="finalizarCandidatura()">
+        <form >
             <div class="secao">
                 <h2>Dados Pessoais</h2>
 
@@ -46,7 +46,7 @@
                 <input type="text" id="cep" name="cep" [(ngModel)]="curriculo.endereco.cep" class="formulario-input" placeholder="Digite o CEP"/>
 
                 <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.endereco" class="formulario-input" placeholder="Digite o endereço"/>
+                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.rua" class="formulario-input" placeholder="Digite o endereço"/>
 
                 <label for="numero">Número:</label>
                 <input type="text" id="numero" name="numero" [(ngModel)]="curriculo.endereco.numero" class="formulario-input" placeholder="Número"/>
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarExperienciaProfissional()">Adicionar Experiência Profissional</button>
-            <button type="button" (click)="salvarExperienciasProfissionais()">Salvar</button>
+            <button type="button" >Salvar</button>
             
 
             <h2>Experiência Acadêmica</h2>

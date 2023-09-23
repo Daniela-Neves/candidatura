@@ -1,5 +1,8 @@
+import { Candidato } from "./candidato";
+
 export interface Curriculo {
     candidatoId: number;
+    candidato?: Candidato;
     dataNascimento: string;
     genero: string;
     raca: string;
@@ -12,7 +15,7 @@ export interface Curriculo {
     };
     endereco: {
         cep: string;
-        endereco: string;
+        rua: string;
         numero: string;
         cidade: string;
         estado: string;

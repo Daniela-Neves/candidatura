@@ -35,7 +35,7 @@
             },
             endereco: {
                 cep: '',
-                endereco: '',
+                rua: '',
                 numero: '',
                 cidade: '',
                 estado: ''
@@ -44,20 +44,20 @@
         };
     
     
-        finalizarCandidatura() {
-            this.service.salvarDadosPessoais(this.curriculo).subscribe(() => {
-                this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(() => {
-                    this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(() => {
-                        this.service.salvarIdioma(this.idiomas).subscribe(() => {
-                            this.service.salvarCertificado(this.certificados).subscribe(() => {
-                                alert('Candidatura preenchido com sucesso!');
-                                this.router.navigate(['/detalhes-vaga', this.curriculo.candidatoId]);
-                            }, error => this.handleError(error));
-                        }, error => this.handleError(error));
-                    }, error => this.handleError(error));
-                }, error => this.handleError(error));
-            }, error => this.handleError(error));
-        }
+        // finalizarCandidatura() {
+        //     this.service.salvarDadosPessoais(this.curriculo).subscribe(() => {
+        //         this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(() => {
+        //             this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(() => {
+        //                 this.service.salvarIdioma(this.idiomas).subscribe(() => {
+        //                     this.service.salvarCertificado(this.certificados).subscribe(() => {
+        //                         alert('Candidatura preenchido com sucesso!');
+        //                         this.router.navigate(['/detalhes-vaga', this.curriculo.candidatoId]);
+        //                     }, error => this.handleError(error));
+        //                 }, error => this.handleError(error));
+        //             }, error => this.handleError(error));
+        //         }, error => this.handleError(error));
+        //     }, error => this.handleError(error));
+        // }
         
         private handleError(error: any) {
             console.error('Erro ao finalizar a candidatura:', error);
@@ -68,14 +68,17 @@
         experienciasProfissionais: ExperienciaProfissional[] = [];
     
         adicionarExperienciaProfissional() {
-            this.experienciasProfissionais.push({
+            const newExperienciaProfissional: ExperienciaProfissional = {
                 candidatoId: 0,
+                curriculo: this.curriculo,
                 titulo: '',
                 tipoEmprego: '',
                 nomeEmpresa: '',
                 inicio: '',
                 fim: ''
-            });
+            };
+            this.experienciasProfissionais.push(newExperienciaProfissional)
+            this.salvarExperienciasProfissionais(newExperienciaProfissional)
         }
     
         excluirExperienciaProfissional(index: number) {
@@ -133,8 +136,8 @@
             });
           }
         
-          salvarExperienciasProfissionais() {
-            this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(response => {
+          salvarExperienciasProfissionais(experiencia:ExperienciaProfissional) {
+            this.service.salvarExperienciasProfissionais(experiencia).subscribe(response => {
               console.log('Experiências Profissionais salvas:', response);
             });
           }

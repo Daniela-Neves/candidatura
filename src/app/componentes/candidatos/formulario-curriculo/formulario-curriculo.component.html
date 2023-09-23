@@ -46,7 +46,7 @@
                 <input type="text" id="cep" name="cep" [(ngModel)]="curriculo.endereco.cep" class="formulario-input" placeholder="Digite o CEP"/>
 
                 <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.endereco" class="formulario-input" placeholder="Digite o endereço"/>
+                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.rua" class="formulario-input" placeholder="Digite o endereço"/>
 
                 <label for="numero">Número:</label>
                 <input type="text" id="numero" name="numero" [(ngModel)]="curriculo.endereco.numero" class="formulario-input" placeholder="Número"/>
@@ -71,8 +71,12 @@
                     <input type="text" id="titulo{{i}}" name="titulo" class="formulario-input" [(ngModel)]="experiencia.titulo">
             
                     <label for="tipoEmprego{{i}}">Tipo de Emprego:</label>
-                    <input type="text" id="tipoEmprego{{i}}" name="tipoEmprego" class="formulario-input" [(ngModel)]="experiencia.tipoEmprego">
-            
+                    <select id="tipoEmprego{{i}}" [(ngModel)]="experiencia.tipoEmprego" name="tipoEmprego">
+                        <option value="CLT">CLT</option>
+                        <option value="PJ">PJ</option>
+                        <option value="Estágio">Estágio</option>
+                        <option value="Aprendiz">Aprendiz</option>
+                    </select>
                     <label for="nomeEmpresa{{i}}">Nome da Empresa:</label>
                     <input type="text" id="nomeEmpresa{{i}}" name="nomeEmpresa" class="formulario-input" [(ngModel)]="experiencia.nomeEmpresa">
             
@@ -86,7 +90,7 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarExperienciaProfissional()">Adicionar Experiência Profissional</button>
-            <button type="button" (click)="salvarExperienciasProfissionais()">Salvar</button>
+            <button type="button" >Salvar</button>
             
 
             <h2>Experiência Acadêmica</h2>
