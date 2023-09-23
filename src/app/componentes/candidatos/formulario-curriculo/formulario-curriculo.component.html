@@ -93,9 +93,17 @@
             <div *ngFor="let experiencia of experienciasAcademicas; let i = index">
                 <div class="experiencia-item">
                     <label for="nivelFormacao{{i}}">Nível de Formação:</label>
-                    <input type="text" id="nivelFormacao{{i}}" name="nivelFormacao" class="formulario-input" [(ngModel)]="experiencia.nivelFormacao">
+                    <select id="nivelFormacao{{i}}" [(ngModel)]="experiencia.nivelFormacao" name="nivelFormacao">
+                        <option value="Fundamental">Fundamental</option>
+                        <option value="EnsinoMedio">Ensino Médio</option>
+                        <option value="Graduacao">Graduação</option>
+                        <option value="PosGraduacao">Pós Graduação</option>
+                        <option value="Mestrado">Mestrado</option>
+                        <option value="Doutorado">Doutorado</option>
+                        <option value="PHD">PHD</option>
+                    </select>
             
-                    <label for="curso{{i}}">Curso:</label>
+                    <label for="curso{{i}}">Instituição/Curso:</label>
                     <input type="text" id="curso{{i}}" name="curso" class="formulario-input" [(ngModel)]="experiencia.curso">
             
                     <label for="dataInicio{{i}}">Data de Início:</label>

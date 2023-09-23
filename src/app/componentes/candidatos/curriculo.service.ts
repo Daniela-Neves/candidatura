@@ -15,7 +15,7 @@ import { FormacaoAcademica } from './formacaoAcademica';
 export class CurriculoService {
 
   private readonly API = 'http://localhost:5277/Curriculo'
-  private readonly API_DadosPessoais = 'http://localhost:5277/DadosPessoais'
+  // private readonly API_DadosPessoais = 'http://localhost:5277/DadosPessoais'
   private readonly API_Idiomas = 'http://localhost:5277/Proficiencia'
   private readonly API_ExperienciaProfssional = 'http://localhost:5277/ExperienciaProfissional'
   private readonly API_FormacaoAcademica = 'http://localhost:5277/FormacaoAcademica'
