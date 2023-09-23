@@ -5,8 +5,8 @@
           <label for="nomeVaga">Nome da vaga</label>
           <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="cadastro-input">
 
-          <label for="tipoContratacao">Tipo de contratação</label>
-          <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="cadastro-input">
+          <label for="tipoVaga">Tipo de contratação</label>
+          <select [(ngModel)]="vaga.tipoVaga" name="tipoContratacao" id="tipoContratacao" class="cadastro-input">
               <option value="CLT">CLT</option>
               <option value="PJ">PJ</option>
           </select>
@@ -30,8 +30,8 @@
             <option value="HomeOffice">Home Office</option>
           </select>
 
-          <label for="sobreAVaga">Sobre a vaga</label>
-          <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
+          <label for="descricao">Sobre a vaga</label>
+          <textarea [(ngModel)]="vaga.descricao" name="sobreAVaga" id="sobreAVaga" class="cadastro-textarea"></textarea>
 
           <label for="responsabilidades">Responsabilidades e atribuições</label>
           <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="cadastro-textarea"></textarea>

@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Vagas } from '../../vagas/vagas';
 import { VagasService } from '../../vagas/vagas.service';
@@ -15,60 +15,37 @@ import { Empresas } from '../empresas';
 export class CadastrarOportunidadeComponent implements OnInit{
 
   vaga:Vagas={
-  id:0,
+  empresaId:0,
   nome:'',
-  tipoContratacao:'',
+  tipoVaga:'',
   dataPublicacao:'',
   cidade:'',
   estado:'',
   salario:'',
-  sobreAVaga:'',
+  descricao:'',
   responsabilidades:'',
   qualificacoes:'',
-  modalidade:'',
-  candidatos: [],
-  statusProcesso:''
+  modalidade:''
   }
 
-  constructor(private service: VagasService, private router: Router, private empresaService: EmpresasService){
+  constructor(private service: VagasService, private router: Router, private route : ActivatedRoute, private empresaService: EmpresasService){
 
   }
 
-  empresa:Empresas={
-    id:0,
-    cnpj:'',
-    razaoSocial:'',
-    nomeFantasia:'',
-    endereco:{
-      cep:'',
-      rua:'',
-      numero:0,
-      cidade:'',
-      estado:''    
-    },
-    email:'',
-    senha:'',
-    linkedin:'',
-    siteInstitucional:''
-  }
 
 
   ngOnInit(): void {
-    this.empresaService.buscarPorId(1).subscribe((empresa: Empresas) => {
-      this.empresa = empresa
-    })
+    const id = this.route.snapshot.paramMap.get('id');
+    this.vaga.empresaId = Number(id);
   }
 
 
   criarOportunidade(){
     // this.empresaService.criarVaga(1,this.vaga).subscribe(()=>{
     //   this.router.navigate(['/paginaInicialEmpresa'])
-    // })
-    this.vaga.id = this.service.gerarID()
-    // this.empresa.vagas.push(this.vaga)
-    this.empresaService.editar(this.empresa).subscribe(() => {
-      this.router.navigate(['/paginaInicialEmpresa']);
-    });
+    this.service.criar(this.vaga).subscribe(()=>{
+      this.router.navigate(['/paginaInicialEmpresa'])
+    })
 
 
   }

@@ -3,16 +3,16 @@ import { Candidato } from "../candidatos/candidato"
 
 export interface Vagas{
   id?:number
+  empresaId:number
   nome:string
-  tipoContratacao:string
+  tipoVaga:string
   dataPublicacao:string
   cidade:string
   estado:string
   salario:string
-  sobreAVaga:string
+  descricao:string
   responsabilidades:string
   qualificacoes:string
   modalidade:string
-  candidatos: Candidato[]
-  statusProcesso:string
+  statusProcesso?:string
 }

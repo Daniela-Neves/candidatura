@@ -44,7 +44,7 @@
         <div class="lista-vagas">
           <div *ngFor="let vaga of vagas" class="vaga">
             <h3>{{ vaga.nome }}</h3>
-            <p>{{ vaga.sobreAVaga }}</p>
+            <p>{{ vaga.descricao }}</p>
             <p>Salário: {{ vaga.salario }}</p>
             <p>ID:{{vaga.id}} </p>
             <a [routerLink]="['/vagas/detalhes/', vaga.id]" class="detalhes-link">Ver Detalhes</a>

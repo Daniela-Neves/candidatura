@@ -11,18 +11,18 @@ import { Vagas } from '../vagas';
 export class ExcluirVagaComponent {
 
   vaga:Vagas={
-    id:0,
+  id:0,
+  empresaId:0,
   nome:'',
-  tipoContratacao:'',
+  tipoVaga:'',
   dataPublicacao:'',
   cidade:'',
   estado:'',
   salario:'',
-  sobreAVaga:'',
+  descricao:'',
   responsabilidades:'',
   qualificacoes:'',
   modalidade:'',
-  candidatos: [],
   statusProcesso:''
     }
 

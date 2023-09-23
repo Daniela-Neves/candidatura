@@ -7,7 +7,7 @@
           <input [(ngModel)]="vaga.nome" name="nome" type="text" id="nomeVaga" class="editar-input">
 
           <label for="tipoContratacao">Tipo de contratação</label>
-          <select [(ngModel)]="vaga.tipoContratacao" name="tipoContratacao" id="tipoContratacao" class="editar-input">
+          <select [(ngModel)]="vaga.tipoVaga" name="tipoContratacao" id="tipoContratacao" class="editar-input">
               <option value="CLT">CLT</option>
               <option value="PJ">PJ</option>
           </select>
@@ -25,7 +25,7 @@
           <input [(ngModel)]="vaga.salario" name="remuneracao" type="text" id="remuneracao" class="editar-input">
 
           <label for="sobreAVaga">Sobre a vaga</label>
-          <textarea [(ngModel)]="vaga.sobreAVaga" name="sobreAVaga" id="sobreAVaga" class="editar-textarea"></textarea>
+          <textarea [(ngModel)]="vaga.descricao" name="sobreAVaga" id="sobreAVaga" class="editar-textarea"></textarea>
 
           <label for="responsabilidades">Responsabilidades e atribuições</label>
           <textarea [(ngModel)]="vaga.responsabilidades" name="responsabilidades" id="responsabilidades" class="editar-textarea"></textarea>
