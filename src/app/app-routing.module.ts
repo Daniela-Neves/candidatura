@@ -81,10 +81,10 @@ const routes: Routes = [
         path: 'listarVagas/:id',
         component: ListarVagaComponent
     }, {
-        path: 'vagas/excluirVaga/:id',
+        path: 'vagas/excluirVaga/:id/:idEmpresa',
         component: ExcluirVagaComponent
     }, {
-        path: 'vagas/editarVaga/:id',
+        path: 'vagas/editarVaga/:id/:idEmpresa',
         component: EditarVagaComponent
     }, {
         path: 'menu-candidato/:id',

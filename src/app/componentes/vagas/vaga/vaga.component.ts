@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Vagas } from '../vagas';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vaga',
@@ -7,6 +8,8 @@ import { Vagas } from '../vagas';
   styleUrls: ['./vaga.component.css']
 })
 export class VagaComponent implements OnInit{
+
+  idEmpresa=0;
 
   @Input() vagas: Vagas = {
 
@@ -26,12 +29,16 @@ export class VagaComponent implements OnInit{
 
   }
 
-  constructor(){
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute){
 
   }
 
   ngOnInit(): void {
-
+    this.idEmpresa = Number(this.route.snapshot.paramMap.get('id'))
+    console.log('este é i id',this.idEmpresa);
+    
   }
 
 }
