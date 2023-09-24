@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Vagas } from '../vagas/vagas';
 import { catchError, map} from 'rxjs/operators';
 import { of } from 'rxjs';
+import { VagasInscricao } from '../candidatos/vagasInscricao';
 
 @Injectable({
   providedIn: 'root'
@@ -41,9 +42,9 @@ export class InscricaoService {
     return this.http.get<Inscricao>(url)
   }
 
-  buscarPorCandidato(id:number): Observable<Inscricao[]>{
+  buscarPorCandidato(id:number): Observable<VagasInscricao[]>{
     const url = `${this.API}/candidato/${id}`
-    return this.http.get<Inscricao[]>(url)
+    return this.http.get<VagasInscricao[]>(url)
   }
 
   // editar(empresa: Inscricao): Observable<Inscricao>{
