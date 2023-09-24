@@ -28,6 +28,14 @@ import { FormularioCandidaturaComponent } from './componentes/candidatos/formula
 import { FormularioCurriculoComponent } from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
+import { DashboardComponent } from './componentes/everymind/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -56,12 +64,20 @@ import { LoginEmComponent } from './componentes/everymind/login-em/login-em.comp
     FormularioCurriculoComponent,
     MenuEmComponent,
     LoginEmComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

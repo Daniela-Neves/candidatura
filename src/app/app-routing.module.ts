@@ -20,6 +20,7 @@ import {FormularioCandidaturaComponent} from './componentes/candidatos/formulari
 import {FormularioCurriculoComponent} from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
+import { DashboardComponent } from './componentes/everymind/dashboard/dashboard.component';
 
 const routes: Routes = [
     {
@@ -110,6 +111,9 @@ const routes: Routes = [
     }, {
         path: 'menu-em',
         component: MenuEmComponent
+    }, {
+        path: 'dashboard',
+        component: DashboardComponent
     }
 ];
 
