@@ -58,8 +58,12 @@ export class CriarEmpresaComponent implements OnInit{
       razaoSocial: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required],
+      confirmacaoSenha:['', Validators.required],
       linkedin: ['', Validators.required],
       siteInstitucional: ['', Validators.required]
+    },
+    {
+      validators: this.senhaMatchValidator
     });
 
   }
@@ -72,8 +76,6 @@ export class CriarEmpresaComponent implements OnInit{
     }
   }
 
-  confirmacaoSenha:string = ''
-
   cancelar() {
     this.router.navigate(['/listarEmpresa'])
   }
@@ -84,6 +86,17 @@ export class CriarEmpresaComponent implements OnInit{
     }
     else{
       return 'botao__desabilitado'
+    }
+  }
+
+  senhaMatchValidator(form: FormGroup) {
+    const senha = form.get('senha');
+    const confirmacaoSenha = form.get('confirmacaoSenha');
+
+    if (senha && confirmacaoSenha && senha.value !== confirmacaoSenha.value) {
+      confirmacaoSenha.setErrors({ senhaNaoCoincide: true });
+    } else {
+      confirmacaoSenha!.setErrors(null);
     }
   }
 

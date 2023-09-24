@@ -139,8 +139,7 @@
           class="input"
           id="confirmacaoSenha"
           formControlName="confirmacaoSenha"
-          placeholder="Confirme a Senha"
-          [(ngModel)]="confirmacaoSenha">
+          placeholder="Confirme a Senha">
           <div class="mensagem__erro" *ngIf="formulario.get('confirmacaoSenha')?.errors?.['required'] && formulario.get('confirmacaoSenha')?.touched">
             *Campo obrigatório!
           </div>
