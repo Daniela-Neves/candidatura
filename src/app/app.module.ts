@@ -73,7 +73,7 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
