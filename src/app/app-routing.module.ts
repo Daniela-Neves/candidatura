@@ -95,7 +95,7 @@ const routes: Routes = [
         path: 'buscar-vagas/:id',
         component: BuscarVagasComponent
     }, {
-        path: 'vagas/detalhes/:id',
+        path: 'vagas/detalhes/:id/:candidatoId',
         component: DetalhesVagaComponent
     }, {
         path: 'formulario-candidatura/:id',

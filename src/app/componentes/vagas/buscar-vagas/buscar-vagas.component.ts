@@ -3,6 +3,7 @@ import { VagasService } from '../vagas.service';
 import { Vagas } from '../vagas';
 import { EmpresasService } from '../../empresas/empresas.service';
 import { Empresas } from '../../empresas/empresas';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-buscar-vagas',
@@ -13,7 +14,7 @@ export class BuscarVagasComponent implements OnInit {
   vagas: Vagas[] = [];
   empresas : Empresas[] = [];
   vagasTemp: Vagas[] = [];
-
+  candidatoId=this.route.snapshot.paramMap.get('id')
 
     // Filtros
     filtros = {
@@ -26,7 +27,7 @@ export class BuscarVagasComponent implements OnInit {
     };
 
 
-  constructor(private vagaService: VagasService, private empresaService: EmpresasService) { }
+  constructor(private vagaService: VagasService, private empresaService: EmpresasService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     // Chama o método listar() de empresasService para poder resgatar todas as empresas, atribuindo à variável this.empresas
