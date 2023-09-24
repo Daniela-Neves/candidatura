@@ -4,6 +4,10 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { CandidatoService } from '../../candidatos/candidato.service';
 import { Candidato } from '../../candidatos/candidato';
+import { EmpresasService } from '../../empresas/empresas.service';
+import { Empresas } from '../../empresas/empresas';
+import { VagasService } from '../../vagas/vagas.service';
+import { Vagas } from '../../vagas/vagas';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +16,8 @@ import { Candidato } from '../../candidatos/candidato';
 })
 export class DashboardComponent implements OnInit{
   listaCandidatos:Candidato[]=[]
+  listaEmpresas:Empresas[]=[]
+  listaVagas:Vagas[]=[]
 
   ngOnInit(){
     
@@ -20,6 +26,13 @@ export class DashboardComponent implements OnInit{
       
     })
 
+    this.empresaService.listar().subscribe((listaEmpresas)=>{
+      this.listaEmpresas = listaEmpresas;
+    })
+
+    this.vagasService.listar().subscribe((listaVagas)=>{
+      this.listaVagas = listaVagas;
+    })
     
   }
   
@@ -50,6 +63,7 @@ export class DashboardComponent implements OnInit{
     );
 
   
-  constructor(private breakpointObserver: BreakpointObserver, private candidatoService : CandidatoService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private candidatoService : CandidatoService, 
+    private empresaService:EmpresasService, private vagasService:VagasService) {}
 
 }
