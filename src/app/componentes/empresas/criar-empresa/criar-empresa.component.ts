@@ -71,13 +71,13 @@ export class CriarEmpresaComponent implements OnInit{
   criarEmpresa(){
     if(this.formulario.valid){
       this.service.criar(this.empresa).subscribe(() => {
-        this.router.navigate(['/listarEmpresa'])
+        this.router.navigate(['/loginEmpresa'])
       })
     }
   }
 
   cancelar() {
-    this.router.navigate(['/listarEmpresa'])
+    this.router.navigate(['/loginEmpresa'])
   }
 
   habilitarBotao():string{
