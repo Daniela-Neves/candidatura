@@ -40,6 +40,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/editar-empresa.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MenuEmComponent,
     LoginEmComponent,
     CadastroEmComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditarEmpresaComponent
   ],
   imports: [
     BrowserModule,

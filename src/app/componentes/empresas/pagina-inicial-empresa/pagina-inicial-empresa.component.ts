@@ -22,7 +22,7 @@ export class PaginaInicialEmpresaComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     console.log('este é o id',id);
-    
+
         this.service.buscarPorId(Number(id)).subscribe((empresa) => {
             this.empresa = empresa;
         });
@@ -38,7 +38,7 @@ export class PaginaInicialEmpresaComponent implements OnInit {
       rua:'',
       numero:0,
       cidade:'',
-      estado:''    
+      estado:''
     },
     email:'',
     senha:'',
@@ -64,6 +64,10 @@ export class PaginaInicialEmpresaComponent implements OnInit {
 cadastrarVaga(){
   const id = this.route.snapshot.paramMap.get('id');
   this.router.navigate(['/cadastrar-oportunidades/',id])
+}
+
+editarDadosCadastrais(){
+  this.router.navigate(['/editarEmpresa/',this.route.snapshot.paramMap.get('id')])
 }
 
 }

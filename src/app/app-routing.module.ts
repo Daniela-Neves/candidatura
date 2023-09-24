@@ -22,6 +22,7 @@ import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.compone
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
 import { CadastroEmComponent } from './componentes/everymind/cadastro-em/cadastro-em.component';
 import { DashboardComponent } from './componentes/everymind/dashboard/dashboard.component';
+import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/editar-empresa.component';
 
 const routes: Routes = [
     {
@@ -118,6 +119,10 @@ const routes: Routes = [
     }, {
         path: 'dashboard',
         component: DashboardComponent
+    },
+    {
+      path:'editarEmpresa/:id',
+      component:EditarEmpresaComponent
     }
 ];
 
