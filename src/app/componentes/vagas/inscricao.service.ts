@@ -41,6 +41,11 @@ export class InscricaoService {
     return this.http.get<Inscricao>(url)
   }
 
+  buscarPorCandidato(id:number): Observable<Inscricao[]>{
+    const url = `${this.API}/candidato/${id}`
+    return this.http.get<Inscricao[]>(url)
+  }
+
   // editar(empresa: Inscricao): Observable<Inscricao>{
   //   const url = `${this.API}/${empresa.id}`
   //   return this.http.put<Inscricao>(url, empresa)
