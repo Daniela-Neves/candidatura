@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Empresas } from '../empresas';
 import { EmpresasService } from '../empresas.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-criar-empresa',
-  templateUrl: './criar-empresa.component.html',
-  styleUrls: ['./criar-empresa.component.css']
+  selector: 'app-editar-empresa',
+  templateUrl: './editar-empresa.component.html',
+  styleUrls: ['./editar-empresa.component.css']
 })
-export class CriarEmpresaComponent implements OnInit{
+export class EditarEmpresaComponent {
 
   formulario!:FormGroup
 
@@ -68,16 +68,16 @@ export class CriarEmpresaComponent implements OnInit{
 
   }
 
-  criarEmpresa(){
+  editarEmpresa(){
     if(this.formulario.valid){
-      this.service.criar(this.empresa).subscribe(() => {
-        this.router.navigate(['/loginEmpresa'])
+      this.service.editar(this.empresa).subscribe(() => {
+        this.router.navigate(['/listarEmpresa'])
       })
     }
   }
 
   cancelar() {
-    this.router.navigate(['/loginEmpresa'])
+    this.router.navigate(['/listarEmpresa'])
   }
 
   habilitarBotao():string{

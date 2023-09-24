@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Vagas } from '../vagas/vagas';
 import { catchError, map} from 'rxjs/operators';
 import { of } from 'rxjs';
+import { VagasInscricao } from '../candidatos/vagasInscricao';
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +22,14 @@ export class InscricaoService {
     return this.http.get<Inscricao[]>(this.API)
   }
 
-
-
   criarVaga(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
     const url = `${this.API}/${idEmpresa}/vagas`;
 
     return this.http.post<Vagas>(url, novaVaga);
   }
 
-  criar(empresa: Inscricao):Observable<Inscricao>{
-    return this.http.post<Inscricao>(this.API, empresa)
+  criar(inscricao: Inscricao):Observable<Inscricao>{
+    return this.http.post<Inscricao>(this.API, inscricao)
   }
 
   excluir(id:number):Observable<Inscricao>{
@@ -41,6 +40,11 @@ export class InscricaoService {
   buscarPorId(id: number): Observable<Inscricao>{
     const url = `${this.API}/${id}`
     return this.http.get<Inscricao>(url)
+  }
+
+  buscarPorCandidato(id:number): Observable<VagasInscricao[]>{
+    const url = `${this.API}/candidato/${id}`
+    return this.http.get<VagasInscricao[]>(url)
   }
 
   // editar(empresa: Inscricao): Observable<Inscricao>{

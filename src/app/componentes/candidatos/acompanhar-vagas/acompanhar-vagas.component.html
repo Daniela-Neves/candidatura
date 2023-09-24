@@ -1,0 +1,10 @@
+<p>acompanhar-vagas works!</p>
+
+<div *ngFor="let vaga of vagas" class="vaga">
+    <h3>{{ vaga.vaga.nome }}</h3>
+    <p>{{ vaga.vaga.descricao }}</p>
+    <p>Salário: {{ vaga.vaga.salario }}</p>
+    <p>ID:{{vaga.vaga.id}} </p>
+    <p>Status da inscricao{{vaga.statusInscricao}}</p>
+    <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
+</div>
