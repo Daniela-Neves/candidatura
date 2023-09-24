@@ -92,7 +92,7 @@ const routes: Routes = [
         path: 'menu-candidato/:id',
         component: MenuCandidatoComponent
     }, {
-        path: 'buscar-vagas',
+        path: 'buscar-vagas/:id',
         component: BuscarVagasComponent
     }, {
         path: 'vagas/detalhes/:id',
