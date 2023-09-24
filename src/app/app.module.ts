@@ -41,6 +41,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AcompanharVagasComponent } from './componentes/candidatos/acompanhar-vagas/acompanhar-vagas.component';
+import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/editar-empresa.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { AcompanharVagasComponent } from './componentes/candidatos/acompanhar-va
     LoginEmComponent,
     CadastroEmComponent,
     DashboardComponent,
-    AcompanharVagasComponent
+    AcompanharVagasComponent,
+    EditarEmpresaComponent
   ],
   imports: [
     BrowserModule,
