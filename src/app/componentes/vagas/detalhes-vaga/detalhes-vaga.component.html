@@ -35,7 +35,8 @@
    -->
   
   
-    <button class="candidatar" [routerLink]="['/formulario-candidatura', candidato.id]">
+    <!-- <button class="candidatar" [routerLink]="['/formulario-candidatura', candidato.id]"> -->
+  <button class="candidatar" (click)="candidatar()">
       <span>Candidatar-se a vaga</span>
   </button>
   
