@@ -112,8 +112,7 @@ const routes: Routes = [
     }, {
         path: 'menu-em',
         component: MenuEmComponent
-    },
-    {
+    },{
       path:'cadastroEveryMind',
       component:CadastroEmComponent
     }, {
