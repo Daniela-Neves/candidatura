@@ -43,9 +43,17 @@ export class CriarEmpresaComponent implements OnInit{
         Validators.maxLength(14)
       ])],
       endereco: this.formBuilder.group({
-        cep: ['', Validators.required], // Campo CEP com validação
+        cep: ['', Validators.compose([
+          Validators.pattern('[0-9]+'),
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(8)
+        ])], // Campo CEP com validação
         rua: ['', Validators.required], // Outros campos do endereço com validação
-        numero: ['', Validators.required],
+        numero: ['', Validators.compose([
+          Validators.pattern('[0-9]+'),
+          Validators.required,
+        ])],
       }),
       razaoSocial: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],

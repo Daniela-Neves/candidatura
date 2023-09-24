@@ -84,6 +84,15 @@
             <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.hasError('required') && formulario.get('endereco.cep')?.touched">
               *Campo obrigatório!
             </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.errors?.['pattern'] && formulario.get('endereco.cep')?.touched">
+              *Este campo deve ter apenas valores numéricos!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.errors?.['minlength'] && formulario.get('endereco.cep')?.touched">
+              *Este campo deve ter 8 caracteres!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.errors?.['maxlength'] && formulario.get('endereco.cep')?.touched">
+              *Este campo deve ter apenas 8 caracteres!
+            </div>
           </div>
 
 
