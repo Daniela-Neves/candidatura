@@ -36,10 +36,10 @@ const routes: Routes = [
         path: 'perfis',
         component: PerfisComponent
     },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
+    // {
+    //     path: 'login',
+    //     component: LoginComponent
+    // },
     {
         path: 'criarCandidato',
         component: CriarCandidatoComponent
@@ -111,10 +111,12 @@ const routes: Routes = [
     }, {
         path: 'login-em',
         component: LoginEmComponent
-    }, {
-        path: 'menu-em',
-        component: MenuEmComponent
-    },{
+    }, 
+    // {
+    //     path: 'menu-em',
+    //     component: MenuEmComponent
+    // },
+    {
       path:'cadastroEveryMind',
       component:CadastroEmComponent
     }, {
@@ -128,6 +130,9 @@ const routes: Routes = [
     {
       path:'editarEmpresa/:id',
       component:EditarEmpresaComponent
+    },{
+        path: 'menu-em/:id',
+        component: MenuEmComponent
     }
 ];
 

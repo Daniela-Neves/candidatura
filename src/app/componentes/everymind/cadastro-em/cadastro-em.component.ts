@@ -15,6 +15,7 @@ export class CadastroEmComponent {
   everymind : Everymind = {
     id: 0,
     nome: '',
+    sobrenome: '',
     email: '',
     senha: ''
 };
@@ -29,7 +30,7 @@ export class CadastroEmComponent {
       return;
     }
     this.service.criar(this.everymind).subscribe(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login-em']);
     });
   }
 
@@ -37,7 +38,7 @@ export class CadastroEmComponent {
 
 
   cancelar() {
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login-em'])
   }
 
 }
