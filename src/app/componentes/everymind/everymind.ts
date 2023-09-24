@@ -1,6 +1,7 @@
 export interface Everymind{
-  id?:number,
+  id:number,
   nome:string,
+  sobrenome:string,
   email:string,
   senha:string
 }
