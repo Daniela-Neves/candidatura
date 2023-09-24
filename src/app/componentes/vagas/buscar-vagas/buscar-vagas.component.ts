@@ -12,6 +12,7 @@ import { Empresas } from '../../empresas/empresas';
 export class BuscarVagasComponent implements OnInit {
   vagas: Vagas[] = [];
   empresas : Empresas[] = [];
+  vagasTemp: Vagas[] = [];
 
 
     // Filtros
@@ -29,29 +30,11 @@ export class BuscarVagasComponent implements OnInit {
 
   ngOnInit(): void {
     // Chama o método listar() de empresasService para poder resgatar todas as empresas, atribuindo à variável this.empresas
-    this.empresaService.listar().subscribe((empresas) => {
-      this.empresas = empresas
-
-      // Para cada empresa eu varro a vagas e então listo elas
-      this.empresas.forEach(empresa => {
-        // this.vagas = empresa.vagas
-        // this.vagas.push(...empresa.vagas)
-
-      });
+    this.vagaService.listar().subscribe((vagas) => {
+      this.vagas = vagas
+     
 
     })
-
-    // this.vagaService.listar().subscribe(
-    //   (data) => {
-    //     this.vagas = data; // Atribui as vagas à variável vagas
-    //   },
-    //   (error) => {
-    //     console.error('Erro ao buscar as vagas', error);
-    //   }
-    // );
-    // this.empresaService.buscarPorId(1).subscribe((empresa) => {
-    //   this.vagas = empresa.vagas
-    // })
 
 
   }

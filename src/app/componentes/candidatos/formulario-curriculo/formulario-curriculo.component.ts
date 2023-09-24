@@ -6,22 +6,33 @@ import { ExperienciaProfissional } from '../experienciaProfissional';
 import { FormacaoAcademica } from '../formacaoAcademica';
 import { Proficiencia } from '../proficiencia';
 import { Certificacao } from '../certificacao';
+import { Candidato } from '../candidato';
+import { CandidatoService } from '../candidato.service';
 
 @Component({selector: 'app-formulario-curriculo', templateUrl: './formulario-curriculo.component.html', styleUrls: ['./formulario-curriculo.component.css']})
 
 export class FormularioCurriculoComponent implements OnInit {
 
-    constructor(private service : CurriculoService, private router : Router, private route : ActivatedRoute) {}
-
+    constructor(private service : CurriculoService, private router : Router, private route : ActivatedRoute, private candidatoService:CandidatoService) {}
     ngOnInit(): void {
-        const id = this.route.snapshot.paramMap.get('id')
-        this.service.buscarPorId(parseInt(id !)).subscribe((curriculo) => {
-            this.curriculo = curriculo
-        })
+      const id = this.route.snapshot.paramMap.get('id');
+      this.curriculo.candidatoId = Number(id);
+      this.candidatoService.buscarPorId(Number(id)).subscribe((candidato) => {
+        this.candidato = candidato
+      })
     }
+  
+    candidato : Candidato = {
+      id: 0,
+      nome: '',
+      sobrenome: '',
+      email: '',
+      senha: ''
+  };
 
     curriculo : Curriculo = {
         candidatoId: 0,
+        candidato:this.candidato,
         dataNascimento: '',
         genero: '',
         raca: '',
@@ -34,49 +45,28 @@ export class FormularioCurriculoComponent implements OnInit {
         },
         endereco: {
             cep: '',
-            endereco: '',
+            rua: '',
             numero: '',
             cidade: '',
             estado: ''
         },
         linkedin: ''
     };
-
-
-    finalizarCurriculo() {
-        this.service.salvarDadosPessoais(this.curriculo).subscribe(() => {
-            this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(() => {
-                this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(() => {
-                    this.service.salvarIdioma(this.idiomas).subscribe(() => {
-                        this.service.salvarCertificado(this.certificados).subscribe(() => {
-                            alert('Currículo preenchido com sucesso!');
-                            this.router.navigate(['/menu-curriculo', this.curriculo.candidatoId]);
-                        }, error => this.handleError(error));
-                    }, error => this.handleError(error));
-                }, error => this.handleError(error));
-            }, error => this.handleError(error));
-        }, error => this.handleError(error));
-    }
     
-    private handleError(error: any) {
-        console.error('Erro ao finalizar o currículo:', error);
-        alert('Erro ao finalizar o currículo. Tente novamente mais tarde.');
-    }
-    
-    
-
-
     experienciasProfissionais: ExperienciaProfissional[] = [];
 
     adicionarExperienciaProfissional() {
-        this.experienciasProfissionais.push({
-            candidatoId: 0,
-            titulo: '',
-            tipoEmprego: '',
-            nomeEmpresa: '',
-            inicio: '',
-            fim: ''
-        });
+      const newExperienciaProfissional: ExperienciaProfissional = {
+        candidatoId: this.candidato.id,
+        curriculo: this.curriculo,
+        titulo: '',
+        tipoEmprego: '',
+        nomeEmpresa: '',
+        inicio: '',
+        fim: ''
+    };
+        this.experienciasProfissionais.push(newExperienciaProfissional)
+      //this.salvarExperienciasProfissionais(newExperienciaProfissional)
     }
 
     excluirExperienciaProfissional(index: number) {
@@ -87,13 +77,16 @@ export class FormularioCurriculoComponent implements OnInit {
 
 
     adicionarExperienciaAcademica() {
-        this.experienciasAcademicas.push({
-            candidatoId: 0, 
-            nivelFormacao: '',
-            curso: '',
-            dataInicio: '',
-            dataFim: ''
-        });
+      const newExperienciaAcademica: FormacaoAcademica = {
+        candidatoId: this.candidato.id,
+        curriculo: this.curriculo,
+        nivelFormacao: '',
+        curso: '',
+        dataInicio: '',
+        dataFim: ''
+    };
+        this.experienciasAcademicas.push(newExperienciaAcademica)
+      //this.salvarExperienciasProfissionais(newExperienciaProfissional)
     }
 
     excluirExperienciaAcademica(index: number) {
@@ -128,22 +121,35 @@ export class FormularioCurriculoComponent implements OnInit {
     excluirCertificado(index: number) {
         this.certificados.splice(index, 1);
     }
+    
     salvarDadosPessoais() {
         this.service.salvarDadosPessoais(this.curriculo).subscribe(response => {
           console.log('Dados pessoais salvos:', response);
         });
       }
     
-      salvarExperienciasProfissionais() {
-        this.service.salvarExperienciasProfissionais(this.experienciasProfissionais).subscribe(response => {
-          console.log('Experiências Profissionais salvas:', response);
+      salvarExperienciasProfissionais(experiencias:ExperienciaProfissional[]) {
+        experiencias.forEach(experiencia => {
+          this.service.salvarExperienciasProfissionais(experiencia).subscribe(response => {
+            console.log('Experiências Profissionais salvas:', response);
+          });
         });
       }
-    
-      salvarExperienciaAcademica() {
-        this.service.salvarExperienciaAcademica(this.experienciasAcademicas).subscribe(response => {
-          console.log('Experiências Acadêmicas salvas:', response);
+
+      acionaExperienciasProfissionais(){
+        this.salvarExperienciasProfissionais(this.experienciasProfissionais)
+      }
+
+      salvarExperienciaAcademica(experiencias:FormacaoAcademica[]) {
+        experiencias.forEach(experiencia => {
+          this.service.salvarExperienciaAcademica(experiencia).subscribe(response => {
+            console.log('Experiências Acadêmicas salvas:', response);
+          });
         });
+      }
+
+      acionaExperienciasAcademica(){
+        this.salvarExperienciaAcademica(this.experienciasAcademicas)
       }
     
       salvarIdioma() {

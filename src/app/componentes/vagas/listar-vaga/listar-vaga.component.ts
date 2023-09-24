@@ -16,18 +16,22 @@ export class ListarVagaComponent implements OnInit{
   constructor(
     private service: VagasService,
     private router: Router,
-    private empresaService: EmpresasService
+    private empresaService: EmpresasService,
+    private route: ActivatedRoute
     ){
 
   }
   ngOnInit(): void {
-    // const id = this.route.snapshot.paramMap.get('id')
+    const id = this.route.snapshot.paramMap.get('id')
+    console.log('este é o id',id);
+    
     // this.service.buscarPorId(parseInt(id!)).subscribe((vagas) => {
     //   this.vagas = vagas
     // })
 
-    this.empresaService.buscarPorId(1).subscribe((empresa) => {
-      // this.listaVagas = empresa.vagas
+    this.service.listarPorEmpresa(Number(id)).subscribe((vagas) => {
+      this.listaVagas = vagas
+      
     })
   }
 
@@ -38,7 +42,8 @@ export class ListarVagaComponent implements OnInit{
   }
 
   cancelar(){
-    this.router.navigate(['/paginaInicialEmpresa'])
+    const id = this.route.snapshot.paramMap.get('id')
+    this.router.navigate(['/paginaInicialEmpresa/',id])
   }
 
   vagas:Vagas={

@@ -1,6 +1,6 @@
 <body class="fundo1">
     <div class="form-dados">
-        <form (ngSubmit)="finalizarCurriculo()">
+        <form>
             <div class="secao">
                 <h2>Dados Pessoais</h2>
 
@@ -19,13 +19,13 @@
 
                 <label for="identificacao">Como você se identifica racial/etnicamente?</label>
                 <select id="identificacao" [(ngModel)]="curriculo.raca" name="identificacao" required>
-                    <option value="Preta(o) ou Negra(o)">Preta(o) ou Negra(o)</option>
-                    <option value="Branca(o)">Branca(o)</option>
-                    <option value="Parda(o)">Parda(o)</option>
-                    <option value="Indígena ou Nativa(o)">Indígena ou Nativa(o)</option>
-                    <option value="Amarela(o) ou Asiática(o)">Amarela(o) ou Asiática(o)</option>
-                    <option value="Árabe ou Oriente Médio">Árabe ou Oriente Médio</option>
-                    <option value="Prefiro não informar">Prefiro não informar</option>
+                    <option value="PRETO">Preta(o) ou Negra(o)</option>
+                    <option value="BRANCO">Branca(o)</option>
+                    <option value="PARDO">Parda(o)</option>
+                    <option value="INDIGENA">Indígena ou Nativa(o)</option>
+                    <option value="ASIATICO">Amarela(o) ou Asiática(o)</option>
+                    <option value="ARABE">Árabe ou Oriente Médio</option>
+                    <option value="NAO_INFORMAR">Prefiro não informar</option>
                 </select>
 
                 <label for="deficiencia">Deficiência:</label>
@@ -46,7 +46,7 @@
                 <input type="text" id="cep" name="cep" [(ngModel)]="curriculo.endereco.cep" class="formulario-input" placeholder="Digite o CEP"/>
 
                 <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.endereco" class="formulario-input" placeholder="Digite o endereço"/>
+                <input type="text" id="endereco" name="endereco" [(ngModel)]="curriculo.endereco.rua" class="formulario-input" placeholder="Digite o endereço"/>
 
                 <label for="numero">Número:</label>
                 <input type="text" id="numero" name="numero" [(ngModel)]="curriculo.endereco.numero" class="formulario-input" placeholder="Número"/>
@@ -60,7 +60,7 @@
                 <label for="linkedin">LinkedIn:</label>
                 <input type="text" id="linkedin" name="linkedin" [(ngModel)]="curriculo.linkedin" class="formulario-input" placeholder="Insira o LinkedIn"/>
 
-                <button type="button" (click)="salvarDadosPessoais()">Salvar</button>
+                <button type="button" (click)="salvarDadosPessoais()">Salvar Dados Pessoais</button>
 
             </div>
 
@@ -71,8 +71,12 @@
                     <input type="text" id="titulo{{i}}" name="titulo" class="formulario-input" [(ngModel)]="experiencia.titulo">
             
                     <label for="tipoEmprego{{i}}">Tipo de Emprego:</label>
-                    <input type="text" id="tipoEmprego{{i}}" name="tipoEmprego" class="formulario-input" [(ngModel)]="experiencia.tipoEmprego">
-            
+                    <select id="tipoEmprego{{i}}" [(ngModel)]="experiencia.tipoEmprego" name="tipoEmprego">
+                        <option value="CLT">CLT</option>
+                        <option value="PJ">PJ</option>
+                        <option value="Estágio">Estágio</option>
+                        <option value="Aprendiz">Aprendiz</option>
+                    </select>
                     <label for="nomeEmpresa{{i}}">Nome da Empresa:</label>
                     <input type="text" id="nomeEmpresa{{i}}" name="nomeEmpresa" class="formulario-input" [(ngModel)]="experiencia.nomeEmpresa">
             
@@ -86,16 +90,24 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarExperienciaProfissional()">Adicionar Experiência Profissional</button>
-            <button type="button" (click)="salvarExperienciasProfissionais()">Salvar</button>
+            <button type="button" (click)="acionaExperienciasProfissionais()">Salvar</button>
             
 
             <h2>Experiência Acadêmica</h2>
             <div *ngFor="let experiencia of experienciasAcademicas; let i = index">
                 <div class="experiencia-item">
                     <label for="nivelFormacao{{i}}">Nível de Formação:</label>
-                    <input type="text" id="nivelFormacao{{i}}" name="nivelFormacao" class="formulario-input" [(ngModel)]="experiencia.nivelFormacao">
+                    <select id="nivelFormacao{{i}}" [(ngModel)]="experiencia.nivelFormacao" name="nivelFormacao">
+                        <option value="Fundamental">Fundamental</option>
+                        <option value="EnsinoMedio">Ensino Médio</option>
+                        <option value="Graduacao">Graduação</option>
+                        <option value="PosGraduacao">Pós Graduação</option>
+                        <option value="Mestrado">Mestrado</option>
+                        <option value="Doutorado">Doutorado</option>
+                        <option value="PHD">PHD</option>
+                    </select>
             
-                    <label for="curso{{i}}">Curso:</label>
+                    <label for="curso{{i}}">Instituição/Curso:</label>
                     <input type="text" id="curso{{i}}" name="curso" class="formulario-input" [(ngModel)]="experiencia.curso">
             
                     <label for="dataInicio{{i}}">Data de Início:</label>
@@ -108,9 +120,9 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarExperienciaAcademica()">Adicionar Experiência Acadêmica</button>
-            <button type="button" (click)="salvarExperienciaAcademica()">Salvar</button>
+            <button type="button" (click)="acionaExperienciasAcademica()">Salvar</button>
 
-            
+
             <h2>Idiomas</h2>
             <div *ngFor="let idioma of idiomas; let i = index">
                 <div class="idioma-item">

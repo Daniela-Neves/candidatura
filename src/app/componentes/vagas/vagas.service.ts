@@ -15,7 +15,13 @@ export class VagasService {
 
 
   listar(): Observable<Vagas[]> {
+
     return this.http.get<Vagas[]>(this.API)
+  }
+
+  listarPorEmpresa(id:number): Observable<Vagas[]> {
+    const url = `${this.API}/empresa/${id}`;
+    return this.http.get<Vagas[]>(url)
   }
 
   criar(novaVaga: Vagas): Observable<Vagas> {

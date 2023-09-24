@@ -16,10 +16,11 @@ import {EditarVagaComponent} from './componentes/vagas/editar-vaga/editar-vaga.c
 import {MenuCandidatoComponent} from './componentes/candidatos/menu-candidato/menu-candidato.component';
 import {BuscarVagasComponent} from './componentes/vagas/buscar-vagas/buscar-vagas.component';
 import {DetalhesVagaComponent} from './componentes/vagas/detalhes-vaga/detalhes-vaga.component';
-import {FormularioCandidaturaComponent} from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
+import { FormularioCandidaturaComponent } from './componentes/candidatos/formulario-candidatura/formulario-candidatura.component';
 import {FormularioCurriculoComponent} from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
+import { CadastroEmComponent } from './componentes/everymind/cadastro-em/cadastro-em.component';
 import { DashboardComponent } from './componentes/everymind/dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -79,13 +80,13 @@ const routes: Routes = [
     //     component: AlterarDadosComponent
     // }
     {
-        path: 'listarVagas',
+        path: 'listarVagas/:id',
         component: ListarVagaComponent
     }, {
-        path: 'vagas/excluirVaga/:id',
+        path: 'vagas/excluirVaga/:id/:idEmpresa',
         component: ExcluirVagaComponent
     }, {
-        path: 'vagas/editarVaga/:id',
+        path: 'vagas/editarVaga/:id/:idEmpresa',
         component: EditarVagaComponent
     }, {
         path: 'menu-candidato/:id',
@@ -111,6 +112,10 @@ const routes: Routes = [
     }, {
         path: 'menu-em',
         component: MenuEmComponent
+    },
+    {
+      path:'cadastroEveryMind',
+      component:CadastroEmComponent
     }, {
         path: 'dashboard',
         component: DashboardComponent

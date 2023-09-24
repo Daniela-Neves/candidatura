@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CriarCandidatoComponent } from './componentes/candidatos/criar-candidato/criar-candidato.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarCandidatoComponent } from './componentes/candidatos/listar-candidato/listar-candidato.component';
 import { CandidatoComponent } from './componentes/candidatos/candidato/candidato.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,6 +28,7 @@ import { FormularioCandidaturaComponent } from './componentes/candidatos/formula
 import { FormularioCurriculoComponent } from './componentes/candidatos/formulario-curriculo/formulario-curriculo.component';
 import { MenuEmComponent } from './componentes/everymind/menu-em/menu-em.component';
 import { LoginEmComponent } from './componentes/everymind/login-em/login-em.component';
+import { CadastroEmComponent } from './componentes/everymind/cadastro-em/cadastro-em.component';
 import { DashboardComponent } from './componentes/everymind/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -64,12 +65,15 @@ import { MatListModule } from '@angular/material/list';
     FormularioCurriculoComponent,
     MenuEmComponent,
     LoginEmComponent,
+    CadastroEmComponent,
     DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,

@@ -44,14 +44,14 @@ export class CadastrarOportunidadeComponent implements OnInit{
     // this.empresaService.criarVaga(1,this.vaga).subscribe(()=>{
     //   this.router.navigate(['/paginaInicialEmpresa'])
     this.service.criar(this.vaga).subscribe(()=>{
-      this.router.navigate(['/paginaInicialEmpresa'])
+      this.router.navigate(['/paginaInicialEmpresa/',this.route.snapshot.paramMap.get('id')])
     })
 
 
   }
 
   cancelar(){
-    this.router.navigate(['/paginaInicialEmpresa'])
+    this.router.navigate(['/paginaInicialEmpresa',this.route.snapshot.paramMap.get('id')])
   }
 
 }
