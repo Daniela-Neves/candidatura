@@ -133,6 +133,36 @@
           <div class="mensagem__erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
             *Campo obrigatório!
           </div>
+          <div
+  class="senha-strength"
+  [ngClass]="{
+    'senha-weak': passwordStrength === 'Fraca',
+    'senha-medium': passwordStrength === 'Média',
+    'senha-strong': passwordStrength === 'Forte'
+  }"
+><span style="color: grey">Senha: </span>
+  {{ passwordStrength }}
+</div>
+
+          <div class="senha-requirements" *ngIf="!allRequirementsMet">
+            <ul>
+              <li [ngClass]="{'checked': isPasswordValid('length'), 'unchecked': !isPasswordValid('length')}">
+                <span [ngClass]="{'check-mark': isPasswordValid('length'), 'x-mark': !isPasswordValid('length')}"></span> Mínimo de 8 caracteres
+              </li>
+              <li [ngClass]="{'checked': isPasswordValid('uppercase'), 'unchecked': !isPasswordValid('uppercase')}">
+                <span [ngClass]="{'check-mark': isPasswordValid('uppercase'), 'x-mark': !isPasswordValid('uppercase')}"></span> Pelo menos uma letra maiúscula
+              </li>
+              <li [ngClass]="{'checked': isPasswordValid('lowercase'), 'unchecked': !isPasswordValid('lowercase')}">
+                <span [ngClass]="{'check-mark': isPasswordValid('lowercase'), 'x-mark': !isPasswordValid('lowercase')}"></span> Pelo menos uma letra minúscula
+              </li>
+              <li [ngClass]="{'checked': isPasswordValid('number'), 'unchecked': !isPasswordValid('number')}">
+                <span [ngClass]="{'check-mark': isPasswordValid('number'), 'x-mark': !isPasswordValid('number')}"></span> Pelo menos um número
+              </li>
+              <li [ngClass]="{'checked': isPasswordValid('special'), 'unchecked': !isPasswordValid('special')}">
+                <span [ngClass]="{'check-mark': isPasswordValid('special'), 'x-mark': !isPasswordValid('special')}"></span> Pelo menos um caractere especial
+              </li>
+            </ul>
+          </div>
 
       <input
           type="password"

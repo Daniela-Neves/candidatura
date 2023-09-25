@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CriarEmpresaComponent implements OnInit{
 
   formulario!:FormGroup
+  passwordStrength: string = '';
 
   empresa:Empresas={
     id:0,
@@ -66,6 +67,14 @@ export class CriarEmpresaComponent implements OnInit{
       validators: this.senhaMatchValidator
     });
 
+    this.formulario.get('senha')?.valueChanges.subscribe(() => {
+      this.checkRequirements();
+    });
+
+    this.formulario.get('senha')?.valueChanges.subscribe(() => {
+      this.checkPasswordStrength();
+    });
+
   }
 
   criarEmpresa(){
@@ -99,5 +108,72 @@ export class CriarEmpresaComponent implements OnInit{
       confirmacaoSenha!.setErrors(null);
     }
   }
+
+  isPasswordValid(type: string): boolean {
+    const senha = this.formulario.get('senha')?.value;
+
+    switch (type) {
+      case 'length':
+        return senha.length >= 8;
+      case 'uppercase':
+        return /[A-Z]/.test(senha);
+      case 'lowercase':
+        return /[a-z]/.test(senha);
+      case 'number':
+        return /\d/.test(senha);
+      case 'special':
+        return /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(senha);
+      default:
+        return false;
+    }
+  }
+
+  allRequirementsMet = false;
+
+  checkRequirements() {
+    const requirements = [
+      this.isPasswordValid('length'),
+      this.isPasswordValid('uppercase'),
+      this.isPasswordValid('lowercase'),
+      this.isPasswordValid('number'),
+      this.isPasswordValid('special'),
+    ];
+
+    // Verifique se todos os requisitos são verdadeiros
+    this.allRequirementsMet = requirements.every(req => req === true);
+  }
+
+  checkPasswordStrength() {
+    const password = this.formulario.get('senha')?.value;
+    let score = 0;
+
+    // Pontue cada requisito atendido
+    if (/[a-z]/.test(password)) {
+      score += 1;
+    }
+    if (/[A-Z]/.test(password)) {
+      score += 1;
+    }
+    if (/[0-9]/.test(password)) {
+      score += 1;
+    }
+    if (/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]+/.test(password)) {
+      score += 1;
+    }
+    if (password.length >= 8) {
+      score += 1;
+    }
+
+    // Defina a força com base na pontuação
+    if (score <= 2) {
+      this.passwordStrength = 'Fraca';
+    } else if (score <= 4) {
+      this.passwordStrength = 'Média';
+    } else {
+      this.passwordStrength = 'Forte';
+    }
+  }
+
+
 
 }

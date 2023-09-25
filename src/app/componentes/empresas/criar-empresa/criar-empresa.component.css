@@ -148,12 +148,60 @@
 
 
 
+}
 
+.senha-requirementos{
+  height: auto;
+  float: left;
+  text-align: left;
 
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  color: red; /* Por padrão, defina a cor do texto como vermelha */
+}
+.checked {
+  color: green; /* Quando um requisito é atendido, defina a cor do texto como verde */
 }
 
 .endereco{
   width: 100%;
+}
+
+.check-mark::before {
+  content: '\2713'; /* Símbolo de check Unicode */
+  color: green; /* Cor verde para o check */
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Estilo para o símbolo "x" quando o requisito não é atendido */
+.x-mark::before {
+  content: '✕'; /* Símbolo "x" Unicode */
+  color: red; /* Cor vermelha para o "x" */
+  font-weight: bold; /* Texto em negrito */
+}
+
+.senha-requirements ul{
+  text-align: left;
+}
+
+/* Estilo para a classe unchecked */
+.unchecked {
+  color: red; /* Cor vermelha para o texto */
+}
+
+/* Estilo para a linha da lista quando o requisito não é atendido */
+.senha-requirements li.unchecked {
+  border-left: 3px solid red; /* Linha esquerda vermelha */
+}
+
+.senha-requirements li.checked{
+  border-left: 3px solid green;
 }
 
 .endereco div{
@@ -167,6 +215,23 @@
   margin-top: -10px;
   margin-bottom: 20px;
   text-align: left;
+}
+
+.senha-strength{
+  color: grey;
+  text-align: left;
+}
+
+.senha-weak {
+  color: red;
+}
+
+.senha-medium {
+  color: orange;
+}
+
+.senha-strong {
+  color: green;
 }
 
 .botao__desabilitado {
