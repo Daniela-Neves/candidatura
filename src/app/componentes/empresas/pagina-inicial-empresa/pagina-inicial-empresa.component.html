@@ -12,19 +12,13 @@
                 </a>
             </div>
             <div class="image-box">
-                <a (click)="listarCandidatos()">
-                    <img src="../../../../assets/images/candidato2.png" alt="AcompanharCandidatos">
-                    <p class="image-text">Candidatos</p>
-                </a>
-            </div>
-            <div class="image-box">
                 <a (click)="cadastrarVaga()">
                     <img src="../../../../assets/images/vaga.png" alt="CadastrarVaga">
                     <p class="image-text">Cadastrar Vaga</p>
                 </a>
             </div>
             <div class="image-box">
-                <a>
+                <a [routerLink]="['/empresas/editarEmpresa', empresa.id]">
                     <img src="../../../../assets/images/dados.png" alt="DadosCadastrais">
                     <p class="image-text">Dados Cadastrais</p>
                 </a>

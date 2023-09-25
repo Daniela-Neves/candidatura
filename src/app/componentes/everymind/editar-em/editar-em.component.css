@@ -5,20 +5,21 @@
     align-content: center;
   }
   
-  h1{
-    color: rgb(128, 128, 128);
-    margin-bottom: 35px;
-    font-weight: bolder;
-  }
   .fundo1 {
     width: 100%;
-    height: auto;
+    height: 1300px;
     background: rgba(46,46,56,1);
     opacity: 1;
     position: absolute;
     top: 0px;
     left: 0px;
     overflow: hidden;
+  }
+  
+  .fundo1 h1{
+    color: rgb(128, 128, 128);
+    margin-bottom: 35px;
+    font-weight: bolder;
   }
   
   .botao {
@@ -37,17 +38,10 @@
     color: black;
   }
   
-  .editar-empresa {
+  .criar-candidatos {
     padding: 2rem 0;
     text-align: center;
-  }
-
-  .endereco{
-    width: 100%;
-  }
-  
-  .endereco div{
-    text-align: center;
+    height: 100%;
   }
   
   .recrutamentos{
@@ -62,25 +56,6 @@
     height: 200px;
   
   }
-
-  .mensagem__erro {
-    font-size: 12px;
-    margin-left: 5px;
-    color: red;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .botao__desabilitado {
-    background-color: red;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-  }
   
   .recrutamentos img{
     width: 100%; /* A imagem ocupa 100% da largura do elemento */
@@ -88,7 +63,7 @@
     object-fit: cover;
   }
   
-  .editar-empresa form {
+  .criar-candidatos form {
     background: rgba(46,46,56,1);
   
     width: 70%;
@@ -105,13 +80,13 @@
     align-items: center;
   }
   
-  .editar-empresa form label {
+  .criar-candidatos form label {
     color: #154580;
     font-weight: bold;
     margin: 0 0 1rem;
   }
   
-  .editar-empresa form .input {
+  .criar-candidatos form .input {
     border: none;
     height: 40px;
     width: 70%;
@@ -121,26 +96,25 @@
     background: rgb(205, 205, 205);
     font-size: 18px;
   
-  
-  
   }
   
-  .editar-empresa form .input:focus{
+  .criar-candidatos form .input:focus{
     background-color: yellow;
   }
   
-  .editar-empresa form .input::placeholder{
+  .criar-candidatos form .input::placeholder{
     color: black;
     font-size: 18px;
   }
   
   
-  .editar-empresa form .textarea {
+  .criar-candidatos form .textarea {
     border: none;
     padding: 1rem 2rem;
     border-radius: 20px;
     margin: 0.5rem 0 2rem;
   }
+  
   
   @media (max-width: 480px) {
     /*
@@ -156,4 +130,7 @@
       align-content: center;
       flex-wrap: wrap;
     }
+  
+  
+  
   }

@@ -9,10 +9,16 @@
                     <p class="image-text">Métricas Gerais</p>
                 </a>
             </div>
-            <div class="image-box">
-                <a>
+            <!-- <div class="image-box">
+                <a [routerLink]="['/everymind/cadastrar', everymind.id]">
                     <img src="../../../../assets/images/adms.png" alt="Administrador">
-                    <p class="image-text">Administradores</p>
+                    <p class="image-text">Cadastrar Admin</p>
+                </a>
+            </div> -->
+            <div class="image-box">
+                <a [routerLink]="['/everymind/editarEverymind', everymind.id]">
+                    <img src="../../../../assets/images/adms.png" alt="Administrador">
+                    <p class="image-text">Editar Admin</p>
                 </a>
             </div>
         </div>

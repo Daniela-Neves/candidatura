@@ -8,6 +8,7 @@ import { EmpresasService } from '../../empresas/empresas.service';
 import { Empresas } from '../../empresas/empresas';
 import { VagasService } from '../../vagas/vagas.service';
 import { Vagas } from '../../vagas/vagas';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,8 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit(){
     
+    // const id = this.route.snapshot.paramMap.get('id');
+
     this.candidatoService.listar().subscribe((listaCandidatos) => {
       this.listaCandidatos = listaCandidatos
       
@@ -36,7 +39,12 @@ export class DashboardComponent implements OnInit{
     
   }
 
-  constructor(private breakpointObserver: BreakpointObserver, private candidatoService : CandidatoService, 
-    private empresaService:EmpresasService, private vagasService:VagasService) {}
+  // cancelar(){
+  //   const id = this.route.snapshot.paramMap.get('id')
+  //   this.router.navigate(['/menu-em',this.route.snapshot.paramMap.get('id')])
+  // }
 
+
+  constructor(private breakpointObserver: BreakpointObserver, private candidatoService : CandidatoService, 
+    private empresaService:EmpresasService, private vagasService:VagasService, private router: Router, private route: ActivatedRoute) {}
 }

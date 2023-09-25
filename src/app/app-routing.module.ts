@@ -24,6 +24,7 @@ import { CadastroEmComponent } from './componentes/everymind/cadastro-em/cadastr
 import { DashboardComponent } from './componentes/everymind/dashboard/dashboard.component';
 import { AcompanharVagasComponent } from './componentes/candidatos/acompanhar-vagas/acompanhar-vagas.component';
 import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/editar-empresa.component';
+import { EditarEmComponent } from './componentes/everymind/editar-em/editar-em.component';
 
 const routes: Routes = [
     {
@@ -128,14 +129,24 @@ const routes: Routes = [
         component: AcompanharVagasComponent
     },
     {
-      path:'editarEmpresa/:id',
-      component:EditarEmpresaComponent
-    },{
+        path: 'empresas/editarEmpresa/:id',
+        component: EditarEmpresaComponent
+    },
+    {
         path: 'menu-em/:id',
         component: MenuEmComponent
-    }, {
-        path: 'perfis',
-        component: PerfisComponent
+    },
+    {
+        path: 'everymind/editarEverymind/:id',
+        component: EditarEmComponent
+    },
+    {
+        path: 'empresas/editarEmpresa/:id',
+        component: EditarEmpresaComponent
+    },
+    {
+        path: 'everymind/cadastrar/:id',
+        component: CadastroEmComponent
     }
 ];
 
