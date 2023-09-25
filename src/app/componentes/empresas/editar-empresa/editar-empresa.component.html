@@ -1,4 +1,4 @@
-<section class="container criar-empresa ff-inter">
+<section class="container editar-empresa ff-inter">
 
   <div class="fundo1">
     <div>
@@ -7,8 +7,7 @@
     </div>
     <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div>
 
-    <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px; text-align: center;" >Digite seus dados para o cadastro</h2>
-    <form [formGroup]="formulario" class="criar-empresas">
+    <form [formGroup]="formulario" class="editar-empresas">
       <input
         type="textarea"
         class="input"
@@ -170,10 +169,7 @@
           </div>
 
         <div class="acoes">
-          <button
-          [disabled]="!formulario.valid"
-          [ngClass]="habilitarBotao()"
-          (click)="editarEmpresa()">Editar</button>
+          <button (click)="editarEmpresa()" class="botao">Editar</button>
           <button (click)="cancelar()" class="botao">Cancelar</button>
         </div>
       </form>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Empresas } from '../empresas';
 import { EmpresasService } from '../empresas.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-empresa',
@@ -31,10 +31,14 @@ export class EditarEmpresaComponent {
     siteInstitucional:''
   }
 
-  constructor(private service: EmpresasService, private router: Router, private formBuilder: FormBuilder){
-
+  constructor(private service: EmpresasService,   private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder){
   }
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+      this.service.buscarPorId(parseInt(id!)).subscribe((empresa) => {
+        this.empresa = empresa
+      })
+
     this.formulario = this.formBuilder.group({
       cnpj: ['', Validators.compose([
         Validators.required,
@@ -60,7 +64,8 @@ export class EditarEmpresaComponent {
       senha: ['', Validators.required],
       confirmacaoSenha:['', Validators.required],
       linkedin: ['', Validators.required],
-      siteInstitucional: ['', Validators.required]
+      siteInstitucional: ['', Validators.required],
+      nomeFantasia: ['']
     },
     {
       validators: this.senhaMatchValidator
@@ -68,17 +73,20 @@ export class EditarEmpresaComponent {
 
   }
 
-  editarEmpresa(){
-    if(this.formulario.valid){
-      this.service.editar(this.empresa).subscribe(() => {
-        this.router.navigate(['/listarEmpresa'])
-      })
-    }
+  editarEmpresa() {
+    // Verifique os erros no console
+    console.log('Erros do formulário:', this.formulario.errors);
+    this.service.editar(this.empresa).subscribe(() => {
+      this.router.navigate(['/paginaInicialEmpresa', this.empresa.id]);
+    })
   }
+  
 
   cancelar() {
-    this.router.navigate(['/listarEmpresa'])
+    this.router.navigate(['/paginaInicialEmpresa', this.empresa.id]);
+
   }
+
 
   habilitarBotao():string{
     if(this.formulario.valid){

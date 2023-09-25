@@ -39,12 +39,12 @@ export class EditarVagaComponent implements OnInit{
 
     editarEmpresa(){
       this.service.editar(this.vaga).subscribe(() => {
-        this.router.navigate(['/listarVagas'])
+        this.router.navigate(['/listarVagas/',this.route.snapshot.paramMap.get('idEmpresa')])
       })
     }
 
     cancelar(){
-      this.router.navigate(['/paginaInicialEmpresa'])
+      this.router.navigate(['/listarVagas',this.route.snapshot.paramMap.get('idEmpresa')])
     }
 
 }

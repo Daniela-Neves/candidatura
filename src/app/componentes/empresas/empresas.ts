@@ -1,9 +1,9 @@
 import { Vagas } from "../vagas/vagas"
 
 export interface Empresas{
-  id:number
-  cnpj:string
-  razaoSocial:string
+  id:number,
+  cnpj:string,
+  razaoSocial:string,
   nomeFantasia?:string,
   endereco:{
     cep:string,
@@ -12,8 +12,8 @@ export interface Empresas{
     cidade:string,
     estado:string    
   },
-  email:string
-  senha:string
+  email:string,
+  senha:string,
   linkedin:string,
   siteInstitucional:string
 }

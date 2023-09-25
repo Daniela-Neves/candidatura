@@ -1,0 +1,159 @@
+.acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  h1{
+    color: rgb(128, 128, 128);
+    margin-bottom: 35px;
+    font-weight: bolder;
+  }
+  .fundo1 {
+    width: 100%;
+    height: auto;
+    background: rgba(46,46,56,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  .botao {
+    margin: 5px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: black;
+    color: yellow;
+    border:2px solid rgb(225, 225, 3);
+  }
+  
+  .botao:hover{
+    background-color: yellow;
+    color: black;
+  }
+  
+  .editar-empresa {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .endereco{
+    width: 100%;
+  }
+  
+  .endereco div{
+    text-align: center;
+  }
+  
+  .recrutamentos{
+    margin: auto;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .ey-logo{
+    width: 200px;
+    height: 200px;
+  
+  }
+
+  .mensagem__erro {
+    font-size: 12px;
+    margin-left: 5px;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .botao__desabilitado {
+    background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+  
+  .recrutamentos img{
+    width: 100%; /* A imagem ocupa 100% da largura do elemento */
+    height: 100%; /* A imagem ocupa 100% da altura do elemento */
+    object-fit: cover;
+  }
+  
+  .editar-empresa form {
+    background: rgba(46,46,56,1);
+  
+    width: 70%;
+  
+    margin: auto;
+    margin-top: 50px;
+    border: none;
+    border-radius: 20px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    padding: 2rem;
+    align-items: center;
+  }
+  
+  .editar-empresa form label {
+    color: #154580;
+    font-weight: bold;
+    margin: 0 0 1rem;
+  }
+  
+  .editar-empresa form .input {
+    border: none;
+    height: 40px;
+    width: 70%;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 2rem;
+    background: rgb(205, 205, 205);
+    font-size: 18px;
+  
+  
+  
+  }
+  
+  .editar-empresa form .input:focus{
+    background-color: yellow;
+  }
+  
+  .editar-empresa form .input::placeholder{
+    color: black;
+    font-size: 18px;
+  }
+  
+  
+  .editar-empresa form .textarea {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    /*
+    Teste para ver se a media pega
+    .fundo1 {
+      background-color: red;
+    }
+    */
+    .acoes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      flex-wrap: wrap;
+    }
+  }
