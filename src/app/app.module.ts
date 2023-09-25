@@ -42,6 +42,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AcompanharVagasComponent } from './componentes/candidatos/acompanhar-vagas/acompanhar-vagas.component';
 import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/editar-empresa.component';
+import { AdministrarVagaComponent } from './componentes/vagas/administrar-vaga/administrar-vaga.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/ed
     CadastroEmComponent,
     DashboardComponent,
     AcompanharVagasComponent,
-    EditarEmpresaComponent
+    EditarEmpresaComponent,
+    AdministrarVagaComponent
   ],
   imports: [
     BrowserModule,

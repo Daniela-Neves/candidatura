@@ -1,0 +1,17 @@
+<p>administrar-vaga works!</p>
+<div *ngFor="let vagas of listaVagas">
+    <p>{{vagas.candidato.nome}}</p>
+    <p>{{vagas.statusInscricao}}</p>
+    <p>Alterar status do candidato</p>
+    <select name="statusCandidato" id="statusCandidato" [(ngModel)]="novoStatus">
+        <option value="ENVIO CURRICULO">Curriculo em análise</option>
+        <option value="TESTE DISSERTACAO">TESTE DISSERTACAO</option>
+        <option value="ANALISE CURRICULO">ANALISE DO CURRICULO</option>
+        <option value="ENTREVISTA RH">ENTREVISTA RH</option>
+        <option value="ENTREVISTA GESTOR">ENTREVISTA GESTOR</option>
+        <option value="FINALIZADA">FINALIZADA</option>
+    </select>
+    <button (click)="salvar(vagas.candidato.id)">Salvar novo status</button>
+</div>
+
+<button (click)="voltar()">VOLTAR</button>

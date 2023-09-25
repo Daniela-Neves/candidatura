@@ -6,6 +6,7 @@ import { Vagas } from '../vagas/vagas';
 import { catchError, map} from 'rxjs/operators';
 import { of } from 'rxjs';
 import { VagasInscricao } from '../candidatos/vagasInscricao';
+import { CandidatoInscricao } from './vaga/candidatoInscricao';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,11 @@ export class InscricaoService {
     return this.http.get<VagasInscricao[]>(url)
   }
 
+  buscarPorVaga(id:number): Observable<CandidatoInscricao[]>{
+    const url = `${this.API}/vaga/${id}`
+    return this.http.get<CandidatoInscricao[]>(url)
+  }
+
   // editar(empresa: Inscricao): Observable<Inscricao>{
   //   const url = `${this.API}/${empresa.id}`
   //   return this.http.put<Inscricao>(url, empresa)
@@ -71,4 +77,9 @@ export class InscricaoService {
   //   );
   // }
   
+  atualizarStatus(idVaga:number, idCandidato:number,statusInscricao:Inscricao): Observable<Inscricao>{
+    const url = `${this.API}?vagaId=${idVaga}&candidatoId=${idCandidato}`
+    return this.http.put<Inscricao>(url,statusInscricao)
+  }
+
 }
