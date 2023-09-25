@@ -38,10 +38,10 @@ const routes: Routes = [
         path: 'perfis',
         component: PerfisComponent
     },
-    // {
-    //     path: 'login',
-    //     component: LoginComponent
-    // },
+    {
+        path: 'login',
+        component: LoginComponent
+    },
     {
         path: 'criarCandidato',
         component: CriarCandidatoComponent

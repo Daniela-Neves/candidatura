@@ -109,18 +109,20 @@ export class FormularioCurriculoComponent implements OnInit {
 
     certificados: Certificacao[] = [];
 
-    adicionarCertificado() {
-        this.certificados.push({
-            candidatoId: 0,  // Atualize conforme necessário
-            titulo: '',
-            organizacao: '',
-            dataEmissao: ''
-        });
-    }
 
-    excluirCertificado(index: number) {
-        this.certificados.splice(index, 1);
+    adicionarCertificado() {
+      const newCertificado: Certificacao = {
+        candidatoId: this.candidato.id,
+        titulo: '',
+        organizacao: '',
+        dataEmissao: ''
+    };
+        this.certificados.push(newCertificado)
     }
+    
+    excluirCertificado(index: number) {
+      this.certificados.splice(index, 1);
+  }
     
     salvarDadosPessoais() {
         this.service.salvarDadosPessoais(this.curriculo).subscribe(response => {
@@ -158,10 +160,17 @@ export class FormularioCurriculoComponent implements OnInit {
         });
       }
     
-      salvarCertificado() {
-        this.service.salvarCertificado(this.certificados).subscribe(response => {
-          console.log('Certificados salvos:', response);
+      salvarCertificado(certificados:Certificacao[]) {
+        certificados.forEach(certificado => {
+          this.service.salvarCertificado(certificado).subscribe(response => {
+            console.log('Certificados salvos:', response);
+          });
         });
       }
+
+      acionarCertificado(){
+        this.salvarCertificado(this.certificados)
+      }
+
 
 }
