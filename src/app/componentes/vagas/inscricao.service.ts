@@ -14,6 +14,7 @@ import { CandidatoInscricao } from './vaga/candidatoInscricao';
 export class InscricaoService {
 
   private readonly API = 'http://localhost:5277/Inscricao'
+  private readonly API_Dashboard = 'http://localhost:5277/Dashboard'
 
   
 
@@ -21,6 +22,11 @@ export class InscricaoService {
 
   listar(): Observable<Inscricao[]> {
     return this.http.get<Inscricao[]>(this.API)
+  }
+
+  listarPorEmpresa(idEmpresa: number): Observable<Number> {
+    const url = `http://localhost:5277/quantidadeInscricoes?idEmpresa=${idEmpresa}`
+    return this.http.get<Number>(url)
   }
 
   criarVaga(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
