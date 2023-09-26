@@ -27,6 +27,7 @@ import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/ed
 import { AdministrarVagaComponent } from './componentes/vagas/administrar-vaga/administrar-vaga.component';
 import { EditarEmComponent } from './componentes/everymind/editar-em/editar-em.component';
 import { VerCurriculoComponent } from './componentes/candidatos/ver-curriculo/ver-curriculo.component';
+import { DashboardEmpresaComponent } from './componentes/empresas/dashboard/dashboard-empresa.component';
 
 const routes: Routes = [
     {
@@ -157,6 +158,9 @@ const routes: Routes = [
     {
         path: 'verCurriculo/:idCandidato/:idEmpresa/:idVaga',
         component: VerCurriculoComponent
+    }, {
+        path: 'dashboard-empresas/:id',
+        component: DashboardEmpresaComponent
     }
 ];
 

@@ -4,7 +4,7 @@ export interface Empresas{
   id:number,
   cnpj:string,
   razaoSocial:string,
-  nomeFantasia?:string,
+  nomeFantasia:string,
   endereco:{
     cep:string,
     rua:string,

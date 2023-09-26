@@ -6,6 +6,7 @@
     import { FormacaoAcademica } from '../formacaoAcademica';
     import { Proficiencia } from '../proficiencia';
     import { Certificacao } from '../certificacao';
+import { Candidato } from '../candidato';
     
     @Component({
         selector: 'app-formulario-candidatura',
@@ -20,6 +21,14 @@
             const id = this.route.snapshot.paramMap.get('id');
             this.curriculo.candidatoId = Number(id);
           }
+
+          candidato : Candidato = {
+            id: 0,
+            nome: '',
+            sobrenome: '',
+            email: '',
+            senha: ''
+        };
     
         curriculo : Curriculo = {
             candidatoId: 0,
@@ -122,17 +131,19 @@
         certificados: Certificacao[] = [];
     
         adicionarCertificado() {
-            this.certificados.push({
-                candidatoId: 0, 
-                titulo: '',
-                organizacao: '',
-                dataEmissao: ''
-            });
+          const newCertificado: Certificacao = {
+            candidatoId: this.candidato.id,
+            titulo: '',
+            organizacao: '',
+            dataEmissao: ''
+        };
+            this.certificados.push(newCertificado)
         }
-    
+        
         excluirCertificado(index: number) {
-            this.certificados.splice(index, 1);
-        }
+          this.certificados.splice(index, 1);
+      }
+
         salvarDadosPessoais() {
             this.service.salvarDadosPessoais(this.curriculo).subscribe(response => {
               console.log('Dados pessoais salvos:', response);
@@ -157,16 +168,16 @@
             this.salvarExperienciaAcademica(this.experienciasAcademicas)
           }
         
-          salvarIdioma() {
-            this.service.salvarIdioma(this.idiomas).subscribe(response => {
-              console.log('Idiomas salvos:', response);
+          salvarCertificado(certificados:Certificacao[]) {
+            certificados.forEach(certificado => {
+              this.service.salvarCertificado(certificado).subscribe(response => {
+                console.log('Certificados salvos:', response);
+              });
             });
           }
-        
-          salvarCertificado() {
-            this.service.salvarCertificado(this.certificados).subscribe(response => {
-              console.log('Certificados salvos:', response);
-            });
+    
+          acionarCertificado(){
+            this.salvarCertificado(this.certificados)
           }
     
     }

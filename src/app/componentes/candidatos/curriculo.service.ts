@@ -73,7 +73,7 @@ export class CurriculoService {
     return this.http.post<any>(`${this.API_Idiomas}`, idiomas);
   }
 
-  salvarCertificado(certificados: Certificacao[]): Observable<any> {
+  salvarCertificado(certificados: Certificacao): Observable<any> {
     return this.http.post<any>(`${this.API_Certificacao}`, certificados);
   }
 }
