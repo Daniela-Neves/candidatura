@@ -61,7 +61,8 @@ export class CriarEmpresaComponent implements OnInit{
       senha: ['', Validators.required],
       confirmacaoSenha:['', Validators.required],
       linkedin: ['', Validators.required],
-      siteInstitucional: ['', Validators.required]
+      siteInstitucional: ['', Validators.required],
+      nomeFantasia : ['']
     },
     {
       validators: this.senhaMatchValidator
