@@ -220,6 +220,7 @@ li {
 .senha-strength{
   color: grey;
   text-align: left;
+  margin-bottom: 40px;
 }
 
 .senha-weak {
