@@ -123,7 +123,7 @@
             <button type="button" (click)="acionaExperienciasAcademica()">Salvar</button>
 
 
-            <h2>Idiomas</h2>
+            <!-- <h2>Idiomas</h2>
             <div *ngFor="let idioma of idiomas; let i = index">
                 <div class="idioma-item">
                     <label for="idioma{{i}}">Idioma:</label>
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarIdioma()">Adicionar Idioma</button>
-            <button type="button" (click)="salvarIdioma()">Salvar</button>
+            <button type="button" (click)="salvarIdioma()">Salvar</button> -->
 
             
 
@@ -156,10 +156,10 @@
                 </div>
             </div>
             <button type="button" (click)="adicionarCertificado()">Adicionar Certificado</button>
-            <button type="button" (click)="salvarCertificado()">Salvar</button>
+            <button type="button" (click)="acionarCertificado()">Salvar</button>
 
             
-            <button type="submit">Finalizar Currículo</button>
+            <button type="submit" [routerLink]="['/menu-candidato/',candidato.id]">Finalizar Currículo</button>
 
         </form>
     </div>

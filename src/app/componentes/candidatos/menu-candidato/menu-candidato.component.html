@@ -1,38 +1,34 @@
 <body>
-    <div class="v177_1564">
-        <div class="v177_1573">
-            <div class="v177_1574"></div>
+    <div class="container">
+        <h1 class="welcome-text">Olá, {{ candidato.nome }}!</h1>
+        <h1 class="welcome-text">Seja bem-vindo(a)</h1>
+        <h1 class="welcome-text">Veja as vagas que já foram cadastradas, cadastre novas oportunidades ou acompanhe o status dos candidatos.</h1>
+
+        <div class="botao-box">
+            <div class="image-box">
+                <a [routerLink]="['/buscar-vagas/',candidato.id]">
+                    <img src="../../../../assets/images/buscar.png" alt="BuscarVagas">
+                    <p class="image-text">Buscar Vagas</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/acompanhar-vagas', candidato.id]">
+                    <img src="../../../../assets/images/acompanhar.png" alt="AcompanharVagas">
+                    <p class="image-text">Acompanhar Vagas</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/formulario-curriculo', candidato.id]">
+                    <img src="../../../../assets/images/curriculo.png" alt="Currículo">
+                    <p class="image-text">Currículo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/candidatos/editarCandidato', candidato.id]">
+                    <img src="../../../../assets/images/dados.png" alt="DadosCadastrais">
+                    <p class="image-text">Dados Cadastrais</p>
+                </a>
+            </div>
         </div>
-        <button class="logout" routerLink="/login">
-            <span class="logout-txt">Logout</span>
-        </button>
-
-
-        <span class="v177_1565">Olá, {{ candidato.nome }}!</span>
-        <span class="v177_1566">Seja bem-vindo(a) a área de administrativa da EveryMind</span>
-        <span class="v177_1567">Veja as vagas que já foram cadastradas, cadastre novas oportunidades ou acompanhe o status dos candidatos.</span>
-
-        <span class="v177_1568" [routerLink]="['/buscar-vagas/',candidato.id]">
-            <span class="v177_1570">Buscar novas vagas</span>
-            <div class="v177_1576"></div>
-        </span>
-
-        <button class="v177_1569" [routerLink]="['/acompanhar-vagas', candidato.id]">
-            <span class="v177_1571">Acompanhar Vagas</span>
-            <div class="v177_1599"></div>
-        </button>
-
-        <button class="v177_1593" [routerLink]="['/formulario-curriculo', candidato.id]">
-            <span class="v177_1594">Currículo</span>
-            <div class="v177_1597"></div>
-        </button>
-        
-            <button class="v200_180" [routerLink]="['/candidatos/editarCandidato', candidato.id]">
-                <span class="v200_181">Alterar dados cadastrais</span>
-            <div class="v200_182"></div>
-        </button>
-
-        <div class="v191_116"></div>
-
     </div>
 </body>

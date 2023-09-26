@@ -1,5 +1,5 @@
 export interface Inscricao{
-  candidatoId:number
-  vagaId:string
+  candidatoId?:number,
+  vagaId?:string,
   statusInscricao?:string
 }

@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Vagas } from '../vagas/vagas';
 import { catchError, map} from 'rxjs/operators';
 import { of } from 'rxjs';
+import { VagasInscricao } from '../candidatos/vagasInscricao';
+import { CandidatoInscricao } from './vaga/candidatoInscricao';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ import { of } from 'rxjs';
 export class InscricaoService {
 
   private readonly API = 'http://localhost:5277/Inscricao'
+  private readonly API_Dashboard = 'http://localhost:5277/Dashboard'
 
   
 
@@ -19,6 +22,11 @@ export class InscricaoService {
 
   listar(): Observable<Inscricao[]> {
     return this.http.get<Inscricao[]>(this.API)
+  }
+
+  listarPorEmpresa(idEmpresa: number): Observable<Number> {
+    const url = `http://localhost:5277/quantidadeInscricoes?idEmpresa=${idEmpresa}`
+    return this.http.get<Number>(url)
   }
 
   criarVaga(idEmpresa: number, novaVaga: Vagas): Observable<Vagas> {
@@ -41,9 +49,14 @@ export class InscricaoService {
     return this.http.get<Inscricao>(url)
   }
 
-  buscarPorCandidato(id:number): Observable<Inscricao[]>{
+  buscarPorCandidato(id:number): Observable<VagasInscricao[]>{
     const url = `${this.API}/candidato/${id}`
-    return this.http.get<Inscricao[]>(url)
+    return this.http.get<VagasInscricao[]>(url)
+  }
+
+  buscarPorVaga(id:number): Observable<CandidatoInscricao[]>{
+    const url = `${this.API}/vaga/${id}`
+    return this.http.get<CandidatoInscricao[]>(url)
   }
 
   // editar(empresa: Inscricao): Observable<Inscricao>{
@@ -70,4 +83,9 @@ export class InscricaoService {
   //   );
   // }
   
+  atualizarStatus(idVaga:number, idCandidato:number,statusInscricao:Inscricao): Observable<Inscricao>{
+    const url = `${this.API}?vagaId=${idVaga}&candidatoId=${idCandidato}`
+    return this.http.put<Inscricao>(url,statusInscricao)
+  }
+
 }

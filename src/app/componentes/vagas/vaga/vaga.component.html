@@ -6,7 +6,7 @@
   <p><strong>Cidade:</strong> {{ vagas.cidade }}</p>
   <p><strong>Estado:</strong> {{ vagas.estado }}</p>
   <p><strong>Remuneração: R$</strong> {{ vagas.salario }},00</p>
-  <button class="ver-button">Ver Detalhes</button>
+  <button class="ver-button"routerLink="/administrar-vaga/{{vagas.id}}/{{idEmpresa}}" >Administrar candidatos</button>
   <div class="botoes">
     <button class="botao-editar" routerLink="/vagas/editarVaga/{{vagas.id}}/{{idEmpresa}}">
       <img src="../../../../assets/images/icone-editar.png" alt="Ícone de editar">
