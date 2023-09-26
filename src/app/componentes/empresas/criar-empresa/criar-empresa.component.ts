@@ -13,6 +13,7 @@ export class CriarEmpresaComponent implements OnInit{
 
   formulario!:FormGroup
   passwordStrength: string = '';
+  mostrarinformacoesSenha = false
 
   empresa:Empresas={
     id:0,

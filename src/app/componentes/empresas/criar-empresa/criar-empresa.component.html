@@ -129,11 +129,13 @@
           id="senha"
           formControlName="senha"
           placeholder="Senha"
-          [(ngModel)]="empresa.senha">
+          [(ngModel)]="empresa.senha"
+          (focus)="mostrarinformacoesSenha = true">
           <div class="mensagem__erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
             *Campo obrigatório!
           </div>
-          <div class="senha-strength"
+          <div *ngIf="mostrarinformacoesSenha">
+            <div class="senha-strength"
   [ngClass]="{
     'senha-weak': passwordStrength === 'Fraca',
     'senha-medium': passwordStrength === 'Média',
@@ -161,6 +163,7 @@
                 <span [ngClass]="{'check-mark': isPasswordValid('special'), 'x-mark': !isPasswordValid('special')}"></span> Pelo menos um caractere especial
               </li>
             </ul>
+          </div>
           </div>
 
       <input
