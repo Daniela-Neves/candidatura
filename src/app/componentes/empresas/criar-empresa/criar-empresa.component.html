@@ -133,8 +133,7 @@
           <div class="mensagem__erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
             *Campo obrigatório!
           </div>
-          <div
-  class="senha-strength"
+          <div class="senha-strength"
   [ngClass]="{
     'senha-weak': passwordStrength === 'Fraca',
     'senha-medium': passwordStrength === 'Média',
