@@ -57,6 +57,11 @@ export class AdministrarVagaComponent implements OnInit{
       
     })
   }
+
+  idEmpresa = this.route.snapshot.paramMap.get('idEmpresa')
+  idVaga = this.route.snapshot.paramMap.get('id')
+
+ 
   
   
 }

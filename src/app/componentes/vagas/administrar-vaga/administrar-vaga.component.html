@@ -11,6 +11,7 @@
         <option value="ENTREVISTA GESTOR">ENTREVISTA GESTOR</option>
         <option value="FINALIZADA">FINALIZADA</option>
     </select>
+    <button routerLink="/verCurriculo/{{vagas.candidato.id}}/{{idEmpresa}}/{{idVaga}}">Ver currículo do candidato</button>
     <button (click)="salvar(vagas.candidato.id)">Salvar novo status</button>
 </div>
 

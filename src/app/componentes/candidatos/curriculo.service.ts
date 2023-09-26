@@ -39,7 +39,7 @@ export class CurriculoService {
     return this.http.delete<Curriculo>(url)
   }
 
-  buscarPorId(id: number): Observable<Curriculo>{
+  buscarPorId(id: Number): Observable<Curriculo>{ 
     const url = `${this.API}/${id}`
     return this.http.get<Curriculo>(url)
   }

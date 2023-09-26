@@ -44,6 +44,7 @@ import { AcompanharVagasComponent } from './componentes/candidatos/acompanhar-va
 import { EditarEmpresaComponent } from './componentes/empresas/editar-empresa/editar-empresa.component';
 import { EditarEmComponent } from './componentes/everymind/editar-em/editar-em.component';
 import { AdministrarVagaComponent } from './componentes/vagas/administrar-vaga/administrar-vaga.component';
+import { VerCurriculoComponent } from './componentes/candidatos/ver-curriculo/ver-curriculo.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { AdministrarVagaComponent } from './componentes/vagas/administrar-vaga/a
     AcompanharVagasComponent,
     EditarEmpresaComponent,
     EditarEmComponent,
-    AdministrarVagaComponent
+    AdministrarVagaComponent,
+    VerCurriculoComponent
   ],
   imports: [
     BrowserModule,
