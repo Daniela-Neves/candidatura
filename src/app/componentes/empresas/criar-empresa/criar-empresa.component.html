@@ -1,0 +1,181 @@
+<section class="container criar-empresa ff-inter">
+
+  <div class="fundo1">
+    <div>
+      <!-- <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt=""> -->
+      <h1 style="font-family: 'Karla', sans-serif;">RECRUTAMENTOS</h1>
+    </div>
+    <!-- <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div> -->
+
+    <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px; text-align: center;" >Digite seus dados para o cadastro</h2>
+    <form [formGroup]="formulario" class="criar-empresas">
+      <input
+        type="textarea"
+        class="input"
+        id="cnpj"
+        formControlName="cnpj"
+        placeholder="CNPJ"
+        [(ngModel)]="empresa.cnpj">
+        <div class="mensagem__erro" *ngIf="formulario.get('cnpj')?.errors?.['required'] && formulario.get('cnpj')?.touched">
+          *Campo obrigatório!
+        </div>
+        <div class="mensagem__erro" *ngIf="formulario.get('cnpj')?.errors?.['pattern'] && formulario.get('cnpj')?.touched">
+          *Este campo deve ter apenas valores numéricos!
+        </div>
+        <div class="mensagem__erro" *ngIf="formulario.get('cnpj')?.errors?.['minlength'] && formulario.get('cnpj')?.touched">
+          *Este campo deve ter 14 caracteres!
+        </div>
+        <div class="mensagem__erro" *ngIf="formulario.get('cnpj')?.errors?.['maxlength'] && formulario.get('cnpj')?.touched">
+          *Este campo deve ter apenas 14 caracteres!
+        </div>
+
+        <input
+          type="text"
+          class="input"
+          id="razaoSocial"
+          formControlName="razaoSocial"
+          placeholder="Razão Social"
+          [(ngModel)]="empresa.razaoSocial">
+          <div class="mensagem__erro" *ngIf="formulario.get('razaoSocial')?.errors?.['required'] && formulario.get('razaoSocial')?.touched">
+            *Campo obrigatório!
+          </div>
+
+        <input
+          type="text"
+          class="input"
+          id="nomeFantasia"
+          formControlName="nomeFantasia"
+          [(ngModel)]="empresa.nomeFantasia"
+          placeholder="Nome Fantasia (Opcional)">
+
+          <div class="endereco" formGroupName="endereco">
+            <input
+              type="text"
+              class="input"
+              id="rua"
+              formControlName="rua"
+              placeholder="Endereço"
+              [(ngModel)]="empresa.endereco.rua">
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.rua')?.hasError('required') && formulario.get('endereco.rua')?.touched">
+              *Campo obrigatório!
+            </div>
+
+            <input
+              type="text"
+              class="input"
+              id="numero"
+              formControlName="numero"
+              placeholder="Número"
+              [(ngModel)]="empresa.endereco.numero">
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.numero')?.hasError('required') && formulario.get('endereco.numero')?.touched">
+              *Campo obrigatório!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.numero')?.hasError('pattern') && formulario.get('endereco.numero')?.touched">
+              *Este campo deve ter apenas valores numéricos!
+            </div>
+
+            <input
+              type="text"
+              class="input"
+              id="cep"
+              formControlName="cep"
+              placeholder="CEP"
+              [(ngModel)]="empresa.endereco.cep">
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.hasError('required') && formulario.get('endereco.cep')?.touched">
+              *Campo obrigatório!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.errors?.['pattern'] && formulario.get('endereco.cep')?.touched">
+              *Este campo deve ter apenas valores numéricos!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.errors?.['minlength'] && formulario.get('endereco.cep')?.touched">
+              *Este campo deve ter 8 caracteres!
+            </div>
+            <div class="mensagem__erro" *ngIf="formulario.get('endereco.cep')?.errors?.['maxlength'] && formulario.get('endereco.cep')?.touched">
+              *Este campo deve ter apenas 8 caracteres!
+            </div>
+          </div>
+
+
+
+
+
+          <div class="mensagem__erro" *ngIf="formulario.get('cep')?.errors?.['pattern'] && formulario.get('cep')?.touched">
+            *Este campo deve ter apenas valores numéricos!
+          </div>
+          <div class="mensagem__erro" *ngIf="formulario.get('cep')?.errors?.['minlength'] && formulario.get('cep')?.touched">
+            *Este campo deve ter 8 caracteres!
+          </div>
+          <div class="mensagem__erro" *ngIf="formulario.get('cep')?.errors?.['maxlength'] && formulario.get('cep')?.touched">
+            *Este campo deve ter apenas 8 caracteres!
+          </div>
+
+          <input
+          type="text"
+          class="input"
+          id="email"
+          formControlName="email"
+          placeholder="Email"
+          [(ngModel)]="empresa.email">
+          <div class="mensagem__erro" *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">
+            *Campo obrigatório!
+          </div>
+          <div class="mensagem__erro" *ngIf="formulario.get('email')?.errors?.['email'] && formulario.get('email')?.touched">
+            *Este não é um e-mail válido
+          </div>
+
+        <input
+          type="password"
+          class="input"
+          id="senha"
+          formControlName="senha"
+          placeholder="Senha"
+          [(ngModel)]="empresa.senha">
+          <div class="mensagem__erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
+            *Campo obrigatório!
+          </div>
+
+      <input
+          type="password"
+          class="input"
+          id="confirmacaoSenha"
+          formControlName="confirmacaoSenha"
+          placeholder="Confirme a Senha">
+          <div class="mensagem__erro" *ngIf="formulario.get('confirmacaoSenha')?.errors?.['required'] && formulario.get('confirmacaoSenha')?.touched">
+            *Campo obrigatório!
+          </div>
+          <div class="mensagem__erro" *ngIf="formulario.get('confirmacaoSenha')?.errors?.['senhaNaoCoincide'] && formulario.get('confirmacaoSenha')?.touched">
+            *As senhas não coincidem.
+          </div>
+
+          <input
+          type="text"
+          class="input"
+          id="linkedin"
+          formControlName="linkedin"
+          placeholder="LinkedIn"
+          [(ngModel)]="empresa.linkedin">
+          <div class="mensagem__erro" *ngIf="formulario.get('linkedin')?.errors?.['required'] && formulario.get('linkedin')?.touched">
+            *Campo obrigatório!
+          </div>
+
+          <input
+          type="text"
+          class="input"
+          id="siteInstitucional"
+          formControlName="siteInstitucional"
+          placeholder="Site Institucional"
+          [(ngModel)]="empresa.siteInstitucional">
+          <div class="mensagem__erro" *ngIf="formulario.get('siteInstitucional')?.errors?.['required'] && formulario.get('siteInstitucional')?.touched">
+            *Campo obrigatório!
+          </div>
+
+        <div class="acoes">
+          <button
+          [disabled]="!formulario.valid"
+          [ngClass]="habilitarBotao()"
+          (click)="criarEmpresa()">Cadastrar</button>
+          <button (click)="cancelar()" class="botao">Cancelar</button>
+        </div>
+      </form>
+  </div>
+</section>

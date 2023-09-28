@@ -1,0 +1,132 @@
+.fundo1 {
+  margin: 0;
+  display: flex;
+  font-family: 'Roboto', monospace;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background: rgba(46,46,56,1); */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow-y: scroll;
+}
+
+.form-dados{
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.formulario-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.secao{
+  background-color: rgb(235, 235, 235);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.secao h2{
+  background-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.secao button{
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.secao button:hover{
+  background-color: rgba(27, 200, 65, 1);
+  border-style: solid;
+  border-color: #383838;
+  cursor: pointer;
+  color: #fff;
+}
+
+.form-dados input{
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.finalizar{
+  background-color: rgba(27, 200, 65, 1);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bold;
+  border-color: black;
+}
+
+/* .form-dados input[type = checkbox]{
+  border: #0056b3;
+
+} */
+
+.check-deficiencia{
+  display: flex;
+  width: 100%;
+  justify-content:space-around;
+}
+
+.adicionar-button,
+.salvar-button {
+  display: block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  cursor: pointer;
+}
+
+.adicionar-button:hover,
+.salvar-button:hover {
+  background-color: #0056b3;
+}
+
+.salvar-button {
+  margin-bottom: 20px;
+}
+
+.salvar-button:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Estilizando os checkboxes */
+.checkbox-label {
+  display: block;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}
+
+@media (max-width:850px) {
+  .check-deficiencia{
+    flex-direction: column;
+  }
+}

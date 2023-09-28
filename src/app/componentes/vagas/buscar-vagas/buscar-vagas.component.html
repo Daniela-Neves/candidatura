@@ -1,0 +1,54 @@
+
+<body class="fundo1">
+    <div class="filtro-container">
+        <h2>Filtros</h2>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" class="filtro-input" [(ngModel)]="filtros.estado">
+
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" class="filtro-input" [(ngModel)]="filtros.cidade">
+
+        <label for="nomeEmpresa">Nome da Empresa:</label>
+        <input type="text" id="nomeEmpresa" class="filtro-input" [(ngModel)]="filtros.nomeEmpresa">
+
+        <label for="tipoVaga">Tipo de Vaga:</label>
+        <select id="tipoVaga" class="filtro-input">
+            <option value="CLT">CLT</option>
+            <option value="PJ">PJ</option>
+            <option value="Estágio">Estágio</option>
+        </select>
+
+        <label for="salario">Salário:</label>
+        <select id="salario" class="filtro-input">
+            <option value="0-2000">Até R$ 2.000,00</option>
+            <option value="2000-5000">R$ 2.000,00 - R$ 5.000,00</option>
+            <option value="5000-10000">R$ 5.000,00 - R$ 10.000,00</option>
+            <option value="10000+">Acima de R$ 10.000,00</option>
+        </select>
+
+        <label for="modalidade">Modalidade:</label>
+        <select id="modalidade" class="filtro-input">
+            <option value="Presencial">Presencial</option>
+            <option value="Home Office">Home Office</option>
+            <option value="Híbrido">Híbrido</option>
+        </select>
+
+        <button class="aplicar-button" (click)="aplicarFiltros()">Aplicar</button>
+    </div>
+
+    <div class="centro-container">
+        <h1 class="centro-heading">Busca de Vagas</h1>
+        <input type="text" id="busca" class="centro-input" placeholder="Digite sua busca...">
+
+        <div class="lista-vagas">
+          <div *ngFor="let vaga of vagas" class="vaga">
+            <h3>{{ vaga.nome }}</h3>
+            <p>{{ vaga.descricao }}</p>
+            <p>Salário: {{ vaga.salario }}</p>
+            <p>Modalidade: {{vaga.modalidade}} </p>
+            <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a>
+        </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,27 @@
+<body>
+    <div class="container">
+        <h1 class="welcome-text">Olá, {{ everymind.nome }}!</h1>
+        <h1 class="welcome-text">Seja bem-vindo(a) a área de administração da plataforma!</h1>
+        <div class="botao-box">
+            <div class="image-box">
+                <a href="/dashboard">
+                    <img src="../../../../assets/images/dashboard.png" alt="DashBoard">
+                    <p class="image-text">Métricas Gerais</p>
+                </a>
+            </div>
+            <!-- <div class="image-box">
+                <a [routerLink]="['/everymind/cadastrar', everymind.id]">
+                    <img src="../../../../assets/images/adms.png" alt="Administrador">
+                    <p class="image-text">Cadastrar Admin</p>
+                </a>
+            </div> -->
+            <div class="image-box">
+                <a [routerLink]="['/everymind/editarEverymind', everymind.id]">
+                    <img src="../../../../assets/images/adms.png" alt="Administrador">
+                    <p class="image-text">Editar Admin</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,75 @@
+<section class="container editar-empresa ff-inter">
+
+    <div class="fundo1">
+      <div>
+        <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt="">
+      </div>
+      <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div>
+
+      <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
+      <form>
+        <input
+          type="textarea"
+          class="input"
+          id="cnpj"
+          name="cnpj"
+          placeholder="CNPJ"
+          [(ngModel)]="empresa.cnpj">
+
+          <input
+            type="text"
+            class="input"
+            id="razaoSocial"
+            name="razaoSocial"
+            placeholder="Razão Social"
+            [(ngModel)]="empresa.razaoSocial">
+
+          <input
+            type="text"
+            class="input"
+            id="endereco"
+            name="endereco"
+            placeholder="Endereço"
+            [(ngModel)]="empresa.endereco">
+
+            <input
+            type="text"
+            class="input"
+            id="numero"
+            name="numero"
+            placeholder="Número"
+            [(ngModel)]="empresa.endereco.numero">
+
+            <input
+            type="text"
+            class="input"
+            id="email"
+            name="email"
+            placeholder="Email"
+            [(ngModel)]="empresa.email">
+
+          <input
+            type="text"
+            class="input"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            [(ngModel)]="empresa.senha">
+
+        <input
+            type="text"
+            class="input"
+            id="confirmacaoSenha"
+            name="confirmacaoSenha"
+            placeholder="Confirmação de Senha">
+            <!-- [(ngModel)]="empresa.endereco.confirmacaoSenha"> -->
+
+          <div class="acoes">
+            <button (click)="editarEmpresa()" routerLink="/listarEmpresa" class="botao">Editar</button>
+            <button (click)="cancelar()" class="botao">Cancelar</button>
+          </div>
+        </form>
+    </div>
+  </section>
+
+

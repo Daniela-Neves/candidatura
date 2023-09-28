@@ -1,0 +1,58 @@
+<section class="container criar-candidatos ff-inter">
+
+  <div class="fundo1">
+    <div>
+      <!-- <img class="recrutamentos" src="../../../../assets/images/v127_6.png" alt=""> -->
+      <h1 style="font-family: 'Karla', sans-serif;">RECRUTAMENTOS</h1>
+    </div>
+    <!-- <div ><img class="ey-logo" src="../../../../assets/images/v126_3.png" alt=""></div> -->
+
+    <h2 style="color: yellow; font-family: 'Courier New', Courier, monospace; margin-top: 30px;" >Digite seus dados para o cadastro</h2>
+    <form>
+      <input
+          type="text"
+          class="input"
+          id="nome"
+          name="nome"
+          placeholder="Nome"
+          [(ngModel)]="everymind.nome">
+
+          <input
+          type="text"
+          class="input"
+          id="sobrenome"
+          name="sobrenome"
+          placeholder="Sobrenome"
+          [(ngModel)]="everymind.sobrenome">
+
+      <input
+        type="textarea"
+        class="input"
+        id="email"
+        name="email"
+        placeholder="Email"
+        [(ngModel)]="everymind.email">
+
+        <input
+          type="password"
+          class="input"
+          id="senha"
+          name="senha"
+          placeholder="Senha"
+          [(ngModel)]="everymind.senha">
+
+          <input
+          type="password"
+          class="input"
+          id="confirmacaoSenha"
+          name="confirmacaoSenha"
+          placeholder="Confirme a Senha"
+          [(ngModel)]="confirmacaoSenhaDigitada">
+
+        <div class="acoes">
+          <button (click)="criarEveryMind()" class="botao">Cadastrar</button>
+          <button (click)="cancelar()" class="botao">Cancelar</button>
+        </div>
+      </form>
+  </div>
+</section>

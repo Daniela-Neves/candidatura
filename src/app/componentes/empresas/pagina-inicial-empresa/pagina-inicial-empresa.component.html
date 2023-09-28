@@ -1,0 +1,34 @@
+<body>
+    <div class="container">
+        <h1 class="welcome-text">Olá, {{empresa.razaoSocial}}!</h1>
+        <h1 class="welcome-text">Seja bem-vindo(a) à sua área de Empresa,</h1>
+        <h1 class="welcome-text">Veja as vagas que já foram cadastradas, cadastre novas oportunidades ou acompanhe o status dos candidatos.</h1>
+
+        <div class="botao-box">
+            <div class="image-box">
+                <a (click)="listarVagas()">
+                    <img src="../../../../assets/images/acompanhar.png" alt="AcompanharVagas">
+                    <p class="image-text">Vagas</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a (click)="cadastrarVaga()">
+                    <img src="../../../../assets/images/vaga.png" alt="CadastrarVaga">
+                    <p class="image-text">Cadastrar Vaga</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/empresas/editarEmpresa', empresa.id]">
+                    <img src="../../../../assets/images/dados.png" alt="DadosCadastrais">
+                    <p class="image-text">Dados Cadastrais</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/dashboard-empresas', empresa.id]">
+                    <img src="../../../../assets/images/dashboard.png" alt="DashBoard">
+                    <p class="image-text">Métricas Gerais</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>

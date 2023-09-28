@@ -8,15 +8,16 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './excluir-candidato.component.html',
   styleUrls: ['./excluir-candidato.component.css']
 })
+
 export class ExcluirCandidatoComponent implements OnInit{
 
-  candidato:Candidato={
-    id:0,
-    nome:'',
-    sobrenome:'',
-    email:'',
-    senha:''
-  }
+  candidato : Candidato = {
+    id: 0,
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: ''
+};
 
   constructor(
     private service: CandidatoService,
@@ -40,7 +41,7 @@ export class ExcluirCandidatoComponent implements OnInit{
   }
 
   cancelar() {
-    this.router.navigate(['/listarPensamento'])
+    this.router.navigate(['/listarCandidato'])
   }
 
 }

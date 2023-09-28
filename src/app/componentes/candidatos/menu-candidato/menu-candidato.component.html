@@ -1,0 +1,34 @@
+<body>
+    <div class="container">
+        <h1 class="welcome-text">Olá, {{ candidato.nome }}!</h1>
+        <h1 class="welcome-text">Seja bem-vindo(a)</h1>
+        <h1 class="welcome-text">Veja as vagas que já foram cadastradas, cadastre novas oportunidades ou acompanhe o status dos candidatos.</h1>
+
+        <div class="botao-box">
+            <div class="image-box">
+                <a [routerLink]="['/buscar-vagas/',candidato.id]">
+                    <img src="../../../../assets/images/buscar.png" alt="BuscarVagas">
+                    <p class="image-text">Buscar Vagas</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/acompanhar-vagas', candidato.id]">
+                    <img src="../../../../assets/images/acompanhar.png" alt="AcompanharVagas">
+                    <p class="image-text">Acompanhar Vagas</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/formulario-curriculo', candidato.id]">
+                    <img src="../../../../assets/images/curriculo.png" alt="Currículo">
+                    <p class="image-text">Currículo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a [routerLink]="['/candidatos/editarCandidato', candidato.id]">
+                    <img src="../../../../assets/images/dados.png" alt="DadosCadastrais">
+                    <p class="image-text">Dados Cadastrais</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>

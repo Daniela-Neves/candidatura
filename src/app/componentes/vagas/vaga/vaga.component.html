@@ -1,0 +1,19 @@
+<div class="vaga ff-roboto-mono">
+<div>
+  <h2>{{ vagas.nome }}</h2>
+  <p><strong>Tipo de Contratação:</strong> {{ vagas.tipoVaga }}</p>
+  <p><strong>Data de Publicação:</strong> {{ vagas.dataPublicacao }}</p>
+  <p><strong>Cidade:</strong> {{ vagas.cidade }}</p>
+  <p><strong>Estado:</strong> {{ vagas.estado }}</p>
+  <p><strong>Remuneração: R$</strong> {{ vagas.salario }},00</p>
+  <button class="ver-button"routerLink="/administrar-vaga/{{vagas.id}}/{{idEmpresa}}" >Administrar candidatos</button>
+  <div class="botoes">
+    <button class="botao-editar" routerLink="/vagas/editarVaga/{{vagas.id}}/{{idEmpresa}}">
+      <img src="../../../../assets/images/icone-editar.png" alt="Ícone de editar">
+  </button>
+    <button class="botao-excluir" routerLink="/vagas/excluirVaga/{{vagas.id}}/{{idEmpresa}}">
+      <img src="../../../../assets/images/icone-excluir.png" alt="Ícone de excluir">
+  </button>
+  </div>
+</div>
+</div>

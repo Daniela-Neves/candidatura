@@ -1,10 +1,206 @@
 {
+  "empresas": [
+    {
+      "id": 1,
+      "cnpj": "12345678910",
+      "razaoSocial": "Amor",
+      "endereco": "Avenida Rua",
+      "numero": "12",
+      "email": "email@email.com",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "vagas": [
+        {
+          "nome": "teste",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "teste",
+          "estado": "teste",
+          "salario": "1",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "Hibrido",
+          "id": 1
+        },
+        {
+          "nome": "Dev fullstack",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-12",
+          "cidade": "São Paulo",
+          "estado": "São Paulo",
+          "salario": "60000",
+          "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
+          "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
+          "qualificacoes": "Conhecimento em java e angular",
+          "modalidade": "HomeOffice",
+          "id": 2
+        },
+        {
+          "nome": "teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-14",
+          "cidade": "teste",
+          "estado": "teste",
+          "salario": "1000",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "HomeOffice",
+          "id": 3
+        },
+        {
+          "id": 0,
+          "nome": "testezinho",
+          "tipoContratacao": "",
+          "dataPublicacao": "",
+          "cidade": "",
+          "estado": "",
+          "salario": "1",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": ""
+        },
+        {
+          "id": 0,
+          "nome": "teste6",
+          "tipoContratacao": "",
+          "dataPublicacao": "",
+          "cidade": "",
+          "estado": "",
+          "salario": "",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": ""
+        },
+        {
+          "id": 0,
+          "nome": "fdsfsad",
+          "tipoContratacao": "",
+          "dataPublicacao": "",
+          "cidade": "",
+          "estado": "",
+          "salario": "",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": ""
+        },
+        {
+          "id": 0,
+          "nome": "Teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "Sao Paulo",
+          "estado": "Sao Paulo",
+          "salario": "1000",
+          "sobreAVaga": "",
+          "responsabilidades": "",
+          "qualificacoes": "",
+          "modalidade": "Presencial"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "cnpj": "12345678910",
+      "razaoSocial": "Amor",
+      "endereco": "Avenida Rua",
+      "numero": "12",
+      "email": "email@email.com",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "vagas": [
+        {
+          "nome": "teste",
+          "tipoContratacao": "PJ",
+          "dataPublicacao": "2023-09-13",
+          "cidade": "teste",
+          "estado": "teste",
+          "salario": "1",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "Hibrido",
+          "id": 1
+        },
+        {
+          "nome": "Dev fullstack",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-12",
+          "cidade": "São Paulo",
+          "estado": "São Paulo",
+          "salario": "60000",
+          "sobreAVaga": "Desenvolvedor front-end e back-end para projetos de intranet.",
+          "responsabilidades": "Manutenção em sistema legado e novos desenvolvimentos",
+          "qualificacoes": "Conhecimento em java e angular",
+          "modalidade": "HomeOffice",
+          "id": 2
+        },
+        {
+          "nome": "teste",
+          "tipoContratacao": "CLT",
+          "dataPublicacao": "2023-09-14",
+          "cidade": "teste",
+          "estado": "teste",
+          "salario": "1000",
+          "sobreAVaga": "teste",
+          "responsabilidades": "teste",
+          "qualificacoes": "teste",
+          "modalidade": "HomeOffice",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "cnpj": "1234564874",
+      "razaoSocial": "Minha empresa",
+      "nomeFantasia": "OJogos",
+      "endereco": "",
+      "numero": "69",
+      "cep": "123654",
+      "email": "empresa@gmail.com",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "vagas": [],
+      "linkedin": "N tenho",
+      "siteInstitucional": "",
+      "id": 3
+    }
+  ],
   "candidatos": [
     {
       "id": 2,
       "nome": "Gabriel",
-      "sobrenome": "Morais",
-      "email": "gabrielc_morais@hotmail.com"
+      "sobrenome": "Silva",
+      "email": "gabrielsilva",
+      "senha": "123",
+      "confirmacaoSenha": "123",
+      "dataNascimento": "2023-09-06",
+      "genero": "Outro",
+      "identificacao": "Parda(o)",
+      "deficiencias": {
+        "fisica": true,
+        "auditiva": true,
+        "visual": true,
+        "intelectual": false,
+        "autista": false
+      },
+      "endereco": "yuu",
+      "linkedin": "bibibi",
+      "formacao": "",
+      "curso": "",
+      "inicioFormacao": "",
+      "fimFormacao": "",
+      "idiomas": [
+        {
+          "idioma": "",
+          "nivel": ""
+        }
+      ],
+      "certificados": []
     },
     {
       "id": 4,
@@ -17,13 +213,6 @@
       "nome": "Rafael",
       "sobrenome": "Souza",
       "id": 6
-    },
-    {
-      "email": "Daniela",
-      "nome": "Dani",
-      "sobrenome": "Souza",
-      "senha": "4567",
-      "id": 7
     },
     {
       "email": "dani@gmail.com",
@@ -40,11 +229,121 @@
       "id": 9
     },
     {
-      "email": "",
-      "nome": "",
-      "sobrenome": "",
-      "senha": "",
-      "id": 11
+      "email": "geovanne.macedo@gmail.com",
+      "nome": "Geovanne",
+      "sobrenome": "Macedo",
+      "senha": "aaa",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "nome": "Daniela",
+      "sobrenome": "Santos",
+      "email": "dani@gmail.com",
+      "senha": "123",
+      "dataNascimento": "",
+      "genero": "",
+      "identificacao": "",
+      "deficiencias": {
+        "fisica": false,
+        "auditiva": false,
+        "visual": false,
+        "intelectual": false,
+        "autista": false
+      },
+      "endereco": {
+        "cep": "",
+        "endereco": "",
+        "numero": "",
+        "cidade": "",
+        "estado": ""
+      },
+      "linkedin": "",
+      "formacao": {
+        "fundamental": "",
+        "ensinoMedio": "",
+        "ensinoSuperior": "",
+        "mestrado": "",
+        "doutorado": "",
+        "inicio": "",
+        "fim": ""
+      },
+      "idiomas": [
+        {
+          "idioma": "",
+          "nivel": ""
+        }
+      ],
+      "certificados": [
+        {
+          "nome": "",
+          "organizacao": "",
+          "dataEmissao": ""
+        }
+      ],
+      "experiencia": {
+        "titulo": "",
+        "tipoEmprego": "",
+        "nomeEmpresa": "",
+        "inicio": "",
+        "fim": ""
+      }
+    },
+    {
+      "id": 12,
+      "nome": "Geovanne",
+      "sobrenome": "Douglas",
+      "email": "geovanne.macedo@gmail.com",
+      "senha": "123",
+      "dataNascimento": "",
+      "genero": "",
+      "identificacao": "",
+      "deficiencias": {
+        "fisica": false,
+        "auditiva": false,
+        "visual": false,
+        "intelectual": false,
+        "autista": false
+      },
+      "endereco": {
+        "cep": "",
+        "endereco": "",
+        "numero": "",
+        "cidade": "",
+        "estado": ""
+      },
+      "linkedin": "",
+      "formacao": {
+        "fundamental": "",
+        "ensinoMedio": "",
+        "ensinoSuperior": "",
+        "mestrado": "",
+        "doutorado": "",
+        "inicio": "",
+        "fim": ""
+      },
+      "idiomas": [
+        {
+          "idioma": "",
+          "nivel": ""
+        }
+      ],
+      "certificados": [
+        {
+          "nome": "",
+          "organizacao": "",
+          "dataEmissao": ""
+        }
+      ],
+      "experiencia": {
+        "titulo": "",
+        "tipoEmprego": "",
+        "nomeEmpresa": "",
+        "inicio": "",
+        "fim": ""
+      }
     }
-  ]
+  ],
+  "vagas": []
+
 }
