@@ -22,7 +22,7 @@ export class BuscarVagasComponent implements OnInit {
       cidade: '',
       nomeEmpresa: '',
       tipoVaga: '',
-      remuneracao: '',
+      salario: '',
       modalidade: ''
     };
 
@@ -33,56 +33,63 @@ export class BuscarVagasComponent implements OnInit {
     // Chama o método listar() de empresasService para poder resgatar todas as empresas, atribuindo à variável this.empresas
     this.vagaService.listar().subscribe((vagas) => {
       this.vagas = vagas
-     
 
     })
 
-
   }
 
-  aplicarFiltros() {
-    let vagasFiltradas: Vagas[] = [];
-
-    for (const empresa of this.empresas) {
-      // vagasFiltradas = vagasFiltradas.concat(empresa.vagas);
+  // export interface Vaga {
+  //   id?: number;
+  //   empresaId: number;
+  //   nome: string;
+  //   tipoVaga: string;
+  //   dataPublicacao: string;
+  //   cidade: string;
+  //   estado: string;
+  //   salario: string;
+  //   descricao: string;
+  //   responsabilidades: string;
+  //   qualificacoes: string;
+  //   modalidade: string;
+  //   statusProcesso?: string;
+  // }
+  
+    busca: string = ''; // Inicialize a busca
+  
+    // Restante do seu código
+  
+    aplicarFiltros() {
+      this.vagas = this.vagas.filter((vaga) => {
+        const filtroEstado = vaga.estado === this.filtros.estado || this.filtros.estado === '';
+        const filtroCidade = vaga.cidade === this.filtros.cidade || this.filtros.cidade === '';
+        const filtroNomeEmpresa = vaga.nome.includes(this.filtros.nomeEmpresa);
+        const filtroTipoVaga = vaga.tipoVaga === this.filtros.tipoVaga || this.filtros.tipoVaga === '';
+        const filtroSalario = this.filtros.salario === '' || this.filtrarSalario(vaga.salario);
+        const filtroModalidade = vaga.modalidade === this.filtros.modalidade || this.filtros.modalidade === '';
+  
+        return filtroEstado && filtroCidade && filtroNomeEmpresa && filtroTipoVaga && filtroSalario && filtroModalidade;
+      });
     }
-
-    vagasFiltradas = vagasFiltradas.filter(vaga => {
-      return (
-        (!this.filtros.estado || vaga.estado === this.filtros.estado) &&
-        (!this.filtros.cidade || vaga.cidade === this.filtros.cidade) &&
-        (!this.filtros.nomeEmpresa || vaga.nome === this.filtros.nomeEmpresa) &&
-        (!this.filtros.tipoVaga || vaga.tipoVaga === this.filtros.tipoVaga) &&
-      this.filtroRemuneracao(vaga.salario) &&
-      (!this.filtros.modalidade || vaga.modalidade === this.filtros.modalidade)
-//ALTERAR AQUI PARA NOME FANTASIA QUANDO EXISTIR NO PROJETO
-
+  
+    private filtrarSalario(salario: string): boolean {
+      const faixas = this.filtros.salario.split('-');
+      const salarioVaga = parseFloat(salario.replace('R$ ', '').replace(',', '.'));
+      if (faixas.length === 2) {
+        const salarioMin = parseFloat(faixas[0].trim());
+        const salarioMax = parseFloat(faixas[1].trim());
+        return salarioVaga >= salarioMin && salarioVaga <= salarioMax;
+      } else if (faixas.length === 1) {
+        const salarioMin = parseFloat(faixas[0].trim());
+        return salarioVaga >= salarioMin;
+      } else {
+        return true;
+      }
+    }
+  
+    atualizarListaBusca(busca: string) {
+      this.busca = busca.toLowerCase();
+      this.vagas = this.vagas.filter((vaga) =>
+        vaga.nome.toLowerCase().includes(this.busca)
       );
-    });
-
-    this.vagas = vagasFiltradas;
+    }
   }
-
-
-  filtroRemuneracao(remuneracao: string): boolean {
-    if (!this.filtros.remuneracao) return true;
-
-    const faixas = this.filtros.remuneracao.split('-');
-    const valorMinimo = parseFloat(faixas[0]);
-    const valorMaximo = parseFloat(faixas[1]);
-
-    if (isNaN(valorMinimo) && isNaN(valorMaximo)) return true;
-
-    const salario = parseFloat(remuneracao.replace('R$', '').replace('.', '').replace(',', '.'));
-
-    if (isNaN(salario)) return false;
-
-    if (!isNaN(valorMinimo) && salario < valorMinimo) return false;
-    if (!isNaN(valorMaximo) && salario > valorMaximo) return false;
-
-    return true;
-  }
-
-
-
-}
