@@ -1,0 +1,102 @@
+.admVagas
+{
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+  border: 4px solid #1d75b8;
+  background-color: #333333;
+  margin-left: 60px;
+  margin-top: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px;
+  float: left;
+}
+
+h3{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: radial-gradient(circle, #5be4bb , #1d75b8 40%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+}
+
+.vaga:hover{
+  background-color: #1d75b8;
+}
+
+/* h3{
+  margin-left: 20px;
+  color: white;
+} */
+
+img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+p{
+  margin: 20px;
+  text-align: left;
+  color: white;
+  font-weight: 500;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+body{
+  background-color: #333333;
+  padding: 30px;
+  height: 1500px;
+}
+
+select{
+  color: #1d75b8;
+  margin-left: 20px;
+  background-color: #333333;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+button{
+  border-radius: 10px;
+  height: 50px;
+  width: auto;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #00aaff;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: #333333;
+  border-color: #00aaff;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.voltar{
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #1d75b8;
+  margin-top: 20px;
+  background-color: #333333;
+  border: 3px solid #1d75b8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover{
+  background-color: #1d75b8;
+  color: white;
+}
+
+.voltar :hover{
+  background-color: #1d75b8;
+  color: white;
+}
+

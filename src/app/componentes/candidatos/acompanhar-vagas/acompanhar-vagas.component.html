@@ -1,8 +1,16 @@
-<div *ngFor="let vaga of vagas" class="vaga">
-    <h3>{{ vaga.vaga.nome }}</h3>
-    <p>{{ vaga.vaga.descricao }}</p>
-    <p>Salário: {{ vaga.vaga.salario }}</p>
-    <p>Modalidade: {{vaga.vaga.modalidade}} </p>
-    <p>Status da inscricao: {{vaga.statusInscricao}}</p>
-    <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
-</div>
+<body>
+    <!-- <img src="../../../../assets/images/em-LOGO.png" alt=""> -->
+    <h1>Acompanhar vagas</h1>
+            <div *ngFor="let vaga of vagas" class="vaga">
+                <h3>{{ vaga.vaga.nome }}</h3>
+                <p>{{ vaga.vaga.descricao }}</p>
+                <p>Salário:
+                    {{ vaga.vaga.salario }}</p>
+                <p>Modalidade:
+                    {{vaga.vaga.modalidade}}
+                </p>
+                <p>Status da inscricao:
+                    {{vaga.statusInscricao}}</p>
+                <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
+        </div>
+</body>
