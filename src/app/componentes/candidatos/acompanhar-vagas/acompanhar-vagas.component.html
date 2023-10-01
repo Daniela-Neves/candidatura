@@ -1,42 +1,16 @@
 <body>
-  <img src="../../../../assets/images/em-LOGO.png" alt="">
-  <h1>Mural das Vagas</h1>
-  <div>
-    <div class="vaga">
-      <h3>Nome da Vaga</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore provident
-        eaque culpa voluptatem impedit perspiciatis voluptas modi nemo sunt porro!
-        Natus, corporis? Fugiat cupiditate a cum fuga porro ab consequuntur.
-      </p>
-      <p>Salário: R$ 1200,00</p>
-      <p>Modalidade: CLT</p>
-      <p>Status da inscricao: FINALIZADA</p>
-      <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
-    </div>
-    <div class="vaga">
-      <h3>Nome da Vaga</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore provident
-        eaque culpa voluptatem impedit perspiciatis voluptas modi nemo sunt porro!
-        Natus, corporis? Fugiat cupiditate a cum fuga porro ab consequuntur.
-      </p>
-      <p>Salário: R$ 1200,00</p>
-      <p>Modalidade: CLT</p>
-      <p>Status da inscricao: FINALIZADA</p>
-      <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
-    </div>
-    <div class="vaga">
-      <h3>Nome da Vaga</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore provident
-        eaque culpa voluptatem impedit perspiciatis voluptas modi nemo sunt porro!
-        Natus, corporis? Fugiat cupiditate a cum fuga porro ab consequuntur.
-      </p>
-      <p>Salário: R$ 1200,00</p>
-      <p>Modalidade: CLT</p>
-      <p>Status da inscricao: FINALIZADA</p>
-      <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
-    </div>
-  </div>
+    <!-- <img src="../../../../assets/images/em-LOGO.png" alt=""> -->
+    <h1>Acompanhar vagas</h1>
+            <div *ngFor="let vaga of vagas" class="vaga">
+                <h3>{{ vaga.vaga.nome }}</h3>
+                <p>{{ vaga.vaga.descricao }}</p>
+                <p>Salário:
+                    {{ vaga.vaga.salario }}</p>
+                <p>Modalidade:
+                    {{vaga.vaga.modalidade}}
+                </p>
+                <p>Status da inscricao:
+                    {{vaga.statusInscricao}}</p>
+                <!-- <a routerLink="/vagas/detalhes/{{vaga.id}}/{{candidatoId}}" class="detalhes-link">Ver Detalhes</a> -->
+        </div>
 </body>
