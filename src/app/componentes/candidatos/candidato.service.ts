@@ -4,6 +4,7 @@ import { Candidato } from './candidato';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
+// import * as bcrypt from 'bcryptjs';
 
 
 @Injectable({
@@ -21,8 +22,12 @@ export class CandidatoService {
     return this.http.get<Candidato[]>(this.API)
   }
 
-  criar(candidato: Candidato):Observable<Candidato>{
-    return this.http.post<Candidato>(this.API, candidato)
+
+  criar(candidato: Candidato): Observable<Candidato> {
+    // const salt = bcrypt.genSaltSync(10);
+    // candidato.senha = bcrypt.hashSync(candidato.senha, salt);
+  
+    return this.http.post<Candidato>(this.API, candidato);
   }
 
   excluir(id:number):Observable<Candidato>{
@@ -74,6 +79,37 @@ export class CandidatoService {
       })
     );
   }
+  
+
+
+  // login(email: string, senha: string): Observable<Candidato | null> {
+  //   const loginUrl = `${this.API_Login}?email=${email}&senha=${senha}`;
+  
+  //   return this.http.get<Candidato[]>(loginUrl).pipe(
+  //     map(candidatos => {
+  //       if (candidatos && candidatos.length > 0) {
+  //         const candidato = candidatos[0];
+  
+  //         // Verifica se a senha fornecida corresponde à senha no banco de dados
+  //         const senhaCorrespondente = bcrypt.compareSync(senha, candidato.senha);
+  
+  //         if (senhaCorrespondente) {
+  //           return candidato;
+  //         } else {
+  //           console.error('Login falhou. Senha incorreta.');
+  //           return null;
+  //         }
+  //       } else {
+  //         console.error('Login falhou. E-mail não encontrado.');
+  //         return null;
+  //       }
+  //     }),
+  //     catchError(() => {
+  //       console.error('Erro ao realizar o login.');
+  //       return of(null);
+  //     })
+  //   );
+  // }
   
 
 
