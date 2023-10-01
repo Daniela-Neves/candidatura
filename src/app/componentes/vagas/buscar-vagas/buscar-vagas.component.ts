@@ -3,7 +3,7 @@ import { VagasService } from '../vagas.service';
 import { Vagas } from '../vagas';
 import { EmpresasService } from '../../empresas/empresas.service';
 import { Empresas } from '../../empresas/empresas';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscar-vagas',
@@ -12,77 +12,75 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class BuscarVagasComponent implements OnInit {
   vagas: Vagas[] = [];
-  empresas : Empresas[] = [];
+  empresas: Empresas[] = [];
   vagasTemp: Vagas[] = [];
-  candidatoId=this.route.snapshot.paramMap.get('id')
+  candidatoId: string = '';
+  vagasOriginal: Vagas[] = [];
 
-    // Filtros
-    filtros = {
-      estado: '',
-      cidade: '',
-      nomeEmpresa: '',
-      tipoVaga: '',
-      remuneracao: '',
-      modalidade: ''
-    };
+  // Filtros
+  filtros = {
+    estado: '',
+    cidade: '',
+    nomeEmpresa: '',
+    tipoVaga: '',
+    salario: '',
+    modalidade: ''
+  };
 
+  busca: string = '';
 
-  constructor(private vagaService: VagasService, private empresaService: EmpresasService, private router:Router, private route:ActivatedRoute) { }
+  constructor(
+    private vagaService: VagasService,
+    private empresaService: EmpresasService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    // Chama o método listar() de empresasService para poder resgatar todas as empresas, atribuindo à variável this.empresas
+    this.candidatoId = this.route.snapshot.paramMap.get('id') || '';
+
     this.vagaService.listar().subscribe((vagas) => {
-      this.vagas = vagas
-     
-
-    })
-
-
+      this.vagas = vagas;
+      this.vagasTemp = [...vagas];
+      this.vagasOriginal = [...vagas];
+    });
   }
 
   aplicarFiltros() {
-    let vagasFiltradas: Vagas[] = [];
+    this.vagas = this.vagasTemp.filter((vaga) => {
+      const filtroEstado = this.filtros.estado === '' || vaga.estado.toLowerCase().includes(this.filtros.estado.toLowerCase());
+      const filtroCidade = this.filtros.cidade === '' || vaga.cidade.toLowerCase().includes(this.filtros.cidade.toLowerCase());
+      // const filtroNomeEmpresa = this.filtros.nomeEmpresa === '' || vaga.nome.toLowerCase().includes(this.filtros.nomeEmpresa.toLowerCase());
+      const filtroTipoVaga = this.filtros.tipoVaga === '' || vaga.tipoVaga.toLowerCase().includes(this.filtros.tipoVaga.toLowerCase());
+      // const filtroSalario = this.filtros.salario === '' || this.filtrarSalario(vaga.salario);
+      const filtroModalidade = this.filtros.modalidade === '' || vaga.modalidade.toLowerCase().includes(this.filtros.modalidade.toLowerCase());
 
-    for (const empresa of this.empresas) {
-      // vagasFiltradas = vagasFiltradas.concat(empresa.vagas);
-    }
-
-    vagasFiltradas = vagasFiltradas.filter(vaga => {
-      return (
-        (!this.filtros.estado || vaga.estado === this.filtros.estado) &&
-        (!this.filtros.cidade || vaga.cidade === this.filtros.cidade) &&
-        (!this.filtros.nomeEmpresa || vaga.nome === this.filtros.nomeEmpresa) &&
-        (!this.filtros.tipoVaga || vaga.tipoVaga === this.filtros.tipoVaga) &&
-      this.filtroRemuneracao(vaga.salario) &&
-      (!this.filtros.modalidade || vaga.modalidade === this.filtros.modalidade)
-//ALTERAR AQUI PARA NOME FANTASIA QUANDO EXISTIR NO PROJETO
-
-      );
+      return filtroEstado && filtroCidade && filtroTipoVaga && filtroModalidade;
     });
-
-    this.vagas = vagasFiltradas;
   }
 
+  // private filtrarSalario(salario: string): boolean {
+  //   if (this.filtros.salario === '') {
+  //     return true;
+  //   }
 
-  filtroRemuneracao(remuneracao: string): boolean {
-    if (!this.filtros.remuneracao) return true;
+  //   const faixas = this.filtros.salario.split('-');
+  //   const salarioVaga = parseFloat(salario.replace('R$ ', '').replace(',', '.'));
+  //   if (faixas.length === 2) {
+  //     const salarioMin = parseFloat(faixas[0].trim());
+  //     const salarioMax = parseFloat(faixas[1].trim());
+  //     return salarioVaga >= salarioMin && salarioVaga <= salarioMax;
+  //   } else if (faixas.length === 1) {
+  //     const salarioMin = parseFloat(faixas[0].trim());
+  //     return salarioVaga >= salarioMin;
+  //   } else {
+  //     return true;
+  //   }
+  // }
 
-    const faixas = this.filtros.remuneracao.split('-');
-    const valorMinimo = parseFloat(faixas[0]);
-    const valorMaximo = parseFloat(faixas[1]);
-
-    if (isNaN(valorMinimo) && isNaN(valorMaximo)) return true;
-
-    const salario = parseFloat(remuneracao.replace('R$', '').replace('.', '').replace(',', '.'));
-
-    if (isNaN(salario)) return false;
-
-    if (!isNaN(valorMinimo) && salario < valorMinimo) return false;
-    if (!isNaN(valorMaximo) && salario > valorMaximo) return false;
-
-    return true;
+  atualizarListaBusca() {
+    this.vagas = this.vagasOriginal.filter((vaga) =>
+      vaga.nome.toLowerCase().includes(this.busca.toLowerCase())
+    );
   }
-
-
-
 }

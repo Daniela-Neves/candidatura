@@ -5,6 +5,8 @@ import { CandidatoService } from '../candidato.service';
 import { Candidato } from '../candidato';
 import { catchError, map} from 'rxjs/operators';
 import { of } from 'rxjs';
+// import * as bcrypt from 'bcryptjs';
+
 
 @Component({
   selector: 'app-login',
@@ -22,12 +24,22 @@ export class LoginComponent {
   constructor(private candidatoService: CandidatoService, private router: Router) {}
 
   realizarLogin() {
-    this.candidatoService.login(this.candidato.email, this.candidato.senha)
+    // const saltRounds = 10;  // Número de saltos para a criptografia (recomendado: 10)
+    // const hashedPassword = bcrypt.hashSync(this.candidato.senha, saltRounds);
+  
+
+    // const salt = bcrypt.genSaltSync(10);
+    // const senhaCriptografada = bcrypt.hashSync(this.candidato.senha, salt);
+    // this.candidato.senha = senhaCriptografada;
+  
+    const senha = this.candidato.senha;  
+    this.candidatoService.login(this.candidato.email, senha)
       .subscribe(
         (candidatoLogado) => {
           if (candidatoLogado) {
             console.log('Login bem-sucedido.');
-            this.router.navigate(['/menu-candidato', candidatoLogado.id]);          } else {
+            this.router.navigate(['/menu-candidato', candidatoLogado.id]);
+          } else {
             alert('Login falhou. E-mail ou senha incorretos.');
           }
         },
@@ -36,5 +48,8 @@ export class LoginComponent {
           alert('Erro ao realizar o login. Tente novamente mais tarde.');
         }
       );
-  }
+  } 
+  
+  
+  
 }
