@@ -31,7 +31,7 @@ import { DashboardEmpresaComponent } from './componentes/empresas/dashboard/dash
 const routes: Routes = [
     {
         path: '',
-        component: PerfisComponent
+        component: AdministrarVagaComponent
         // component: PaginaInicialEmpresaComponent
         // component: ListarCandidatoComponent,
     },
@@ -114,7 +114,7 @@ const routes: Routes = [
     }, {
         path: 'login-em',
         component: LoginEmComponent
-    }, 
+    },
     // {
     //     path: 'menu-em',
     //     component: MenuEmComponent
