@@ -1,0 +1,78 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: auto;
+  z-index: 1;
+  font-family: 'Inter', sans-serif;
+  background-color: #111111;
+  height: 10%;
+  
+}
+
+.img-logo {
+  height: 100%;
+  float: left;
+}
+
+.buttons {
+  width: 100%;
+  margin-right: 2%;
+  text-align: right;
+  float: right;
+}
+
+input[type=checkbox]{
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+  float: right;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: rgb(0, 0, 0);
+}
+
+input:checked + label::after {
+	background: yellow;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 30px;
+}
