@@ -57,7 +57,7 @@ export class DetalhesVagaComponent implements OnInit {
     // this.router.navigate(['/buscar-vagas/',this.incricao.candidatoId]);
     this.incricaoService.criar(this.inscricao).subscribe(() => {
       this.router.navigate(['/buscar-vagas/',this.inscricao.candidatoId]);
-      alert('Inscrição realiza com sucesso!');
+      alert('Inscrição realizada com sucesso!');
     });
   }
 
